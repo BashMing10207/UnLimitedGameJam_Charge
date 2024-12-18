@@ -18,10 +18,11 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void Charging(float chargingValue)
     {
-        Debug.Log(chargingValue);
+        _currentCharging = chargingValue;
     }
 
     public virtual void Fire()
     {
+        _currentCharging = 0;
     }
 }
