@@ -792,9 +792,41 @@ PrefabInstance:
       propertyPath: impactParticle
       value: 
       objectReference: {fileID: 7272493005001245027}
+    - target: {fileID: 4480022144231742260, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: m_Size.x
+      value: 9.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480022144231742260, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: m_Size.y
+      value: 6.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480022144231742260, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7161209093309611107, guid: 85fbc7e75d8c8394cb3544b97e8b2a8a, type: 3}
+    - target: {fileID: 4480022144231742260, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4515632001773091637, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612721468899575318, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: m_Size.x
+      value: 9.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612721468899575318, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: m_Size.y
+      value: 6.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612721468899575318, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5387344411956874762, guid: 85fbc7e75d8c8394cb3544b97e8b2a8a, type: 3}
+    - target: {fileID: 5612721468899575318, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5638670453060161118, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: m_Name
