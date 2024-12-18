@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -17,10 +18,13 @@ public class GolemBoss : MonoBehaviour
     [SerializeField] private CinemachineImpulseSource ImpulseSource;
 
     [SerializeField] private AnimationCurve takeDownCurve;
+
+    [SerializeField] private Laser leftLaser;
+    [SerializeField] private Laser rightLaser;
     
     private bool isLeftHandMoving;
     private bool isRightHandMoving;
-
+    
     private void Start()
     {
         ImpulseSource = GetComponent<CinemachineImpulseSource>();
@@ -179,9 +183,6 @@ public class GolemBoss : MonoBehaviour
         
         isRightHandMoving = false;
     }
-    
-    
-
     public void CrossHand(float _speed , float _crossSpeed)
     {
         StartCoroutine(CrossHandRoutine(TestTarget,_speed,_crossSpeed));
@@ -229,8 +230,6 @@ public class GolemBoss : MonoBehaviour
         isLeftHandMoving = false;
         isRightHandMoving = false;
     }
-            
-    #endregion
     
     public void TakeDownLeftAndCircleShot(int bulletCount, float _speed,float _downSpeed)
     {
@@ -264,6 +263,7 @@ public class GolemBoss : MonoBehaviour
         ShakeCamera(1.4f);
         ApplyCircleShot(rightHand, bulletCount);
     }
+    #endregion
     
     private IEnumerator MoveToPosition(Transform obj, Vector3 target, float speed)
     {
@@ -278,7 +278,7 @@ public class GolemBoss : MonoBehaviour
             yield return null;
         }
     }
-
+    
     private void ShakeCamera(float power) =>ImpulseSource.GenerateImpulse(power);
 
     private float GetEasing(float startTime,  float endDistance , float speed)
@@ -290,5 +290,12 @@ public class GolemBoss : MonoBehaviour
         
         return curvedFraction;
     }
+    
+    public void ActiveLaser(bool isActive)
+    {
+        leftLaser.gameObject.SetActive(isActive);
+        rightLaser.gameObject.SetActive(isActive);
+    }
+    
     
 }
