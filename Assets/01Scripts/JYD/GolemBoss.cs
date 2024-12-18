@@ -173,7 +173,7 @@ public class GolemBoss : Entity
         Vector3 originalPosition = rightHand.position;
         Vector3 liftTarget = _target.position + Vector3.up * 2.5f;
         Vector3 strikeTarget = _target.position;
-
+        
         yield return StartCoroutine(MoveToPosition(rightHand, liftTarget, _speed));
         
         yield return new WaitForSeconds(0.3f);
