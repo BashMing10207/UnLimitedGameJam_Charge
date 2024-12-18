@@ -4912,8 +4912,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolType: 1
-  _lifeTime: 10
-  _defaultBulletSpeed: 10
+  _lifeTime: 7
+  _defaultBulletSpeed: 15
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64

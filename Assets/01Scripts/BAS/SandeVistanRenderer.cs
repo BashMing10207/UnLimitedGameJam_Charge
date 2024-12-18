@@ -27,18 +27,19 @@ public class SandeVistanRenderer : MonoBehaviour
             sprite.sprite = _targetSpriteRenderer.sprite;
             _spriteLsit.Add(new BashPair<SpriteRenderer,float>(sprite,_lifeTime));
         }
-
         if (_spriteLsit.Count > 0)
         {
-            foreach(BashPair<SpriteRenderer, float> sprit in _spriteLsit)
+            for (int i = 0; i < _spriteLsit.Count; i++)
             {
+                var sprit = _spriteLsit[i];
                 sprit.First.color = _gradient.Evaluate(sprit.Second);
                 sprit.Second -= Time.fixedDeltaTime;
 
-                if (sprit.Second < 0f)
+                if (sprit.Second <= 0f)
                 {
                     Destroy(sprit.First);
-                    _spriteLsit.Remove(sprit);
+                    _spriteLsit.RemoveAt(i); 
+                    i--; 
                 }
             }
         }
