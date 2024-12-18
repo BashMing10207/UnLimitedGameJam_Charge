@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6908461735897266189}
   - component: {fileID: 7417776154885115136}
   - component: {fileID: -67145790997951823}
+  - component: {fileID: -7936390531705436425}
   m_Layer: 0
   m_Name: GolemProjectile
   m_TagString: Untagged
@@ -4898,3 +4899,21 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &-7936390531705436425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592958385865536773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a230c76231b4f0408401a31db7dcd66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poolType: 1
+  _lifeTime: 10
+  _defaultBulletSpeed: 10
+  whatIsTarget:
+    serializedVersion: 2
+    m_Bits: 64

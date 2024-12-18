@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnemyBulletPool
   m_EditorClassIdentifier: 
   poolType: 1
-  prefab: {fileID: 927639931092931130, guid: f83926e5d50896c448f214745b0254ed, type: 3}
+  prefab: {fileID: 592958385865536773, guid: a86dde4243248c7478f3672b530507f0, type: 3}
   initCount: 20

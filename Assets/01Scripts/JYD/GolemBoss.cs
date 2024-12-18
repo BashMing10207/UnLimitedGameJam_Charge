@@ -12,10 +12,10 @@ public class GolemBoss : Entity
 
     [SerializeField] private Transform leftSolder;
     [SerializeField] private Transform rightSolder;
-    
+
     [Space]
     
-    [SerializeField] private GameObject bulletPrefab; 
+    [SerializeField] private GameEventChannelSO SpawnChanel;
     [SerializeField] private float bulletSpeed = 5f;
         
     [SerializeField] private Transform TestTarget;
@@ -49,13 +49,14 @@ public class GolemBoss : Entity
 
             Vector3 bulletMoveDirection = new Vector3(bulletDirX, bulletDirY, 0f).normalized;
 
-            GameObject bullet = Instantiate(bulletPrefab, _firePos.position, Quaternion.identity);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.linearVelocity = bulletMoveDirection * bulletSpeed;
-            }
+            var evt = SpawnEvents.BulletCreate;
+            evt.position = _firePos.position;
+            evt.dir = bulletMoveDirection;
+            evt._bulletType = PoolType.EnemyBullet;
+            evt.power = 10;
 
+            SpawnChanel.RaiseEvent(evt);
+            
             angle += angleStep; 
         }
     }
@@ -78,12 +79,14 @@ public class GolemBoss : Entity
 
             Vector3 bulletMoveDirection = new Vector3(bulletDirX, bulletDirY, 0f).normalized;
 
-            GameObject bullet = Instantiate(bulletPrefab, _firePos.position, Quaternion.identity);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.linearVelocity = bulletMoveDirection * bulletSpeed;
-            }
+            var evt = SpawnEvents.BulletCreate;
+            evt.position = _firePos.position;
+            evt.dir = bulletMoveDirection;
+            evt._bulletType = PoolType.EnemyBullet;
+            evt.power = 10;
+
+            SpawnChanel.RaiseEvent(evt);
+            
 
             angle += angleStep;
             yield return new WaitForSeconds(0.01f);
