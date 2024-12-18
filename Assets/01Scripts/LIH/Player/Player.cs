@@ -33,4 +33,6 @@ public class Player : Entity
         }
         return default;
     }
+
+    public Vector2 LookDir() => (PlayerInput.MousePos - (Vector2)transform.position).normalized;
 }

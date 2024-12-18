@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   displayName: ChargingSpeed
-  _baseValue: 1
+  _baseValue: 10
   _minValue: 1
-  _maxValue: 3
+  _maxValue: 100
   <IsPercent>k__BackingField: 0
