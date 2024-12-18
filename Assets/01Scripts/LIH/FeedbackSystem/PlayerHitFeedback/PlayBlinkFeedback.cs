@@ -4,35 +4,45 @@ using UnityEngine;
 
 public class PlayBlinkFeedback : Feedback
 {
-    [SerializeField] private SkinnedMeshRenderer _targetRenderer;
+    [SerializeField] private SpriteRenderer[] _spriteRenderers;
     [SerializeField] private float _blinkTime = 0.2f;
 
     private readonly int _blinkValueHash = Shader.PropertyToID("_BlinkValue");
 
-    private Material _targetMaterial;
+    private List<Material> _targetMaterials;
     private Coroutine _coroutine = null;
 
-    private void Awake()
+    protected override void Awake()
     {
-        _targetMaterial = _targetRenderer.material;
+        _targetMaterials = new List<Material>();
+        for (int i = 0; i < _spriteRenderers.Length; i++)
+        {
+            _targetMaterials.Add(_spriteRenderers[i].material);
+        }
     }
     public override void CreateFeedback()
     {
         _coroutine = StartCoroutine(BlinkCoroutine());
     }
     
+    //고도 , 언리얼
     private IEnumerator BlinkCoroutine()
     {
-        _targetMaterial.SetFloat(_blinkValueHash, 0.4f);
+        Blink(0.5f);
         yield return new WaitForSeconds(_blinkTime);
-        _targetMaterial.SetFloat(_blinkValueHash, 0);
+        Blink(0f);
     }
-
+    
     public override void FinishFeedback()
     {
-        if(_coroutine != null)
-            StopCoroutine(_coroutine);
 
-        _targetMaterial.SetFloat(_blinkValueHash, 0);
+    }
+
+    private void Blink(float value)
+    {
+        foreach (var material in _targetMaterials)
+        {
+            material.SetFloat(_blinkValueHash, value);
+        }
     }
 }

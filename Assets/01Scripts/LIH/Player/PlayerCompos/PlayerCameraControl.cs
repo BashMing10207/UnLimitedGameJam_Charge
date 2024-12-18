@@ -1,6 +1,8 @@
+using System;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class PlayerCameraControl : MonoBehaviour, IPlayerCompo
 {
@@ -10,15 +12,22 @@ public class PlayerCameraControl : MonoBehaviour, IPlayerCompo
     [Header("Charging Setting")]
     [SerializeField] private float _camDistanceMaxZoomValue = 10f;
     [SerializeField] private float _camDistanceMinValue = 4f;
-    [SerializeField] private float _camDefaultDistacne = 5f;
 
     [Header("Fire Setting")]
     [SerializeField] private float _camShakeMaxValue = 50f;
     [SerializeField] private float _fireMinPower;
     [SerializeField] private float _fireMaxPower;
+
+    private float _camDefaultDistance;
+    
     public void Initialize(Player player)
     {
         _player = player;
+    }
+
+    private void Start()
+    {
+        _camDefaultDistance = FindAnyObjectByType<PlayerCamera>().DefaultDistance;
     }
 
     public void ChargingCamSetting(float chargingTime, float chargingValue)
@@ -35,8 +44,7 @@ public class PlayerCameraControl : MonoBehaviour, IPlayerCompo
 
     public void CamReset()
     {
-        var evt = CameraEvents.CamDistanceChangeEvent;
-        evt.distance = _camDefaultDistacne;
+        var evt = CameraEvents.CamShakeDistanceResetEvent;
         _cameraEventChannel.RaiseEvent(evt);
     }
 
@@ -44,7 +52,7 @@ public class PlayerCameraControl : MonoBehaviour, IPlayerCompo
     {
         var evt = CameraEvents.CamDistanceChangeEvent;
         float inverseLerp = Mathf.InverseLerp(0, _camDistanceMaxZoomValue, chargingValue);
-        float distance = Mathf.Lerp(_camDefaultDistacne, _camDistanceMinValue, inverseLerp);
+        float distance = Mathf.Lerp(_camDefaultDistance, _camDistanceMinValue, inverseLerp);
         
         evt.distance = distance;
         evt.speed = 2f;
@@ -60,8 +68,7 @@ public class PlayerCameraControl : MonoBehaviour, IPlayerCompo
     
     private void CamFireDistanceChange(float power)
     {
-        var evt = CameraEvents.CamDistanceChangeEvent;
-        evt.distance = _camDefaultDistacne;
+        var evt = CameraEvents.CamShakeDistanceResetEvent;
         evt.speed = 2f;
         _cameraEventChannel.RaiseEvent(evt);
     }

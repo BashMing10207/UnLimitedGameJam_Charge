@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitable
 {
@@ -7,13 +9,21 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
     private float _maxHealth;
     private float _currentHealth;
 
-    public UnityEvent OnHit;
+    public UnityEvent<float> OnHit;
     public UnityEvent OnDead;
+
+    private float _damage;
 
     private Entity _owner;
     
     public bool IsDead { get; set; }
-    
+
+    private void Update()
+    {
+        if (Keyboard.current.nKey.wasPressedThisFrame)
+            ApplyDamage(3f);
+    }
+
     public void Initialize(Entity entity)
     {
         _owner = entity;
@@ -33,6 +43,7 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
 
     public void ApplyDamage(float damage)
     {
+        _damage = damage;
         _currentHealth = Mathf.Clamp(_currentHealth - damage, 0, _maxHealth);
         
         if (_currentHealth <= 0)
@@ -46,6 +57,6 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
         if (IsDead)
             OnDead?.Invoke();
         else
-            OnHit?.Invoke();
+            OnHit?.Invoke(_damage);
     }
 }

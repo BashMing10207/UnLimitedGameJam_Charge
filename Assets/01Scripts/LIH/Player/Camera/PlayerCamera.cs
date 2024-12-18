@@ -15,20 +15,25 @@ public class PlayerCamera : MonoBehaviour
 
     private float _targetDistance;
     private float _camDistanceSpeed;
+    public float DefaultDistance { get; private set; }
 
     private void Awake()
     {
         _vCam = GetComponent<CinemachineCamera>();
+        
         _cameraChannel.AddListener<CamDistanceChange>(HandleCamDistanceChange);
         _cameraChannel.AddListener<CamShake>(HandleCamShake);
+        _cameraChannel.AddListener<CamDistanceReset>(HandleCamDistanceReset);
         
         _targetDistance = _vCam.Lens.OrthographicSize;
+        DefaultDistance = _vCam.Lens.OrthographicSize;
     }
-
+    
     private void OnDestroy()
     {
         _cameraChannel.RemoveListener<CamDistanceChange>(HandleCamDistanceChange);
         _cameraChannel.RemoveListener<CamShake>(HandleCamShake);
+        _cameraChannel.RemoveListener<CamDistanceReset>(HandleCamDistanceReset);
     }
 
     private void HandleCamShake(CamShake evt)
@@ -40,6 +45,13 @@ public class PlayerCamera : MonoBehaviour
     private void HandleCamDistanceChange(CamDistanceChange evt)
     {
         _targetDistance = evt.distance;
+        _isChangeComplete = false;
+        _camDistanceSpeed = evt.speed;
+    }
+    
+    private void HandleCamDistanceReset(CamDistanceReset evt)
+    {
+        _targetDistance = DefaultDistance;
         _isChangeComplete = false;
         _camDistanceSpeed = evt.speed;
     }

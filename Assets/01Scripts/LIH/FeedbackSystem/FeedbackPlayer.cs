@@ -8,7 +8,7 @@ public class FeedbackPlayer : MonoBehaviour
 
     private void Awake()
     {
-        _feedbackToPlay = GetComponents<Feedback>().ToList();
+        _feedbackToPlay = GetComponentsInChildren<Feedback>().ToList();
     }
 
     public void PlayFeedback()
