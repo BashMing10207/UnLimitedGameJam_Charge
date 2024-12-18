@@ -79,9 +79,26 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         _currentDashCool = _dashCoolTime;
         StopImmediately(true);
 
-        _rigidbody2D.linearVelocity = _player.LookDir() * _dashSpeed;
+        Vector2 dir = SetDashDir();
+        _rigidbody2D.linearVelocity = dir * _dashSpeed;
     
         DOVirtual.DelayedCall(_dashTime, () => CanMove = true);
+    }
+
+    private Vector2 SetDashDir()
+    {
+        Vector2 dir =  Vector2.zero;
+        switch (_player.dashType)
+        {
+            case PlayerDashType.MouseDir:
+                dir = _player.LookDir();
+                break;
+            case PlayerDashType.InputDir:
+                dir = _player.PlayerInput.InputDirection.normalized;
+                break;
+        }
+
+        return dir;
     }
 
     public void KnockBackStart(float power)
