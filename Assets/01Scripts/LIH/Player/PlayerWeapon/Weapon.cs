@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
+    [SerializeField] private PlayerMuzzleEffect _playerMuzzleEffect;
     [SerializeField] protected GameEventChannelSO _spawnChannel;
     [SerializeField] protected PlayerBullet _bullet;
     [SerializeField] private float _recoilTime;
@@ -31,7 +32,16 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void Fire(float power)
     {
+        InstantiateMuzzle();
         Recoil(power);
+    }
+
+    private void InstantiateMuzzle()
+    {
+        PlayerMuzzleEffect effect = Instantiate(_playerMuzzleEffect);
+        effect.transform.position = _fireTrm.position;
+        float z = Mathf.Atan2(_player.LookDir().y, _player.LookDir().x) * Mathf.Rad2Deg;
+        effect.SetRotate(z);
     }
 
     private void Recoil(float power)

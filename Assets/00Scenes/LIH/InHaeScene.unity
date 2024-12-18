@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Intensity: 1.4
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000fdeab230ad556b3a072e9e8a
+  m_ApplyToSortingLayers: 00000000fdeab230ad556b3a072e9e8a79618315
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1890,7 +1890,7 @@ MonoBehaviour:
   m_Intensity: 1.4
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000fdeab230ad556b3a072e9e8a
+  m_ApplyToSortingLayers: 00000000fdeab230ad556b3a072e9e8a79618315
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -11685,6 +11685,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2334876918199396740, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334876918199396740, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334876918199396740, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387182606153978206, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _playerMuzzleEffect
+      value: 
+      objectReference: {fileID: 4730605180681999947, guid: 87868998d15b8224ca4b6158f8d150fc, type: 3}
     - target: {fileID: 7590177362201923779, guid: f9411729e27cc9643843733e00503422, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.14
@@ -12200,7 +12216,7 @@ MonoBehaviour:
   m_Intensity: 1.4
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000fdeab230ad556b3a072e9e8a
+  m_ApplyToSortingLayers: 00000000fdeab230ad556b3a072e9e8a79618315
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -17143,7 +17159,7 @@ MonoBehaviour:
   m_Intensity: 1.4
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000fdeab230ad556b3a072e9e8a
+  m_ApplyToSortingLayers: 00000000fdeab230ad556b3a072e9e8a79618315
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

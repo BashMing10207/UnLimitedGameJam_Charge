@@ -272,7 +272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715114354748736595}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: -0.453, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -280,7 +280,7 @@ Transform:
   - {fileID: 1360291890800208679}
   - {fileID: 8847561691010128099}
   m_Father: {fileID: 7590177362201923779}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
 --- !u!114 &5387182606153978206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8566718ba9960144c80492b4bd98e39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerMuzzleEffect: {fileID: 4730605180681999947, guid: 87868998d15b8224ca4b6158f8d150fc, type: 3}
   _spawnChannel: {fileID: 11400000, guid: 6944cce5058946943ac30c78e150d1b4, type: 2}
   _bullet: {fileID: 3559990087977567739, guid: 52ebaf3d6b432144e9f1cdef1b09471c, type: 3}
   _recoilTime: 0.1
@@ -523,6 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraEventChannel: {fileID: 11400000, guid: 147bcbf0355179142878d71f4e703d84, type: 2}
+  _radius: 1.5
 --- !u!1 &3654543898941970187
 GameObject:
   m_ObjectHideFlags: 0
