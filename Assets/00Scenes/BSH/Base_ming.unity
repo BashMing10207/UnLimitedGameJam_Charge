@@ -10251,6 +10251,74 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.atime1
+      value: 40478
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.atime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.ctime1
+      value: 20586
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.ctime2
+      value: 40632
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.ctime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.key0.b
+      value: 0.04351759
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.key1.a
+      value: 0.85764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.key1.b
+      value: 0.31372547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.key1.g
+      value: 0.35966352
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.key2.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.key2.g
+      value: 0.61960787
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.key2.r
+      value: 0.9323582
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.key3.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.key3.g
+      value: 0.37719464
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.m_NumAlphaKeys
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660775733831698416, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: _gradient.m_NumColorKeys
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5432457615222919477, guid: f9411729e27cc9643843733e00503422, type: 3}
       propertyPath: _dashTime
       value: 0.2
@@ -10318,66 +10386,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4660272859460995278, guid: f9411729e27cc9643843733e00503422, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 303776913}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9411729e27cc9643843733e00503422, type: 3}
---- !u!1 &303776911 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4660272859460995278, guid: f9411729e27cc9643843733e00503422, type: 3}
-  m_PrefabInstance: {fileID: 303776910}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &303776912 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3693657962144148358, guid: f9411729e27cc9643843733e00503422, type: 3}
-  m_PrefabInstance: {fileID: 303776910}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &303776913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303776911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62447f2df139d3a44b791ae6db90957d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetSpriteRenderer: {fileID: 303776912}
-  _prefab: {fileID: 5422565726652862742, guid: b7f265151861221428ec2b81dedac56d, type: 3}
-  _lifeTime: 0.1
-  _gradient:
-    serializedVersion: 2
-    key0: {r: 0, g: 1, b: 0.04351759, a: 1}
-    key1: {r: 1, g: 0.35966352, b: 0.31372547, a: 0.85764706}
-    key2: {r: 0.9323582, g: 0.61960787, b: 1, a: 0}
-    key3: {r: 0, g: 0.37719464, b: 1, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 20586
-    ctime2: 40632
-    ctime3: 65535
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 40478
-    atime2: 65535
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 4
-    m_NumAlphaKeys: 3
 --- !u!4 &303776914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7590177362201923779, guid: f9411729e27cc9643843733e00503422, type: 3}

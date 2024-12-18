@@ -31,12 +31,12 @@ public class SandeVistanRenderer : MonoBehaviour
         {
             for (int i = 0; i < _spriteLsit.Count; i++)
             {
-                sprit.First.color = _gradient.Evaluate(sprit.Second/_lifeTime);
-                sprit.Second -= Time.fixedDeltaTime;
+                _spriteLsit[i].First.color = _gradient.Evaluate(_spriteLsit[i].Second/_lifeTime);
+                _spriteLsit[i].Second -= Time.fixedDeltaTime;
 
-                if (sprit.Second <= 0f)
+                if (_spriteLsit[i].Second <= 0f)
                 {
-                    Destroy(sprit.First);
+                    Destroy(_spriteLsit[i].First);
                     _spriteLsit.RemoveAt(i); 
                     i--; 
                 }
