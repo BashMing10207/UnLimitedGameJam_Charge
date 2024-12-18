@@ -1014,22 +1014,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6584787670942949, guid: f9411729e27cc9643843733e00503422, type: 3}
-      propertyPath: _playerManagerSO
-      value: 
-      objectReference: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
     - target: {fileID: 1516370337146375645, guid: f9411729e27cc9643843733e00503422, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1516370337146375645, guid: f9411729e27cc9643843733e00503422, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5387182606153978206, guid: f9411729e27cc9643843733e00503422, type: 3}
-      propertyPath: _bullet
-      value: 
-      objectReference: {fileID: 3559990087977567739, guid: 52ebaf3d6b432144e9f1cdef1b09471c, type: 3}
     - target: {fileID: 7590177362201923779, guid: f9411729e27cc9643843733e00503422, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.332
