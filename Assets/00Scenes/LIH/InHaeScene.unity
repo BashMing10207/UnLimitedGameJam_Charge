@@ -11701,6 +11701,30 @@ PrefabInstance:
       propertyPath: _playerMuzzleEffect
       value: 
       objectReference: {fileID: 4730605180681999947, guid: 87868998d15b8224ca4b6158f8d150fc, type: 3}
+    - target: {fileID: 6650279061051543887, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6650279061051543887, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: m_ShadowsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458776107893196724, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458776107893196724, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458776107893196724, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458776107893196724, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7590177362201923779, guid: f9411729e27cc9643843733e00503422, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.14
@@ -11742,7 +11766,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8927066223625713297, guid: f9411729e27cc9643843733e00503422, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9411729e27cc9643843733e00503422, type: 3}

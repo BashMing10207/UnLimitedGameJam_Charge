@@ -68,7 +68,7 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
             _currentChargingTime += Time.deltaTime;
             _currentCharging += Time.deltaTime * _chargingSpeed;
             chargingEvent?.Invoke(_currentChargingTime, _currentCharging);
-            Debug.Log(_currentCharging);
+//            Debug.Log(_currentCharging);
         }
         
         GunRotate();

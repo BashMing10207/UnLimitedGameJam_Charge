@@ -16,10 +16,6 @@ public class PlayerMuzzleEffect : MonoBehaviour
     public void SetRotate(float angle)
     {
         transform.rotation = Quaternion.Euler(0, 0, angle);
-        for (int i = 0; i < _particleSystems.Count; i++)
-        {
-            _particleSystems[i].startRotation = angle * -1;
-        }
         _parentParticle.Play();
     }
 }
