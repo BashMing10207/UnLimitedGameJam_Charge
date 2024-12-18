@@ -13,7 +13,6 @@ public class Laser : MonoBehaviour
     
     private void Start()
     {
-        
         sequence = DOTween.Sequence();
         
         sequence.Append(transform.DORotate(new Vector3(0, 0, 90), 4, RotateMode.FastBeyond360));
@@ -48,6 +47,7 @@ public class Laser : MonoBehaviour
             }
             
             resultPos = hit.point;
+            
         }
         
         if (player != null)
@@ -64,7 +64,7 @@ public class Laser : MonoBehaviour
         _laserBody.up = (resultPos - (Vector2)transform.position).normalized;
         
         float laserSizeX = player == null ? originSizeX : 1.15f;
-        _laserBody.localScale = new Vector3(laserSizeX, distance * 2, _laserBody.localScale.z);
+        _laserBody.localScale = new Vector3(laserSizeX, distance - 2, _laserBody.localScale.z);
         
         _laserHit.position = resultPos;
         
