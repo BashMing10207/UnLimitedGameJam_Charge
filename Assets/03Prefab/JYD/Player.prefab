@@ -530,8 +530,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 817031933
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 159929021, guid: 552b0f28a585cd5468447308980f164f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -607,6 +607,36 @@ MonoBehaviour:
   _targetSpriteRenderer: {fileID: 3693657962144148358}
   _prefab: {fileID: 5422565726652862742, guid: b7f265151861221428ec2b81dedac56d, type: 3}
   _lifeTime: 0.1
+  _gradient:
+    serializedVersion: 2
+    key0: {r: 0.9607843, g: 0.9245509, b: 0.43137252, a: 1}
+    key1: {r: 0.29654026, g: 1, b: 0, a: 0.9683703}
+    key2: {r: 0.91039276, g: 0, b: 1, a: 0}
+    key3: {r: 1, g: 1, b: 1, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 12336
+    ctime2: 28142
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 20817
+    atime2: 65535
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 4
+    m_NumAlphaKeys: 3
 --- !u!1 &6903118207493378797
 GameObject:
   m_ObjectHideFlags: 0

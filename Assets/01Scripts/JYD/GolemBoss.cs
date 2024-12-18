@@ -63,14 +63,12 @@ public class GolemBoss : Entity
     
     public void SpinShot(int bulletCount,bool isLeft)
     {
-        StartCoroutine(ApplySpinShot(isLeft ? leftSolder : rightSolder, bulletCount,360));
+        StartCoroutine(ApplySpinShot(isLeft ? leftSolder : rightSolder, bulletCount,bulletCount));
     }
-    
-    
     private IEnumerator ApplySpinShot(Transform _firePos,int bulletCount,int _bulletAmount)
     {
-        float angleStep = 360f / bulletCount; 
-        float angle = 0f;
+        float angleStep = 20;
+        float angle = 270f;
         
         for (int i = 0; i < _bulletAmount; i++)
         {
@@ -83,8 +81,8 @@ public class GolemBoss : Entity
             evt.position = _firePos.position;
             evt.dir = bulletMoveDirection;
             evt._bulletType = PoolType.EnemyBullet;
-            evt.power = 10;
-
+            evt.power = 30;
+            
             SpawnChanel.RaiseEvent(evt);
             
             angle += angleStep;
@@ -155,7 +153,7 @@ public class GolemBoss : Entity
 
         yield return StartCoroutine(MoveToPosition(leftHand, liftTarget, _speed));
         
-        //yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.3f);
         
         yield return StartCoroutine(MoveToPosition(leftHand, strikeTarget, _downSpeed));
         ShakeCamera(2);
@@ -179,7 +177,7 @@ public class GolemBoss : Entity
 
         yield return StartCoroutine(MoveToPosition(rightHand, liftTarget, _speed));
     
-        //yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.3f);
     
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
         ShakeCamera(2);
