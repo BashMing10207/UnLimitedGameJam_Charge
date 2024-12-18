@@ -693,7 +693,7 @@ MonoBehaviour:
   chest: {fileID: 6265824911614349711}
   leftSolder: {fileID: 771211919558392661}
   rightSolder: {fileID: 6499924449850806105}
-  bulletPrefab: {fileID: 592958385865536773, guid: a86dde4243248c7478f3672b530507f0, type: 3}
+  SpawnChanel: {fileID: 11400000, guid: 6944cce5058946943ac30c78e150d1b4, type: 2}
   bulletSpeed: 10
   TestTarget: {fileID: 0}
   ImpulseSource: {fileID: 8275954186079003205}

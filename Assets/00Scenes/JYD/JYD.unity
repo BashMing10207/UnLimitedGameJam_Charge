@@ -672,10 +672,6 @@ PrefabInstance:
       propertyPath: TestTarget
       value: 
       objectReference: {fileID: 612289749}
-    - target: {fileID: 172769806777398677, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
-      propertyPath: SpawnChanel
-      value: 
-      objectReference: {fileID: 11400000, guid: 6944cce5058946943ac30c78e150d1b4, type: 2}
     - target: {fileID: 5638670453060161118, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: m_Name
       value: Boss

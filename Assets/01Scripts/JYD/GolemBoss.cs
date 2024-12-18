@@ -54,7 +54,7 @@ public class GolemBoss : Entity
             evt.dir = bulletMoveDirection;
             evt._bulletType = PoolType.EnemyBullet;
             evt.power = 10;
-
+            
             SpawnChanel.RaiseEvent(evt);
             
             angle += angleStep; 
@@ -87,7 +87,6 @@ public class GolemBoss : Entity
 
             SpawnChanel.RaiseEvent(evt);
             
-
             angle += angleStep;
             yield return new WaitForSeconds(0.01f);
         }        
@@ -156,7 +155,7 @@ public class GolemBoss : Entity
 
         yield return StartCoroutine(MoveToPosition(leftHand, liftTarget, _speed));
         
-        yield return new WaitForSeconds(0.8f);
+        //yield return new WaitForSeconds(0.8f);
         
         yield return StartCoroutine(MoveToPosition(leftHand, strikeTarget, _downSpeed));
         ShakeCamera(2);
@@ -180,7 +179,7 @@ public class GolemBoss : Entity
 
         yield return StartCoroutine(MoveToPosition(rightHand, liftTarget, _speed));
     
-        yield return new WaitForSeconds(0.8f);
+        //yield return new WaitForSeconds(0.8f);
     
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
         ShakeCamera(2);
