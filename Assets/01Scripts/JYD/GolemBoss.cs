@@ -9,8 +9,13 @@ public class GolemBoss : Entity
     [SerializeField] private Transform leftHand;
     [SerializeField] private Transform rightHand;
     [SerializeField] private Transform chest;
+
+    [SerializeField] private Transform leftSolder;
+    [SerializeField] private Transform rightSolder;
+
+    [Space]
     
-    [SerializeField] private GameObject bulletPrefab; 
+    [SerializeField] private GameEventChannelSO SpawnChanel;
     [SerializeField] private float bulletSpeed = 5f;
         
     [SerializeField] private Transform TestTarget;
@@ -31,11 +36,7 @@ public class GolemBoss : Entity
     }
 
     #region Bullet
-    public void CircleShot(int bulletCount)
-    {
-        ApplyCircleShot(leftHand,bulletCount);
-        ApplyCircleShot(rightHand,bulletCount);
-    }
+    
     private void ApplyCircleShot(Transform _firePos, int bulletCount, float _angle = 360)
     {
         float angleStep = _angle / bulletCount;
@@ -48,21 +49,24 @@ public class GolemBoss : Entity
 
             Vector3 bulletMoveDirection = new Vector3(bulletDirX, bulletDirY, 0f).normalized;
 
-            GameObject bullet = Instantiate(bulletPrefab, _firePos.position, Quaternion.identity);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.linearVelocity = bulletMoveDirection * bulletSpeed;
-            }
-
+            var evt = SpawnEvents.BulletCreate;
+            evt.position = _firePos.position;
+            evt.dir = bulletMoveDirection;
+            evt._bulletType = PoolType.EnemyBullet;
+            evt.power = 10;
+            
+            SpawnChanel.RaiseEvent(evt);
+            
             angle += angleStep; 
         }
     }
     
-    public void SpinShot(int bulletCount)
+    public void SpinShot(int bulletCount,bool isLeft)
     {
-        StartCoroutine(ApplySpinShot(leftHand, bulletCount,360));
+        StartCoroutine(ApplySpinShot(isLeft ? leftSolder : rightSolder, bulletCount,360));
     }
+    
+    
     private IEnumerator ApplySpinShot(Transform _firePos,int bulletCount,int _bulletAmount)
     {
         float angleStep = 360f / bulletCount; 
@@ -75,13 +79,14 @@ public class GolemBoss : Entity
 
             Vector3 bulletMoveDirection = new Vector3(bulletDirX, bulletDirY, 0f).normalized;
 
-            GameObject bullet = Instantiate(bulletPrefab, _firePos.position, Quaternion.identity);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.linearVelocity = bulletMoveDirection * bulletSpeed;
-            }
+            var evt = SpawnEvents.BulletCreate;
+            evt.position = _firePos.position;
+            evt.dir = bulletMoveDirection;
+            evt._bulletType = PoolType.EnemyBullet;
+            evt.power = 10;
 
+            SpawnChanel.RaiseEvent(evt);
+            
             angle += angleStep;
             yield return new WaitForSeconds(0.01f);
         }        
@@ -150,7 +155,7 @@ public class GolemBoss : Entity
 
         yield return StartCoroutine(MoveToPosition(leftHand, liftTarget, _speed));
         
-        yield return new WaitForSeconds(0.8f);
+        //yield return new WaitForSeconds(0.8f);
         
         yield return StartCoroutine(MoveToPosition(leftHand, strikeTarget, _downSpeed));
         ShakeCamera(2);
@@ -174,7 +179,7 @@ public class GolemBoss : Entity
 
         yield return StartCoroutine(MoveToPosition(rightHand, liftTarget, _speed));
     
-        yield return new WaitForSeconds(0.8f);
+        //yield return new WaitForSeconds(0.8f);
     
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
         ShakeCamera(2);
