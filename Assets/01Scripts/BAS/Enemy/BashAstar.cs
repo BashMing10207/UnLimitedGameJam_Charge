@@ -2,17 +2,22 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class BashAstar : MonoBehaviour //나는 이게 Astar가 아니라는 것에 만원을 걸다 -배승현
+public class BashAstar : MonoBehaviour,IEntityComponent //나는 이게 Astar가 아니라는 것에 만원을 걸다 -배승현
 {
-    public Vector3 target;
+    public Vector3 Target;
     private Vector3 _maxtmp = new Vector3(10, 1, 10);
     [SerializeField] 
     private LayerMask _whatisObstacle;
 
     private List<Vector3> _dirs = new List<Vector3>();
     private List<float> _distances = new List<float>();
-
     public Vector3 PathDir => _maxtmp;
+    private Entity _entity;
+
+    public void Initialize(Entity entity)
+    {
+        _entity = entity;
+    }
 
     private void Awake()
     {
@@ -37,7 +42,7 @@ public class BashAstar : MonoBehaviour //나는 이게 Astar가 아니라는 것에 만원을 
             }
             for (int i = 0; i < _dirs.Count; i++)
             {
-                _distances.Add(Vector3.Distance(transform.position + _dirs[i], target));
+                _distances.Add(Vector3.Distance(transform.position + _dirs[i], Target));
                 if (_dirs[i] == _maxtmp * -1)
                 {
                     _distances[i] = 1024;
