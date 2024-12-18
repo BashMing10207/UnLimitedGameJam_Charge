@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -13,18 +14,23 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
     [Header("Dash Setting")]
     [SerializeField] private float _dashTime;
     
-    [Header("Knockback Setting")]
+    [Header("knockBack Setting")]
     [SerializeField] private float _knockBackTime;
     [SerializeField] private float _applyKnockBackMaxPower;
     [SerializeField] private float _maxKnockBackChargingValue;
     [SerializeField] private float _knockBackMinPower;
     
+    [Header("charging speed Setting")]
+    [SerializeField] private float _zeroSpeedChargingValue;
+    
     private Player _player;
     private PlayerWeaponController _playerWeaponController;
+    private PlayerRender _playerRender;
+    
     private Rigidbody2D _rigidbody2D;
     private EntityStat _statCompo;
 
-    private bool _canMove = true;
+    [field: SerializeField] public bool CanMove { get; set; } = true;
 
     private Vector2 _moveDir;
 
@@ -41,6 +47,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         _playerWeaponController = player.GetPlayerCompo<PlayerWeaponController>();
         _rigidbody2D = player.GetComponent<Rigidbody2D>();
         _statCompo = _player.GetEntityCompo<EntityStat>();
+        _playerRender = player.GetPlayerCompo<PlayerRender>();
         
         _moveSpeed = _statCompo.GetStat(_moveSpeedStat).Value;
         _dashSpeed = _statCompo.GetStat(_dashSpeedStat).Value;
@@ -49,6 +56,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         _player.PlayerInput.DashEvent += HandleDashEvent;
         _playerWeaponController.chargingEvent.AddListener(HandleSetChargingSpeed);
         _playerWeaponController.fireEvent.AddListener(HandleResetChargingSpeed);
+        _playerWeaponController.resetEvent.AddListener(ResetCharging);
     }
 
     private void OnDestroy()
@@ -56,6 +64,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         _player.PlayerInput.DashEvent -= HandleDashEvent;
         _playerWeaponController.chargingEvent.RemoveListener(HandleSetChargingSpeed);
         _playerWeaponController.fireEvent.RemoveListener(HandleResetChargingSpeed);
+        _playerWeaponController.resetEvent.RemoveListener(ResetCharging);
     }
 
     private void Update()
@@ -69,33 +78,59 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         if(_currentDashCool >= 0)
             return;
         
-        _canMove = false;
+        _playerRender.StartSande(_dashTime);
+        CanMove = false;
         _currentDashCool = _dashCoolTime;
         StopImmediately(true);
 
-        _rigidbody2D.linearVelocity = _player.LookDir() * _dashSpeed;
+        Vector2 dir = SetDashDir();
+        _rigidbody2D.linearVelocity = dir * _dashSpeed;
     
-        DOVirtual.DelayedCall(_dashTime, () => _canMove = true);
+        DOVirtual.DelayedCall(_dashTime, () => CanMove = true);
+    }
+
+    private Vector2 SetDashDir()
+    {
+        Vector2 dir =  Vector2.zero;
+        switch (_player.dashType)
+        {
+            case PlayerDashType.MouseDir:
+                dir = _player.LookDir();
+                break;
+            case PlayerDashType.InputDir:
+                dir = _player.PlayerInput.InputDirection.normalized;
+                break;
+        }
+
+        return dir;
+    }
+
+    public void KnockBackStart(float power)
+    {
+        StartCoroutine(KnockBack(power));
     }
     
-    public void KnockBack(float power)
+    private IEnumerator KnockBack(float power)
     {
         if(power <= _knockBackMinPower)
-            return;
-            
-        _canMove = false;
+            yield break;
+        
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForFixedUpdate();
+        
+        CanMove = false;
         StopImmediately(true);
         
         float inverseLerp = Mathf.InverseLerp(0, _maxKnockBackChargingValue, power);
         float knockBackPower = Mathf.Lerp(0, _applyKnockBackMaxPower, inverseLerp);
         
         _rigidbody2D.AddForce(-_player.LookDir() * knockBackPower, ForceMode2D.Impulse);
-        DOVirtual.DelayedCall(_knockBackTime, () => _canMove = true);
+        DOVirtual.DelayedCall(_knockBackTime, () => CanMove = true);
     }
 
     private void FixedUpdate()
     {
-        if(!_canMove)
+        if(!CanMove)
             return;
         
         _moveDir = _player.PlayerInput.InputDirection;
@@ -111,7 +146,31 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
 
         _moveDir = Vector2.zero;
     }
-    
-    private void HandleResetChargingSpeed(float power) => _chargingMoveMultiplier = 1f;
-    private void HandleSetChargingSpeed(float chargingValue) => _chargingMoveMultiplier = Mathf.Max(1,chargingValue * 0.1f);
+
+    private void HandleResetChargingSpeed(float power)
+    {
+        ResetCharging();
+    }
+
+    private void ResetCharging()
+    {
+        CanMove = true;
+        _chargingMoveMultiplier = 1f;
+    }
+
+    private void HandleSetChargingSpeed(float chargingTime, float chargingValue)
+    {
+        if(CanMove == false)
+            return;
+
+        if (chargingValue >= _zeroSpeedChargingValue)
+        {
+            StopImmediately(true);
+            CanMove = false;
+        }
+        else
+        {
+            _chargingMoveMultiplier = Mathf.Max(1,chargingValue);
+        }
+    }
 }

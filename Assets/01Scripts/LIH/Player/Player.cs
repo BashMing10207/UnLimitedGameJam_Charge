@@ -3,12 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum PlayerDashType
+{
+    MouseDir,
+    InputDir,
+}
+
 public class Player : Entity
 {
+    public PlayerDashType dashType = PlayerDashType.InputDir;
+    [SerializeField] private PlayerManagerSO _playerManagerSO;
     [field: SerializeField] public PlayerInputSO PlayerInput { get; set; }
 
     private Dictionary<Type, IPlayerCompo> _playerCompos;
-    
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _playerManagerSO.SetPlayer(this);
+    }
+
     protected override void AfterInitialize()
     {
         base.AfterInitialize();

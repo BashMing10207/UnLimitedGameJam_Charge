@@ -2,11 +2,8 @@ using UnityEngine;
 
 public enum PoolType
 {
-    Bullet,
-    BulletImpact,
+    PlayerBullet,
     EnemyBullet,
-    Grenade,
-    ExplosionMedium,
     SoundPlayer,
 }
 

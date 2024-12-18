@@ -18,5 +18,5 @@ MonoBehaviour:
   displayName: Health
   _baseValue: 50
   _minValue: 10
-  _maxValue: 100
+  _maxValue: 1000
   <IsPercent>k__BackingField: 0
