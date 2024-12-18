@@ -3,14 +3,16 @@ using static UnityEngine.EventSystems.EventTrigger;
 [CreateAssetMenu(fileName = "EnemyRunState", menuName = "SO/EnemyState/EnemyChaseState")]
 public class EnemyChaseStateSO : EnemyStateSO // 쫒아가기 상태
 {
-    [SerializeField]
-    private StatModifierSO _statModifier;
+
+    private BashAstar _astar;
+
 
     public override void OnEnter(Entity entity)
     {
         _entity = entity;
         
         entity.GetEntityCompo<EntityStat>().AddModifier(_statModifier.TargetStat,_statModifier,_statModifier.Value);
+        _astar = _entity.GetEntityCompo<BashAstar>();
     }
 
     public override void OnExit()
@@ -20,9 +22,10 @@ public class EnemyChaseStateSO : EnemyStateSO // 쫒아가기 상태
 
     public override void Update()
     {
+        Debug.Log(_entity.gameObject.name);
         var astar = _entity.GetEntityCompo<BashAstar>();
-        //_astar.Target = playerpos;
-        Debug.Log("아직 플레이어 위치 할당 안했어!");
+
+        _astar.Target = _playerSO.PlayerTrm.position;
         Vector2 dir = astar.PathDir;
         _entity.GetEntityCompo<EnemyMovement>().Move(dir);
     }

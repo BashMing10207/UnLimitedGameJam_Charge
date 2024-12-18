@@ -31,7 +31,7 @@ public class SandeVistanRenderer : MonoBehaviour
         {
             foreach(BashPair<SpriteRenderer, float> sprit in _spriteLsit)
             {
-                sprit.First.color = _gradient.Evaluate(sprit.Second);
+                sprit.First.color = _gradient.Evaluate(sprit.Second/_lifeTime);
                 sprit.Second -= Time.fixedDeltaTime;
 
                 if (sprit.Second < 0f)

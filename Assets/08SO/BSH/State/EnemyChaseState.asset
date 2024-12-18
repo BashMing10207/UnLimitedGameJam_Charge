@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 807b19df96a96ae49811429e95084eb0, type: 3}
-  m_Name: EnemyChaseState 1
+  m_Name: EnemyChaseState
   m_EditorClassIdentifier: 
   StateName: EnemyChase
   AnimState: {fileID: 11400000, guid: b81265369d2cf0744918cdf70af4d5cf, type: 2}
   NextState: {fileID: 11400000}
+  _playerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
   _statModifier: {fileID: 11400000, guid: a8e635ed88503fe459fc7855554239b6, type: 2}

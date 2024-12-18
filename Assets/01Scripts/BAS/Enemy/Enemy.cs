@@ -8,7 +8,8 @@ public class Enemy : Entity
         base.Awake();
 
     }
-    void Update()
+
+    protected virtual void Update()
     {
         
     }

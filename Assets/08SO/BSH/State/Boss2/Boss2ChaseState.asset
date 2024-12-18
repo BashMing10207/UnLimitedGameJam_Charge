@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa9a6287a35f2742951d45670151744, type: 3}
-  m_Name: EnemyRunState
+  m_Script: {fileID: 11500000, guid: 807b19df96a96ae49811429e95084eb0, type: 3}
+  m_Name: Boss2ChaseState
   m_EditorClassIdentifier: 
-  StateName: 
-  AnimState: {fileID: 0}
-  NextState: {fileID: 0}
+  StateName: Boss2Chase
+  AnimState: {fileID: 11400000, guid: 786ef6387e9bdd941b722e36a26945e8, type: 2}
+  NextState: {fileID: 11400000}
   _playerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
-  _statModifier: {fileID: 0}
-  _distance: 5
+  _statModifier: {fileID: 11400000, guid: a8e635ed88503fe459fc7855554239b6, type: 2}
