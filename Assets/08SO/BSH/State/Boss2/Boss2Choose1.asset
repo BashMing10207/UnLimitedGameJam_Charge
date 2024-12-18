@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa9a6287a35f2742951d45670151744, type: 3}
-  m_Name: EnemyRunState
+  m_Script: {fileID: 11500000, guid: b9adbcb908721dd4fa9be64f20df15e7, type: 3}
+  m_Name: Boss2Choose1
   m_EditorClassIdentifier: 
-  StateName: 
+  StateName: DashAndDodgeAndThrow
   AnimState: {fileID: 0}
   NextState: {fileID: 0}
-  _playerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
+  _playerSO: {fileID: 0}
   _statModifier: {fileID: 0}
-  _distance: 5
+  ChooseList:
+  - {fileID: 11400000, guid: 8bd0cb29d30296e4b8fe2b3b95ba3aa7, type: 2}
+  - {fileID: 11400000, guid: 2fcc9ec326078d648b62eb05ad948cca, type: 2}

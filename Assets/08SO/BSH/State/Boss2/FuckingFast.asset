@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa9a6287a35f2742951d45670151744, type: 3}
-  m_Name: EnemyRunState
+  m_Script: {fileID: 11500000, guid: 513c390053a747e4e87fdc1bc565aa53, type: 3}
+  m_Name: FuckingFast
   m_EditorClassIdentifier: 
-  StateName: 
-  AnimState: {fileID: 0}
-  NextState: {fileID: 0}
-  _playerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
-  _statModifier: {fileID: 0}
-  _distance: 5
+  TargetStat: {fileID: 11400000, guid: 4cd42c425eb3cf64d94e355a0ffd16d8, type: 2}
+  Value: 1024

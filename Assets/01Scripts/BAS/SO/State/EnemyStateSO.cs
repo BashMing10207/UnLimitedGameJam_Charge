@@ -10,6 +10,11 @@ public abstract class EnemyStateSO : ScriptableObject
 
     public EnemyStateSO NextState;
 
+    [SerializeField]
+    protected PlayerManagerSO _playerSO;
+    [SerializeField]
+    protected StatModifierSO _statModifier;
+
     public abstract void Update();
 
     public abstract void OnEnter(Entity entity);
@@ -20,4 +25,5 @@ public abstract class EnemyStateSO : ScriptableObject
     {
         _entity.GetEntityCompo<EnemyFSM>().SetState(NextState);
     }
+
 }
