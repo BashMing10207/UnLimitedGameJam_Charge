@@ -3,7 +3,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(CinemachineImpulseSource))]
-public class GolemBoss : MonoBehaviour
+public class GolemBoss : Entity
 {
     [SerializeField] private Transform leftHand;
     [SerializeField] private Transform rightHand;

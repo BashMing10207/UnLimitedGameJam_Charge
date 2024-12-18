@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour
 {
     [SerializeField] private float _defaultBulletSpeed;
+    [SerializeField] private string _targetTag;
     private Rigidbody2D _rigidbody2D;
 
     private float _power;
@@ -13,7 +14,7 @@ public class PlayerBullet : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    public void Shoot(Vector2 dir, float power)
+    public virtual void Shoot(Vector2 dir, float power)
     {
         _power = Mathf.RoundToInt(power);
         _rigidbody2D.AddForce(dir * _defaultBulletSpeed, ForceMode2D.Impulse);
@@ -21,9 +22,13 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent(out IDamageable damageable))
+        Transform root = other.transform.root;
+        if (root.CompareTag(_targetTag))
         {
-            damageable.ApplyDamage(_power);
+            if (root.TryGetComponent(out IDamageable health))
+            {
+                health.ApplyDamage(_power);
+            }
         }
         Destroy(gameObject);
     }

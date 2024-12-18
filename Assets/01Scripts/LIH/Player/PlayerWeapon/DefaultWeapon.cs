@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class DefaultWeapon : Weapon
 {
-    public override void Charging(float chargingSpeed)
+    public override void Charging(float chargingTime, float chargingSpeed)
     {
-        base.Charging(chargingSpeed);
+        base.Charging(chargingTime,chargingSpeed);
     }
 
     public override void Fire(float power)
     {
-        PlayerBullet playerBullet = Instantiate(_bullet);
-        playerBullet.transform.position = _fireTrm.position;
-        playerBullet.Shoot(_player.LookDir(), power);
+        Bullet bullet = Instantiate(_bullet);
+        bullet.transform.position = _fireTrm.position;
+        bullet.Shoot(_player.LookDir(), power);
         base.Fire(power);
     }
 }

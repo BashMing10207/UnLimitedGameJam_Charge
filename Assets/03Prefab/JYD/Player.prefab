@@ -102,8 +102,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.06}
-  m_Size: {x: 0.5, y: 0.9}
+  m_Offset: {x: 0, y: -0.24}
+  m_Size: {x: 0.83, y: 1.49}
   m_Direction: 0
 --- !u!114 &6584787670942949
 MonoBehaviour:
@@ -134,10 +134,12 @@ MonoBehaviour:
   _dashSpeedStat: {fileID: 11400000, guid: ba023ed7b49a8744ca30686b3093033a, type: 2}
   _dashCoolStat: {fileID: 11400000, guid: 2e6dce52016d8af4bbdc841a9831b9b1, type: 2}
   _dashTime: 0.15
-  _knockBackTime: 0.1
-  _applyKnockBackMaxPower: 30
+  _knockBackTime: 0.15
+  _applyKnockBackMaxPower: 10
   _maxKnockBackChargingValue: 50
   _knockBackMinPower: 10
+  _zeroSpeedChargingValue: 10
+  <CanMove>k__BackingField: 1
 --- !u!114 &1671013250569073885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +184,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5432457615222919477}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: KnockBack
+        m_MethodName: KnockBackStart
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -192,7 +194,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  resetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6396624672998129913}
+        m_TargetAssemblyTypeName: PlayerCameraControl, Assembly-CSharp
+        m_MethodName: CamReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _chargingSpeedStat: {fileID: 11400000, guid: 33e25a6fb372d7e44b2aca5f1f6d54e5, type: 2}
+  _minChargingValue: 10
   currentWeapon: {fileID: 5387182606153978206}
 --- !u!114 &8876479406187631444
 MonoBehaviour:
@@ -239,7 +257,7 @@ Transform:
   m_GameObject: {fileID: 1715114354748736595}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0, y: -0.453, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -260,8 +278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 4749735178499793450, guid: 52ebaf3d6b432144e9f1cdef1b09471c, type: 3}
-  _recoilTime: 0.2
-  _recoilXValue: 0.3
+  _recoilTime: 0.1
+  _recoilXValue: 0.6
   _minPower: 10
 --- !u!1 &3059186941846116522
 GameObject:
@@ -288,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 3059186941846116522}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.074, y: 0.168, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -340,8 +358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cameraEventChannel: {fileID: 11400000, guid: 147bcbf0355179142878d71f4e703d84, type: 2}
   _camDistanceMaxZoomValue: 50
-  _camDistanceMinValue: 3.5
-  _camDefaultDistacne: 5
+  _camDistanceMinValue: 4.5
+  _camDefaultDistacne: 8
   _camShakeMaxValue: 100
   _fireMinPower: 0.01
   _fireMaxPower: 10
@@ -371,7 +389,7 @@ Transform:
   m_GameObject: {fileID: 3654543898941970187}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.109, z: 0}
+  m_LocalPosition: {x: 1.1, y: 0.153, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []

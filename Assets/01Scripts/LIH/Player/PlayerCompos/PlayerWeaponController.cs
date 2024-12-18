@@ -3,10 +3,12 @@ using UnityEngine.Events;
 
 public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
 {
-    public UnityEvent<float> chargingEvent;
+    public UnityEvent<float, float> chargingEvent;
     public UnityEvent<float> fireEvent;
+    public UnityEvent resetEvent;
 
     [SerializeField] private StatSO _chargingSpeedStat;
+    [SerializeField] private float _minChargingValue;
     
     private Player _player;
     private PlayerInputSO _playerInput;
@@ -21,6 +23,7 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
 
     private float _chargingSpeed;
     private float _currentCharging;
+    private float _currentChargingTime;
     
     public void Initialize(Player player)
     {
@@ -48,7 +51,12 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
         _isChargingStart = isCharging;
         if (!isCharging)
         {
-            fireEvent?.Invoke(_currentCharging);
+            if (_currentCharging <= _minChargingValue)
+                resetEvent?.Invoke();
+            else
+                fireEvent?.Invoke(_currentCharging);
+            
+            _currentChargingTime = 0f;
             _currentCharging = 0f;
         }
     }
@@ -57,8 +65,10 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     {
         if (_isChargingStart)
         {
+            _currentChargingTime += Time.deltaTime;
             _currentCharging += Time.deltaTime * _chargingSpeed;
-            chargingEvent?.Invoke(_currentCharging);
+            chargingEvent?.Invoke(_currentChargingTime, _currentCharging);
+            Debug.Log(_currentCharging);
         }
         
         GunRotate();

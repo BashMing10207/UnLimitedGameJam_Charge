@@ -23,9 +23,9 @@ public abstract class Weapon : MonoBehaviour
 
     public void SetOwner(Player player) => _player = player;
 
-    public virtual void Charging(float chargingValue)
+    public virtual void Charging(float chargingTime ,float chargingValue)
     {
-        Debug.Log(chargingValue);
+        //Debug.Log(chargingValue);
     }
 
     public virtual void Fire(float power)

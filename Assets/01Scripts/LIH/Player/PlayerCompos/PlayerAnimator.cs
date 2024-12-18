@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour, IPlayerCompo
 {
     private Player _player;
+    private Rigidbody2D _rigidbody2D;
     private Animator _animator;
 
     private readonly int _moveHash = Animator.StringToHash("Move");
@@ -12,14 +13,17 @@ public class PlayerAnimator : MonoBehaviour, IPlayerCompo
     public void Initialize(Player player)
     {
         _player = player;
+        _rigidbody2D = player.GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
 
-        _player.PlayerInput.MovementEvent += HandleMoveAnim;
     }
 
-    private void OnDestroy()
+    private void Update()
     {
-        _player.PlayerInput.MovementEvent -= HandleMoveAnim;
+        if (_rigidbody2D.linearVelocity.normalized.sqrMagnitude <= 0)
+            HandleMoveAnim(false);
+        else
+            HandleMoveAnim(true);
     }
 
     private void HandleMoveAnim(bool isMove)

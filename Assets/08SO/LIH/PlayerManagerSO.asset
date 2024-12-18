@@ -9,14 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97bfd947eb0047748d024fa6b63dcd8f, type: 3}
-  m_Name: HealthStat
+  m_Script: {fileID: 11500000, guid: 365b82f9c619483282723813c6812996, type: 3}
+  m_Name: PlayerManagerSO
   m_EditorClassIdentifier: 
-  statName: Health
-  description: 
-  icon: {fileID: 0}
-  displayName: Health
-  _baseValue: 50
-  _minValue: 10
-  _maxValue: 1000
-  <IsPercent>k__BackingField: 0
