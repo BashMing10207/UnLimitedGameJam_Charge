@@ -1,0 +1,2197 @@
+fileFormatVersion: 2
+guid: a57d8e017ec153c4c9ab0e22fc6ff79a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6342741054918483511
+    second: bosssocsods-Sheet_0
+  - first:
+      213: -4205107739386686782
+    second: bosssocsods-Sheet_1
+  - first:
+      213: -2207379973367840448
+    second: bosssocsods-Sheet_2
+  - first:
+      213: 2292036758155745501
+    second: bosssocsods-Sheet_3
+  - first:
+      213: 5405926951827795433
+    second: bosssocsods-Sheet_4
+  - first:
+      213: -4619825974115928845
+    second: bosssocsods-Sheet_5
+  - first:
+      213: -1348565692483596741
+    second: bosssocsods-Sheet_6
+  - first:
+      213: 40448226083558077
+    second: bosssocsods-Sheet_7
+  - first:
+      213: 3252695755531691534
+    second: bosssocsods-Sheet_8
+  - first:
+      213: 6349980990431978429
+    second: bosssocsods-Sheet_9
+  - first:
+      213: 5393492316318194051
+    second: bosssocsods-Sheet_10
+  - first:
+      213: -7519799195036505241
+    second: bosssocsods-Sheet_11
+  - first:
+      213: 6848418068021667015
+    second: bosssocsods-Sheet_12
+  - first:
+      213: 6782455009764985701
+    second: bosssocsods-Sheet_13
+  - first:
+      213: -4588462941679935218
+    second: bosssocsods-Sheet_14
+  - first:
+      213: -5430623537004075291
+    second: bosssocsods-Sheet_15
+  - first:
+      213: -1831418365234637251
+    second: bosssocsods-Sheet_16
+  - first:
+      213: 4058100535804227517
+    second: bosssocsods-Sheet_17
+  - first:
+      213: 7715386521133085540
+    second: bosssocsods-Sheet_18
+  - first:
+      213: 756280787019552067
+    second: bosssocsods-Sheet_19
+  - first:
+      213: 8841922249242956509
+    second: bosssocsods-Sheet_20
+  - first:
+      213: 611223612003606371
+    second: bosssocsods-Sheet_21
+  - first:
+      213: 4896535005813797844
+    second: bosssocsods-Sheet_22
+  - first:
+      213: -155077056710360880
+    second: bosssocsods-Sheet_23
+  - first:
+      213: -161449619805218720
+    second: bosssocsods-Sheet_24
+  - first:
+      213: 2124081800244752520
+    second: bosssocsods-Sheet_25
+  - first:
+      213: -3965614050889099537
+    second: bosssocsods-Sheet_26
+  - first:
+      213: -7486010627402408394
+    second: bosssocsods-Sheet_27
+  - first:
+      213: 6988822313774169612
+    second: bosssocsods-Sheet_28
+  - first:
+      213: -8012346704138745344
+    second: bosssocsods-Sheet_29
+  - first:
+      213: -6867819177551019789
+    second: bosssocsods-Sheet_30
+  - first:
+      213: 6345480213762594949
+    second: bosssocsods-Sheet_31
+  - first:
+      213: 4603156208637536198
+    second: bosssocsods-Sheet_32
+  - first:
+      213: 8194319321766576308
+    second: bosssocsods-Sheet_33
+  - first:
+      213: 5146718250076315938
+    second: bosssocsods-Sheet_34
+  - first:
+      213: 3187011066967870714
+    second: bosssocsods-Sheet_35
+  - first:
+      213: -3977291924515837936
+    second: bosssocsods-Sheet_36
+  - first:
+      213: 3916781019789859504
+    second: bosssocsods-Sheet_37
+  - first:
+      213: 5268052313648116578
+    second: bosssocsods-Sheet_38
+  - first:
+      213: 798449627008188277
+    second: bosssocsods-Sheet_39
+  - first:
+      213: -3885988208762271197
+    second: bosssocsods-Sheet_40
+  - first:
+      213: 7296708254111955155
+    second: bosssocsods-Sheet_41
+  - first:
+      213: 4087049028164733168
+    second: bosssocsods-Sheet_42
+  - first:
+      213: -1048996825220164907
+    second: bosssocsods-Sheet_43
+  - first:
+      213: -914417827771351937
+    second: bosssocsods-Sheet_44
+  - first:
+      213: -742751638806019332
+    second: bosssocsods-Sheet_45
+  - first:
+      213: -5226751253241774687
+    second: bosssocsods-Sheet_46
+  - first:
+      213: -5853755729641476422
+    second: bosssocsods-Sheet_47
+  - first:
+      213: 5807067757399329078
+    second: bosssocsods-Sheet_48
+  - first:
+      213: 3401990253206380874
+    second: bosssocsods-Sheet_49
+  - first:
+      213: 8762095842698025998
+    second: bosssocsods-Sheet_50
+  - first:
+      213: 6655702147436325906
+    second: bosssocsods-Sheet_51
+  - first:
+      213: -8249431803741036680
+    second: bosssocsods-Sheet_52
+  - first:
+      213: 3919890643878361623
+    second: bosssocsods-Sheet_53
+  - first:
+      213: -555689267886744315
+    second: bosssocsods-Sheet_54
+  - first:
+      213: 3635721907791681433
+    second: bosssocsods-Sheet_55
+  - first:
+      213: -7705073294351323697
+    second: bosssocsods-Sheet_56
+  - first:
+      213: -9052107973343671808
+    second: bosssocsods-Sheet_57
+  - first:
+      213: 6093904254266856641
+    second: bosssocsods-Sheet_58
+  - first:
+      213: -3489057797238675831
+    second: bosssocsods-Sheet_59
+  - first:
+      213: 3732804173898085240
+    second: bosssocsods-Sheet_60
+  - first:
+      213: -3652844108059224018
+    second: bosssocsods-Sheet_61
+  - first:
+      213: -8459417996237514959
+    second: bosssocsods-Sheet_62
+  - first:
+      213: -7571461279507793285
+    second: bosssocsods-Sheet_63
+  - first:
+      213: -8931123022008026059
+    second: bosssocsods-Sheet_64
+  - first:
+      213: 6700422175708243079
+    second: bosssocsods-Sheet_65
+  - first:
+      213: 7102382342584528297
+    second: bosssocsods-Sheet_66
+  - first:
+      213: -3065980956035804382
+    second: bosssocsods-Sheet_67
+  - first:
+      213: -8664678297499912589
+    second: bosssocsods-Sheet_68
+  - first:
+      213: 5855236874905332326
+    second: bosssocsods-Sheet_69
+  - first:
+      213: -3972388600202556259
+    second: bosssocsods-Sheet_70
+  - first:
+      213: -5948461063318636024
+    second: bosssocsods-Sheet_71
+  - first:
+      213: -5751911406297052136
+    second: bosssocsods-Sheet_72
+  - first:
+      213: -549995953314571108
+    second: bosssocsods-Sheet_73
+  - first:
+      213: 7500976029850793825
+    second: bosssocsods-Sheet_74
+  - first:
+      213: 5615930121087195483
+    second: bosssocsods-Sheet_75
+  - first:
+      213: 9214524979332901988
+    second: bosssocsods-Sheet_76
+  - first:
+      213: -2684127411134187490
+    second: bosssocsods-Sheet_77
+  - first:
+      213: 2535960379484503793
+    second: bosssocsods-Sheet_78
+  - first:
+      213: -7734070035986711645
+    second: bosssocsods-Sheet_79
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ed3b85261f50850800000000000000
+      internalID: 6342741054918483511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c25c976ac474a5c0800000000000000
+      internalID: -4205107739386686782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04149130c9fcd51e0800000000000000
+      internalID: -2207379973367840448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd8d20ea943fecf10800000000000000
+      internalID: 2292036758155745501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ede76dbbe5b50b40800000000000000
+      internalID: 5405926951827795433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f472b0e0c413efb0800000000000000
+      internalID: -4619825974115928845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3e8c3fc5aee84de0800000000000000
+      internalID: -1348565692483596741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db251838273bf8000800000000000000
+      internalID: 40448226083558077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0623ee5e85e32d20800000000000000
+      internalID: 3252695755531691534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db36e21311aaf1850800000000000000
+      internalID: 6349980990431978429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 389d1fc8fa889da40800000000000000
+      internalID: 5393492316318194051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76ba495497e44a790800000000000000
+      internalID: -7519799195036505241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c46cc9c2f77a0f50800000000000000
+      internalID: 6848418068021667015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b4c1a75ee102e50800000000000000
+      internalID: 6782455009764985701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e01af18e3418250c0800000000000000
+      internalID: -4588462941679935218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 405
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e62fff6aac82a4b0800000000000000
+      internalID: -5430623537004075291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 324
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d36101933be7596e0800000000000000
+      internalID: -1831418365234637251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 324
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbfee63cfe4415830800000000000000
+      internalID: 4058100535804227517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 324
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46379f0c92f821b60800000000000000
+      internalID: 7715386521133085540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 324
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 345d0cc6e59de7a00800000000000000
+      internalID: 756280787019552067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 324
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2dfbd6071d4ba70800000000000000
+      internalID: 8841922249242956509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 324
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f5ecff2a08b7800800000000000000
+      internalID: 611223612003606371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 324
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d3fbc315acf3f340800000000000000
+      internalID: 4896535005813797844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 324
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d047f11d3e09ddf0800000000000000
+      internalID: -155077056710360880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 260
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 068536a1d6a62cdf0800000000000000
+      internalID: -161449619805218720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 260
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 880f579b4214a7d10800000000000000
+      internalID: 2124081800244752520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 260
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe6157c080f47f8c0800000000000000
+      internalID: -3965614050889099537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 260
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e51e83ff85c1890800000000000000
+      internalID: -7486010627402408394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 260
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e35d2bdd84df060800000000000000
+      internalID: 6988822313774169612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 260
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00ac982bf1d6ec090800000000000000
+      internalID: -8012346704138745344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 260
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f0c47468da90b0a0800000000000000
+      internalID: -6867819177551019789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 260
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 588d69672acaf0850800000000000000
+      internalID: 6345480213762594949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 217
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c76975ee22b1ef30800000000000000
+      internalID: 4603156208637536198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 217
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0440ef10218b170800000000000000
+      internalID: 8194319321766576308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 217
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 221a1dedaf0dc6740800000000000000
+      internalID: 5146718250076315938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 217
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afccbdd0ea98a3c20800000000000000
+      internalID: 3187011066967870714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 217
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01824373112ddc8c0800000000000000
+      internalID: -3977291924515837936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 217
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba1193e5933b5630800000000000000
+      internalID: 3916781019789859504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 217
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263bb2dfaa1eb1940800000000000000
+      internalID: 5268052313648116578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 217
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57fbdd494b9a41b00800000000000000
+      internalID: 798449627008188277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32a4e5f1052321ac0800000000000000
+      internalID: -3885988208762271197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d8f00c5f7d134560800000000000000
+      internalID: 7296708254111955155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f84d5fdf6d18b830800000000000000
+      internalID: 4087049028164733168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d25d3ef1f63171f0800000000000000
+      internalID: -1048996825220164907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7c776794d55f43f0800000000000000
+      internalID: -914417827771351937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf2c0acd15731b5f0800000000000000
+      internalID: -742751638806019332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ad323d7d69d677b0800000000000000
+      internalID: -5226751253241774687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abeefccad2843cea0800000000000000
+      internalID: -5853755729641476422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6394962bb59d69050800000000000000
+      internalID: 5807067757399329078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4125bb5c1c463f20800000000000000
+      internalID: 3401990253206380874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c51ffceb7399970800000000000000
+      internalID: 8762095842698025998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c2fb4f6ddcd5c50800000000000000
+      internalID: 6655702147436325906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f943b5b71248d80800000000000000
+      internalID: -8249431803741036680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a3fbaa5cf366630800000000000000
+      internalID: 3919890643878361623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50d1d161e8bc948f0800000000000000
+      internalID: -555689267886744315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 154
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9975700ffcda47230800000000000000
+      internalID: 3635721907791681433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd27d979a4121590800000000000000
+      internalID: -7705073294351323697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a8e5422c3706280800000000000000
+      internalID: -9052107973343671808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c451d2e1a5e19450800000000000000
+      internalID: 6093904254266856641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98628c25b60649fc0800000000000000
+      internalID: -3489057797238675831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8737a417e959dc330800000000000000
+      internalID: 3732804173898085240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28504723ad7e4dc0800000000000000
+      internalID: -3652844108059224018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13757bff62c1a9a80800000000000000
+      internalID: -8459417996237514959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a3054e414cce690800000000000000
+      internalID: -7571461279507793285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53cf5eb3ee64e0480800000000000000
+      internalID: -8931123022008026059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7846d3ce77eacfc50800000000000000
+      internalID: 6700422175708243079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ade1cc4c1bb09260800000000000000
+      internalID: 7102382342584528297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2239f5390927375d0800000000000000
+      internalID: -3065980956035804382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3763b70fef0e0c780800000000000000
+      internalID: -8664678297499912589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66a20845aeaf14150800000000000000
+      internalID: 5855236874905332326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c8d1f5d9d3fd8c0800000000000000
+      internalID: -3972388600202556259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 103
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a76a0ed22d27da0800000000000000
+      internalID: -5948461063318636024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 43
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c85280d0b1d20b0800000000000000
+      internalID: -5751911406297052136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 43
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9c58ce28950e58f0800000000000000
+      internalID: -549995953314571108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 43
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 167f9ff05f1d81860800000000000000
+      internalID: 7500976029850793825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 43
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5991dec0bacfed40800000000000000
+      internalID: 5615930121087195483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 43
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ce917e5a190ef70800000000000000
+      internalID: 9214524979332901988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 43
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e183577375010cad0800000000000000
+      internalID: -2684127411134187490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 43
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe73af678a813320800000000000000
+      internalID: 2535960379484503793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosssocsods-Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 43
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3abf40577401ba490800000000000000
+      internalID: -7734070035986711645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ad893bdb472bcd04d91228dd92c6faae
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bosssocsods-Sheet_0: 6342741054918483511
+      bosssocsods-Sheet_1: -4205107739386686782
+      bosssocsods-Sheet_10: 5393492316318194051
+      bosssocsods-Sheet_11: -7519799195036505241
+      bosssocsods-Sheet_12: 6848418068021667015
+      bosssocsods-Sheet_13: 6782455009764985701
+      bosssocsods-Sheet_14: -4588462941679935218
+      bosssocsods-Sheet_15: -5430623537004075291
+      bosssocsods-Sheet_16: -1831418365234637251
+      bosssocsods-Sheet_17: 4058100535804227517
+      bosssocsods-Sheet_18: 7715386521133085540
+      bosssocsods-Sheet_19: 756280787019552067
+      bosssocsods-Sheet_2: -2207379973367840448
+      bosssocsods-Sheet_20: 8841922249242956509
+      bosssocsods-Sheet_21: 611223612003606371
+      bosssocsods-Sheet_22: 4896535005813797844
+      bosssocsods-Sheet_23: -155077056710360880
+      bosssocsods-Sheet_24: -161449619805218720
+      bosssocsods-Sheet_25: 2124081800244752520
+      bosssocsods-Sheet_26: -3965614050889099537
+      bosssocsods-Sheet_27: -7486010627402408394
+      bosssocsods-Sheet_28: 6988822313774169612
+      bosssocsods-Sheet_29: -8012346704138745344
+      bosssocsods-Sheet_3: 2292036758155745501
+      bosssocsods-Sheet_30: -6867819177551019789
+      bosssocsods-Sheet_31: 6345480213762594949
+      bosssocsods-Sheet_32: 4603156208637536198
+      bosssocsods-Sheet_33: 8194319321766576308
+      bosssocsods-Sheet_34: 5146718250076315938
+      bosssocsods-Sheet_35: 3187011066967870714
+      bosssocsods-Sheet_36: -3977291924515837936
+      bosssocsods-Sheet_37: 3916781019789859504
+      bosssocsods-Sheet_38: 5268052313648116578
+      bosssocsods-Sheet_39: 798449627008188277
+      bosssocsods-Sheet_4: 5405926951827795433
+      bosssocsods-Sheet_40: -3885988208762271197
+      bosssocsods-Sheet_41: 7296708254111955155
+      bosssocsods-Sheet_42: 4087049028164733168
+      bosssocsods-Sheet_43: -1048996825220164907
+      bosssocsods-Sheet_44: -914417827771351937
+      bosssocsods-Sheet_45: -742751638806019332
+      bosssocsods-Sheet_46: -5226751253241774687
+      bosssocsods-Sheet_47: -5853755729641476422
+      bosssocsods-Sheet_48: 5807067757399329078
+      bosssocsods-Sheet_49: 3401990253206380874
+      bosssocsods-Sheet_5: -4619825974115928845
+      bosssocsods-Sheet_50: 8762095842698025998
+      bosssocsods-Sheet_51: 6655702147436325906
+      bosssocsods-Sheet_52: -8249431803741036680
+      bosssocsods-Sheet_53: 3919890643878361623
+      bosssocsods-Sheet_54: -555689267886744315
+      bosssocsods-Sheet_55: 3635721907791681433
+      bosssocsods-Sheet_56: -7705073294351323697
+      bosssocsods-Sheet_57: -9052107973343671808
+      bosssocsods-Sheet_58: 6093904254266856641
+      bosssocsods-Sheet_59: -3489057797238675831
+      bosssocsods-Sheet_6: -1348565692483596741
+      bosssocsods-Sheet_60: 3732804173898085240
+      bosssocsods-Sheet_61: -3652844108059224018
+      bosssocsods-Sheet_62: -8459417996237514959
+      bosssocsods-Sheet_63: -7571461279507793285
+      bosssocsods-Sheet_64: -8931123022008026059
+      bosssocsods-Sheet_65: 6700422175708243079
+      bosssocsods-Sheet_66: 7102382342584528297
+      bosssocsods-Sheet_67: -3065980956035804382
+      bosssocsods-Sheet_68: -8664678297499912589
+      bosssocsods-Sheet_69: 5855236874905332326
+      bosssocsods-Sheet_7: 40448226083558077
+      bosssocsods-Sheet_70: -3972388600202556259
+      bosssocsods-Sheet_71: -5948461063318636024
+      bosssocsods-Sheet_72: -5751911406297052136
+      bosssocsods-Sheet_73: -549995953314571108
+      bosssocsods-Sheet_74: 7500976029850793825
+      bosssocsods-Sheet_75: 5615930121087195483
+      bosssocsods-Sheet_76: 9214524979332901988
+      bosssocsods-Sheet_77: -2684127411134187490
+      bosssocsods-Sheet_78: 2535960379484503793
+      bosssocsods-Sheet_79: -7734070035986711645
+      bosssocsods-Sheet_8: 3252695755531691534
+      bosssocsods-Sheet_9: 6349980990431978429
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
