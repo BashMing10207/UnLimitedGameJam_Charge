@@ -469,6 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8887643014090890602}
   - component: {fileID: 6396624672998129913}
+  - component: {fileID: 4978996435116235745}
   m_Layer: 6
   m_Name: CamController
   m_TagString: Untagged
@@ -509,6 +510,19 @@ MonoBehaviour:
   _camShakeMaxValue: 100
   _fireMinPower: 0.01
   _fireMaxPower: 10
+--- !u!114 &4978996435116235745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637895679843801334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d5d4bd8e53de06449b8be4b3a2e4d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraEventChannel: {fileID: 11400000, guid: 147bcbf0355179142878d71f4e703d84, type: 2}
 --- !u!1 &3654543898941970187
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,7 +851,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7307039316077751754}
-  - component: {fileID: 9215067717387877455}
+  - component: {fileID: 3640328379932766876}
   m_Layer: 6
   m_Name: CameraDistanceFeedback
   m_TagString: Untagged
@@ -860,7 +874,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 91799988118348436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9215067717387877455
+--- !u!114 &3640328379932766876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -869,11 +883,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5247723383969800087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c83c9be826c12b489750d6a6040ade7, type: 3}
+  m_Script: {fileID: 11500000, guid: b9aaeb95eb5b36e46bb56ea2ba85751d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _camEventChannelSo: {fileID: 11400000, guid: 147bcbf0355179142878d71f4e703d84, type: 2}
-  _intensity: 12
+  _camSize: 5
+  _duration: 0.3
+  _speed: 1
+  _returnSpeed: 2
 --- !u!1 &5584859924506413796
 GameObject:
   m_ObjectHideFlags: 0

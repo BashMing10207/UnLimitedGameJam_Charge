@@ -12,18 +12,24 @@ public class PlayerCamera : MonoBehaviour
     private bool _isChangeComplete;
 
     private CinemachineCamera _vCam;
+    private CinemachinePositionComposer _composer;
 
     private float _targetDistance;
     private float _camDistanceSpeed;
+    private float _defaultYoffset;
+    
     public float DefaultDistance { get; private set; }
 
     private void Awake()
     {
         _vCam = GetComponent<CinemachineCamera>();
+        _composer = GetComponent<CinemachinePositionComposer>();
+        _defaultYoffset = _composer.TargetOffset.y;
         
         _cameraChannel.AddListener<CamDistanceChange>(HandleCamDistanceChange);
         _cameraChannel.AddListener<CamShake>(HandleCamShake);
         _cameraChannel.AddListener<CamDistanceReset>(HandleCamDistanceReset);
+        _cameraChannel.AddListener<CamOffsetChange>(HandleCamOffset);
         
         _targetDistance = _vCam.Lens.OrthographicSize;
         DefaultDistance = _vCam.Lens.OrthographicSize;
@@ -34,6 +40,20 @@ public class PlayerCamera : MonoBehaviour
         _cameraChannel.RemoveListener<CamDistanceChange>(HandleCamDistanceChange);
         _cameraChannel.RemoveListener<CamShake>(HandleCamShake);
         _cameraChannel.RemoveListener<CamDistanceReset>(HandleCamDistanceReset);
+        _cameraChannel.RemoveListener<CamOffsetChange>(HandleCamOffset);
+    }
+
+    private void HandleCamOffset(CamOffsetChange evt)
+    {
+        Vector2 dir = evt.targetPos - evt.postion;
+        
+        float distance = Vector2.Distance(evt.targetPos, evt.postion);
+        if (distance >= evt.radius)
+        {
+            dir.Normalize();
+        }
+        
+        _composer.TargetOffset = new Vector3(Mathf.Abs(dir.x), dir.y + _defaultYoffset,0);
     }
 
     private void HandleCamShake(CamShake evt)

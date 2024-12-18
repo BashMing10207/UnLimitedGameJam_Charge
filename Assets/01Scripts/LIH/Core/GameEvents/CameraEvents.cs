@@ -4,7 +4,15 @@ public static class CameraEvents
 {
     public static CamDistanceChange CamDistanceChangeEvent = new CamDistanceChange();
     public static CamShake CamShakeEvent = new CamShake();
-    public static CamDistanceReset CamShakeDistanceResetEvent = new CamDistanceReset();
+    public static CamDistanceReset CamDistanceResetEvent = new CamDistanceReset();
+    public static CamOffsetChange CamOffsetChangeEvent = new CamOffsetChange();
+}
+
+public class CamOffsetChange : GameEvent
+{
+    public Vector2 postion;
+    public Vector2 targetPos;
+    public float radius;
 }
 
 public class CamDistanceChange : GameEvent

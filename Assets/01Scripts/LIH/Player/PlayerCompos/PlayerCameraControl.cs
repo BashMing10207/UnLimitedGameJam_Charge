@@ -44,7 +44,7 @@ public class PlayerCameraControl : MonoBehaviour, IPlayerCompo
 
     public void CamReset()
     {
-        var evt = CameraEvents.CamShakeDistanceResetEvent;
+        var evt = CameraEvents.CamDistanceResetEvent;
         _cameraEventChannel.RaiseEvent(evt);
     }
 
@@ -68,7 +68,7 @@ public class PlayerCameraControl : MonoBehaviour, IPlayerCompo
     
     private void CamFireDistanceChange(float power)
     {
-        var evt = CameraEvents.CamShakeDistanceResetEvent;
+        var evt = CameraEvents.CamDistanceResetEvent;
         evt.speed = 2f;
         _cameraEventChannel.RaiseEvent(evt);
     }
