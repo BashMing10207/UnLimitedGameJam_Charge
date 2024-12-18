@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -46,14 +47,17 @@ public class PlayerCamera : MonoBehaviour
     private void HandleCamOffset(CamOffsetChange evt)
     {
         Vector2 dir = evt.targetPos - evt.postion;
+        Vector2 pos = Vector2.zero;
+
+        float x = Mathf.Clamp(dir.x, -evt.radius, evt.radius);
+        float y = Mathf.Clamp(dir.y, -evt.radius, evt.radius);
+
+        DOTween.To(() => _composer.TargetOffset.x, f =>  _composer.TargetOffset.x = f,
+            Mathf.Abs(x), 0.2f);
+        DOTween.To(() => _composer.TargetOffset.y, f => _composer.TargetOffset.y = f,
+            y, 0.2f);
         
-        float distance = Vector2.Distance(evt.targetPos, evt.postion);
-        if (distance >= evt.radius)
-        {
-            dir.Normalize();
-        }
-        
-        _composer.TargetOffset = new Vector3(Mathf.Abs(dir.x), dir.y + _defaultYoffset,0);
+        //_composer.TargetOffset = new Vector3(Mathf.Abs(pos.x), pos.y + _defaultYoffset,0);
     }
 
     private void HandleCamShake(CamShake evt)
