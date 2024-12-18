@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8566718ba9960144c80492b4bd98e39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnChannel: {fileID: 11400000, guid: 6944cce5058946943ac30c78e150d1b4, type: 2}
   _bullet: {fileID: 3559990087977567739, guid: 52ebaf3d6b432144e9f1cdef1b09471c, type: 3}
   _recoilTime: 0.1
   _recoilXValue: 0.6

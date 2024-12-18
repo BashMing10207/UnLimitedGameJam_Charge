@@ -9,9 +9,13 @@ public class DefaultWeapon : Weapon
 
     public override void Fire(float power)
     {
-        Bullet bullet = Instantiate(_bullet);
-        bullet.transform.position = _fireTrm.position;
-        bullet.Shoot(_player.LookDir(), power);
+        var evt = SpawnEvents.BulletCreate;
+        evt._bulletType = PoolType.PlayerBullet;
+        evt.power = power;
+        evt.dir = _player.LookDir();
+        evt.position = _fireTrm.position;
+        
+        _spawnChannel.RaiseEvent(evt);
         base.Fire(power);
     }
 }

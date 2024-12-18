@@ -165,5 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450be05f113b05141a7d30b8cde05507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _poolType: 0
+  _lifeTime: 3
   _defaultBulletSpeed: 10
   _targetTag: Enemy

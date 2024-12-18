@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
+    [SerializeField] protected GameEventChannelSO _spawnChannel;
     [SerializeField] protected PlayerBullet _bullet;
     [SerializeField] private float _recoilTime;
     [SerializeField] private float _recoilXValue;

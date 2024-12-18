@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 286936371a1542efbb39ede852b72b67, type: 3}
-  m_Name: CameraEventSO
+  m_Name: CameraEventChannel
   m_EditorClassIdentifier: 
