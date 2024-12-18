@@ -1,16 +1,30 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour,IEntityComponent
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Entity _entity;
+    private Rigidbody2D _rbCompo;
+    private EntityStat _entityStat;
+    [SerializeField]
+    private StatSO _speedStat;
+
+    public void Initialize(Entity entity)
     {
-        
+        _entity = entity;
+        _rbCompo = _entity.GetComponentInChildren<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Move(Vector2 dir)
     {
-        
+        float maxSpeed =25;
+        if(_entityStat.TryGetStat(_speedStat,out StatSO stat))
+        {
+            maxSpeed = stat.Value;
+        }
+        _rbCompo.AddForce(BashUtils.LimitedSpeed(_rbCompo.linearVelocity,dir,maxSpeed),ForceMode2D.Impulse);
+    }
+    public void Knockback(Vector2 dir)
+    {
+        _rbCompo.AddForce(dir,ForceMode2D.Impulse);
     }
 }
