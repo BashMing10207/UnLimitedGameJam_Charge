@@ -12,7 +12,7 @@ public class PlayerInputSO : ScriptableObject, Controls.IPlayerActions
     
     public Vector2 InputDirection { get; private set; }
     public Vector2 MousePos { get; private set; }
-
+    
     private Controls _controls;
 
     private void OnEnable()
