@@ -23,7 +23,7 @@ public class SandeVistanRenderer : MonoBehaviour
         if (_duration > 0f)
         {
             _duration -= Time.fixedDeltaTime;
-            SpriteRenderer sprite = Instantiate(_prefab, transform.position, transform.rotation); //°ÔÀÓÀë Æ¯: Instatiate¸¦ Àû±Ø È°¿ëÇÔ.
+            SpriteRenderer sprite = Instantiate(_prefab, transform.position, transform.rotation); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Æ¯: Instatiateï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½ï¿½ï¿½.
             sprite.sprite = _targetSpriteRenderer.sprite;
             _spriteLsit.Add(new BashPair<SpriteRenderer,float>(sprite,_lifeTime));
         }
@@ -31,13 +31,12 @@ public class SandeVistanRenderer : MonoBehaviour
         {
             for (int i = 0; i < _spriteLsit.Count; i++)
             {
-                var sprit = _spriteLsit[i];
-                sprit.First.color = _gradient.Evaluate(sprit.Second);
-                sprit.Second -= Time.fixedDeltaTime;
+                _spriteLsit[i].First.color = _gradient.Evaluate(_spriteLsit[i].Second/_lifeTime);
+                _spriteLsit[i].Second -= Time.fixedDeltaTime;
 
-                if (sprit.Second <= 0f)
+                if (_spriteLsit[i].Second <= 0f)
                 {
-                    Destroy(sprit.First);
+                    Destroy(_spriteLsit[i].First);
                     _spriteLsit.RemoveAt(i); 
                     i--; 
                 }

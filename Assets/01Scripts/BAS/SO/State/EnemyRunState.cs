@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyRunState", menuName = "SO/EnemyState/EnemyRunState")]
@@ -5,10 +6,11 @@ public class EnemyRunState : EnemyStateSO //도망가기 상태
 {
 
     [SerializeField]
-    private StatModifierSO _statModifier;
-    [SerializeField]
     private float _distance = 5f;
-
+    [SerializeField]
+    private bool _isPierceObstacle = false;
+    [SerializeField]
+    private LayerMask _whatisObstacle;
     private BashAstar _astar;
     public override void OnEnter(Entity entity)
     {
@@ -28,8 +30,14 @@ public class EnemyRunState : EnemyStateSO //도망가기 상태
 
     public override void Update()
     {
-        //_astar.Target = playerpos + (playerpos - _entity.transform.position)*_distance;
-        Debug.Log("아직 플레이어 위치 할당 안했어!");
+        Vector2 targetpos = _playerSO.PlayerTrm.position + (_playerSO.PlayerTrm.position - _entity.transform.position) * _distance; ;
+        if(_isPierceObstacle )
+           {
+            RaycastHit2D hit = Physics2D.Raycast(_playerSO.PlayerTrm.position, (_playerSO.PlayerTrm.position - _entity.transform.position), _distance,_whatisObstacle);
+            if(hit)
+                targetpos = hit.point;
+            } 
+        _astar.Target = targetpos;
         Vector2 dir = _astar.PathDir;
         _entity.GetEntityCompo<EnemyMovement>().Move(dir);
     }

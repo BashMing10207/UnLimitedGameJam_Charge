@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour,IEntityComponent
     {
         _entity = entity;
         _rbCompo = _entity.GetComponentInChildren<Rigidbody2D>();
+        _entityStat = _entity.GetEntityCompo<EntityStat>();
     }
 
     public void Move(Vector2 dir)
@@ -26,5 +27,9 @@ public class EnemyMovement : MonoBehaviour,IEntityComponent
     public void Knockback(Vector2 dir)
     {
         _rbCompo.AddForce(dir,ForceMode2D.Impulse);
+    }
+    public void SetVelocity(Vector2 dir)
+    {
+        _rbCompo.linearVelocity = dir;
     }
 }

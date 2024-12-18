@@ -8,6 +8,8 @@ public class BashAstar : MonoBehaviour,IEntityComponent //나는 이게 Astar가 아니
     private Vector3 _maxtmp = new Vector3(10, 1, 10);
     [SerializeField] 
     private LayerMask _whatisObstacle;
+    [SerializeField]
+    private float _scanDistance = 0.5f;
 
     private List<Vector3> _dirs = new List<Vector3>();
     private List<float> _distances = new List<float>();
@@ -21,7 +23,7 @@ public class BashAstar : MonoBehaviour,IEntityComponent //나는 이게 Astar가 아니
 
     private void Awake()
     {
-        InvokeRepeating(nameof(Pathfind), 0f, 0.3f);
+        InvokeRepeating(nameof(Pathfind), 0, 0.3f);
     }
     private void Pathfind()
     {
@@ -33,10 +35,11 @@ public class BashAstar : MonoBehaviour,IEntityComponent //나는 이게 Astar가 아니
             {
                 for (int i2 = -1; i2 <= 1; i2++)
                 {
+
                     if (((i != 0 || i2 != 0) && (i * i2 == 0)))
-                        if (!(Physics.Raycast(transform.position, Vector3.forward * i2 + Vector3.right * i, 1f, _whatisObstacle, QueryTriggerInteraction.Ignore)))
+                        if (!(Physics2D.Raycast(transform.position, (Vector3.up * i2 + Vector3.right * i).normalized* _scanDistance, 1f, _whatisObstacle)))
                         {
-                            _dirs.Add((Vector3.right * i + Vector3.forward * i2).normalized * 0.6f);
+                            _dirs.Add((Vector3.right * i + Vector3.up * i2).normalized * 0.6f);
                         }
                 }
             }
@@ -48,6 +51,8 @@ public class BashAstar : MonoBehaviour,IEntityComponent //나는 이게 Astar가 아니
                     _distances[i] = 1024;
                 }
             }
+            Debug.Log(_dirs.Count);
+            Debug.Log(_distances.Count);
             _maxtmp = _dirs[_distances.IndexOf(_distances.Min())];
         }
     }
