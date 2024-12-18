@@ -35,7 +35,7 @@ public class SandeVistanRenderer : MonoBehaviour
                 sprit.First.color = _gradient.Evaluate(sprit.Second);
                 sprit.Second -= Time.fixedDeltaTime;
 
-                if (sprit.Second < 0f)
+                if (sprit.Second <= 0f)
                 {
                     Destroy(sprit.First);
                     _spriteLsit.RemoveAt(i); 
