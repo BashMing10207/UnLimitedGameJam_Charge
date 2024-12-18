@@ -1,14 +1,24 @@
 using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour, IPlayerCompo
 {
+    [Header("Stat")]
     [SerializeField] private StatSO _moveSpeedStat;
     [SerializeField] private StatSO _dashSpeedStat;
     [SerializeField] private StatSO _dashCoolStat;
-    [SerializeField] private float _dashTime;
 
+    [Header("Dash Setting")]
+    [SerializeField] private float _dashTime;
+    
+    [Header("Knockback Setting")]
+    [SerializeField] private float _knockBackTime;
+    [SerializeField] private float _applyKnockBackMaxPower;
+    [SerializeField] private float _maxKnockBackChargingValue;
+    [SerializeField] private float _knockBackMinPower;
+    
     private Player _player;
     private PlayerWeaponController _playerWeaponController;
     private Rigidbody2D _rigidbody2D;
@@ -67,6 +77,21 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
     
         DOVirtual.DelayedCall(_dashTime, () => _canMove = true);
     }
+    
+    public void KnockBack(float power)
+    {
+        if(power <= _knockBackMinPower)
+            return;
+            
+        _canMove = false;
+        StopImmediately(true);
+        
+        float inverseLerp = Mathf.InverseLerp(0, _maxKnockBackChargingValue, power);
+        float knockBackPower = Mathf.Lerp(0, _applyKnockBackMaxPower, inverseLerp);
+        
+        _rigidbody2D.AddForce(-_player.LookDir() * knockBackPower, ForceMode2D.Impulse);
+        DOVirtual.DelayedCall(_knockBackTime, () => _canMove = true);
+    }
 
     private void FixedUpdate()
     {
@@ -87,6 +112,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         _moveDir = Vector2.zero;
     }
     
-    private void HandleResetChargingSpeed() => _chargingMoveMultiplier = 1f;
+    private void HandleResetChargingSpeed(float power) => _chargingMoveMultiplier = 1f;
     private void HandleSetChargingSpeed(float chargingValue) => _chargingMoveMultiplier = Mathf.Max(1,chargingValue * 0.1f);
 }

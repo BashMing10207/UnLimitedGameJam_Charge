@@ -7,11 +7,11 @@ public class DefaultWeapon : Weapon
         base.Charging(chargingSpeed);
     }
 
-    public override void Fire()
+    public override void Fire(float power)
     {
         PlayerBullet playerBullet = Instantiate(_bullet);
         playerBullet.transform.position = _fireTrm.position;
-        playerBullet.Shoot(_player.LookDir(), _currentCharging);
-        base.Fire();
+        playerBullet.Shoot(_player.LookDir(), power);
+        base.Fire(power);
     }
 }
