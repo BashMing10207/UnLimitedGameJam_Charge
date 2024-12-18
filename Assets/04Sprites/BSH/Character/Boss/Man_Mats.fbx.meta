@@ -119,8 +119,261 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: "\uBCF8"
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LEg_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LEg_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Leg2_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Leg2_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Foot_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Foot_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\uBCF8.001"
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\uBCF8.003"
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: "\uBCF8.007"
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Arm_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Arm_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Arm2_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Arm2_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Man_Mats(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cube
+      parentName: Man_Mats(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: "\uC544\uB9C8\uD29C\uC5B4"
+      parentName: Man_Mats(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: "\uBCF8"
+      parentName: "\uC544\uB9C8\uD29C\uC5B4"
+      position: {x: 0, y: -0.0000000023841857, z: 0.02372283}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\uBCF8.001"
+      parentName: "\uBCF8"
+      position: {x: -0, y: 0.003, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\uBCF8.002"
+      parentName: "\uBCF8.001"
+      position: {x: -0, y: 0.0077016135, z: 0}
+      rotation: {x: 0.004318187, y: 1.4444832e-17, z: 1.4444828e-17, w: 0.9999907}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: "\uBCF8.003"
+      parentName: "\uBCF8.002"
+      position: {x: 8.762945e-27, y: 0.003799656, z: -5.5879355e-12}
+      rotation: {x: -0.017647449, y: -1.2425542e-16, z: -1.2369456e-16, w: 0.9998443}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\uBCF8.007"
+      parentName: "\uBCF8.003"
+      position: {x: 1.9666285e-25, y: 0.0012309981, z: -8.378925e-12}
+      rotation: {x: 0.019026777, y: -7.5796343e-23, z: -4.2248783e-18, w: 0.999819}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\uBCF8.007_end"
+      parentName: "\uBCF8.007"
+      position: {x: -0, y: 0.005759397, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Arm_R
+      parentName: "\uBCF8.002"
+      position: {x: 0.0036424578, y: 0.0010268964, z: 0.00002394763}
+      rotation: {x: 0.0032570404, y: 0.0029590912, z: -0.7184378, w: 0.6955773}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Arm2_R
+      parentName: Arm_R
+      position: {x: 1.09575925e-10, y: 0.0060903546, z: -1.466833e-11}
+      rotation: {x: -0.0002247916, y: -0.0000001904851, z: 0.012896659, w: 0.99991685}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+    - name: Hand_R
+      parentName: Arm2_R
+      position: {x: 9.378127e-10, y: 0.008675932, z: -1.693843e-11}
+      rotation: {x: -0.000005695211, y: 0.00000014994642, z: 0.00032673407, w: 0.99999994}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: Hand_R_end
+      parentName: Hand_R
+      position: {x: -0, y: 0.0048199412, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Arm_L
+      parentName: "\uBCF8.002"
+      position: {x: -0.0036424578, y: 0.0010268964, z: 0.00002394763}
+      rotation: {x: 0.0032570404, y: -0.0029590912, z: 0.7184378, w: 0.6955773}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Arm2_L
+      parentName: Arm_L
+      position: {x: -1.09575925e-10, y: 0.0060903546, z: -1.466833e-11}
+      rotation: {x: -0.0002247916, y: 0.0000001904851, z: -0.012896659, w: 0.99991685}
+      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+    - name: Hand_L
+      parentName: Arm2_L
+      position: {x: -9.378127e-10, y: 0.008675932, z: -1.693843e-11}
+      rotation: {x: -0.000005695211, y: -0.00000014994642, z: -0.00032673407, w: 0.99999994}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: Hand_L_end
+      parentName: Hand_L
+      position: {x: -0, y: 0.0048199412, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LEg_R
+      parentName: "\uBCF8"
+      position: {x: 0.0017637284, y: 0.00006045288, z: 3.9495412e-10}
+      rotation: {x: -0.00000037138338, y: 0.000000043034053, z: 0.997964, w: -0.06377891}
+      scale: {x: 1.0000005, y: 1, z: 1}
+    - name: Leg2_R
+      parentName: LEg_R
+      position: {x: -1.3775647e-15, y: 0.011084082, z: 4.2632565e-17}
+      rotation: {x: 0.000000036943096, y: 0.00000004552328, z: -0.046269037, w: 0.998929}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Foot_R
+      parentName: Leg2_R
+      position: {x: -3.129271e-10, y: 0.010059438, z: 1.7053026e-16}
+      rotation: {x: -0.03977277, y: 0.86500245, z: 0.48474726, w: 0.12332534}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Foot_R_end
+      parentName: Foot_R
+      position: {x: -0, y: 0.0022902123, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LEg_L
+      parentName: "\uBCF8"
+      position: {x: -0.0017637284, y: 0.00006045288, z: 3.9495412e-10}
+      rotation: {x: 0.00000037138338, y: 0.000000043034053, z: 0.997964, w: 0.06377891}
+      scale: {x: 1.0000005, y: 1, z: 1}
+    - name: Leg2_L
+      parentName: LEg_L
+      position: {x: 1.3775647e-15, y: 0.011084082, z: 4.2632565e-17}
+      rotation: {x: 0.000000036943096, y: -0.00000004552328, z: 0.046269037, w: 0.998929}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Foot_L
+      parentName: Leg2_L
+      position: {x: 3.129271e-10, y: 0.010059438, z: 1.7053026e-16}
+      rotation: {x: -0.03977277, y: -0.86500245, z: -0.48474726, w: 0.12332534}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Foot_L_end
+      parentName: Foot_L
+      position: {x: -0, y: 0.0022902123, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

@@ -168,11 +168,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &410023507 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7442643801617449176, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
-  m_PrefabInstance: {fileID: 7272493005001245026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &612289749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7590177362201923779, guid: f9411729e27cc9643843733e00503422, type: 3}
@@ -381,11 +376,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1053193599 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4151206268026109847, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
-  m_PrefabInstance: {fileID: 7272493005001245026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1098677400
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,10 +558,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1516370337146375645, guid: f9411729e27cc9643843733e00503422, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7590177362201923779, guid: f9411729e27cc9643843733e00503422, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.305
@@ -629,22 +615,10 @@ PrefabInstance:
       propertyPath: TestTarget
       value: 
       objectReference: {fileID: 612289749}
-    - target: {fileID: 172769806777398677, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
-      propertyPath: rightLaser
-      value: 
-      objectReference: {fileID: 7272493005001245027}
-    - target: {fileID: 396295361447796220, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
-      propertyPath: _laserBody
-      value: 
-      objectReference: {fileID: 1053193599}
     - target: {fileID: 5638670453060161118, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 6605221037296771763, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
-      propertyPath: _laserBody
-      value: 
-      objectReference: {fileID: 410023507}
     - target: {fileID: 8965503902422697842, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -686,22 +660,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6978047628796167268, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
---- !u!114 &7272493005001245027 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 396295361447796220, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
-  m_PrefabInstance: {fileID: 7272493005001245026}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa737b03e8cd6d41b03eb80a4091e4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
