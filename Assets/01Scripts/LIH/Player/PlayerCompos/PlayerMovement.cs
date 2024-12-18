@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
     
     private Player _player;
     private PlayerWeaponController _playerWeaponController;
+    private PlayerRender _playerRender;
+    
     private Rigidbody2D _rigidbody2D;
     private EntityStat _statCompo;
 
@@ -45,6 +47,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         _playerWeaponController = player.GetPlayerCompo<PlayerWeaponController>();
         _rigidbody2D = player.GetComponent<Rigidbody2D>();
         _statCompo = _player.GetEntityCompo<EntityStat>();
+        _playerRender = player.GetPlayerCompo<PlayerRender>();
         
         _moveSpeed = _statCompo.GetStat(_moveSpeedStat).Value;
         _dashSpeed = _statCompo.GetStat(_dashSpeedStat).Value;
@@ -75,13 +78,31 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         if(_currentDashCool >= 0)
             return;
         
+        _playerRender.StartSande(_dashTime);
         CanMove = false;
         _currentDashCool = _dashCoolTime;
         StopImmediately(true);
 
-        _rigidbody2D.linearVelocity = _player.LookDir() * _dashSpeed;
+        Vector2 dir = SetDashDir();
+        _rigidbody2D.linearVelocity = dir * _dashSpeed;
     
         DOVirtual.DelayedCall(_dashTime, () => CanMove = true);
+    }
+
+    private Vector2 SetDashDir()
+    {
+        Vector2 dir =  Vector2.zero;
+        switch (_player.dashType)
+        {
+            case PlayerDashType.MouseDir:
+                dir = _player.LookDir();
+                break;
+            case PlayerDashType.InputDir:
+                dir = _player.PlayerInput.InputDirection.normalized;
+                break;
+        }
+
+        return dir;
     }
 
     public void KnockBackStart(float power)

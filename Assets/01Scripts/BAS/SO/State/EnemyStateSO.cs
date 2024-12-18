@@ -15,4 +15,9 @@ public abstract class EnemyStateSO : ScriptableObject
     public abstract void OnEnter(Entity entity);
 
     public abstract void OnExit();
+
+    public virtual void DoExit()
+    {
+        _entity.GetEntityCompo<EnemyFSM>().SetState(NextState);
+    }
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   displayName: DashCooltime
-  _baseValue: 5
+  _baseValue: 1
   _minValue: 2
   _maxValue: 7
   <IsPercent>k__BackingField: 0

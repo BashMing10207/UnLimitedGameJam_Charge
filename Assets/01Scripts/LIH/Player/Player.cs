@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum PlayerDashType
+{
+    MouseDir,
+    InputDir,
+}
+
 public class Player : Entity
 {
+    public PlayerDashType dashType = PlayerDashType.InputDir;
     [SerializeField] private PlayerManagerSO _playerManagerSO;
     [field: SerializeField] public PlayerInputSO PlayerInput { get; set; }
 

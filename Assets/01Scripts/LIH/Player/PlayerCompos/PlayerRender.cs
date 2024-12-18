@@ -9,13 +9,15 @@ public class PlayerRender : MonoBehaviour, IPlayerCompo
     private Player _player;
     private PlayerInputSO _playerInput;
 
+    private SandeVistanRenderer _sandeVistanRenderer;
+
     private Vector2 _mousePos;
 
     public void Initialize(Player player)
     {
         _player = player;
         _playerInput = _player.PlayerInput;
-
+        _sandeVistanRenderer = GetComponent<SandeVistanRenderer>();
         _playerInput.MouseMoveEvent += HandleFlipController;
     }
 
@@ -30,6 +32,11 @@ public class PlayerRender : MonoBehaviour, IPlayerCompo
             Flip();
         else if(transform.position.x - _flipOffset >= _mousePos.x && FacingDirection > 0)
             Flip();
+    }
+
+    public void StartSande(float duration)
+    {
+        _sandeVistanRenderer.SetDuration(duration);
     }
 
     private void HandleFlipController(Vector2 mousePos)
