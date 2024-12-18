@@ -3,6 +3,7 @@ using DG.Tweening;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(CinemachineImpulseSource))]
 public class GolemBoss : Entity
@@ -23,8 +24,8 @@ public class GolemBoss : Entity
 
     [SerializeField] private CinemachineImpulseSource ImpulseSource;
 
-    [SerializeField] private AnimationCurve takeDownCurve;
-
+    [SerializeField] private AnimationCurve handMoveCurve;
+    
     [SerializeField] private Laser leftLaser;
     [SerializeField] private Laser rightLaser;
     
@@ -157,16 +158,12 @@ public class GolemBoss : Entity
         
         yield return StartCoroutine(MoveToPosition(leftHand, strikeTarget, _downSpeed));
         PlayImpacts(strikeTarget);
-
         yield return new WaitForSeconds(0.4f);
     
-        yield return StartCoroutine(MoveToPosition(leftHand, originalPosition, _speed/4));
+        yield return StartCoroutine(MoveToPosition(leftHand, originalPosition, _speed));
         
         isLeftHandMoving = false;
     }
-
-
-
     private IEnumerator TakDownRightHandRoutine(Transform _target,float _speed,float _downSpeed)
     {
         if(isRightHandMoving) yield break;
@@ -178,13 +175,14 @@ public class GolemBoss : Entity
         Vector3 strikeTarget = _target.position;
 
         yield return StartCoroutine(MoveToPosition(rightHand, liftTarget, _speed));
-    
+        
         yield return new WaitForSeconds(0.3f);
     
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
         PlayImpacts(strikeTarget);
+        yield return new WaitForSeconds(0.4f);
         
-        yield return StartCoroutine(MoveToPosition(rightHand, originalPosition, _speed/4));
+        yield return StartCoroutine(MoveToPosition(rightHand, originalPosition, _speed));
         
         isRightHandMoving = false;
     }
@@ -273,7 +271,7 @@ public class GolemBoss : Entity
     {
         float journeyLength = Vector3.Distance(obj.position, target);
         float startTime = Time.time;
-
+        
         while (obj.position != target)
         {
             float easingValue = GetEasing(startTime, journeyLength, speed);
@@ -289,9 +287,8 @@ public class GolemBoss : Entity
     {
         float distanceCovered = (Time.time - startTime) * speed;
         float fractionOfJourney = distanceCovered / endDistance;
-        
-        float curvedFraction = takeDownCurve.Evaluate(Mathf.Clamp01(fractionOfJourney));
-        
+        float curvedFraction = handMoveCurve.Evaluate(Mathf.Clamp01(fractionOfJourney));
+                
         return curvedFraction;
     }
     
