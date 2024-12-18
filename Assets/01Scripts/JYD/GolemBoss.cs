@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 
+[RequireComponent(typeof(CinemachineImpulseSource))]
 public class GolemBoss : MonoBehaviour
 {
     [SerializeField] private Transform leftHand;
@@ -14,10 +15,17 @@ public class GolemBoss : MonoBehaviour
     [SerializeField] private Transform TestTarget;
 
     [SerializeField] private CinemachineImpulseSource ImpulseSource;
+
+    [SerializeField] private AnimationCurve takeDownCurve;
     
     private bool isLeftHandMoving;
     private bool isRightHandMoving;
-        
+
+    private void Start()
+    {
+        ImpulseSource = GetComponent<CinemachineImpulseSource>();
+    }
+
     #region Bullet
     public void CircleShot(int bulletCount)
     {
@@ -138,15 +146,14 @@ public class GolemBoss : MonoBehaviour
 
         yield return StartCoroutine(MoveToPosition(leftHand, liftTarget, _speed));
     
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.8f);
     
         yield return StartCoroutine(MoveToPosition(leftHand, strikeTarget, _downSpeed));
         ShakeCamera(2);
-        
-        
-        yield return new WaitForSeconds(0.3f);
+                
+        yield return new WaitForSeconds(0.4f);
     
-        yield return StartCoroutine(MoveToPosition(leftHand, originalPosition, _speed));
+        yield return StartCoroutine(MoveToPosition(leftHand, originalPosition, _speed/4));
         
         isLeftHandMoving = false;
     }
@@ -163,13 +170,13 @@ public class GolemBoss : MonoBehaviour
 
         yield return StartCoroutine(MoveToPosition(rightHand, liftTarget, _speed));
     
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.8f);
     
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
         ShakeCamera(2);
         
-        yield return new WaitForSeconds(0.3f);
-        yield return StartCoroutine(MoveToPosition(rightHand, originalPosition, _speed));
+        yield return new WaitForSeconds(0.4f);
+        yield return StartCoroutine(MoveToPosition(rightHand, originalPosition, _speed/4));
         
         isRightHandMoving = false;
     }
@@ -266,15 +273,23 @@ public class GolemBoss : MonoBehaviour
 
         while (obj.position != target)
         {
-            float distanceCovered = (Time.time - startTime) * speed;
-            float fractionOfJourney = distanceCovered / journeyLength;
-
-            obj.position = Vector3.Lerp(obj.position, target, fractionOfJourney);
-        
+            float easingValue = GetEasing(startTime, journeyLength, speed);
+            obj.position = Vector3.Lerp(obj.position, target, easingValue);
+            
             yield return null;
         }
     }
 
     private void ShakeCamera(float power) =>ImpulseSource.GenerateImpulse(power);
-   
+
+    private float GetEasing(float startTime,  float endDistance , float speed)
+    {
+        float distanceCovered = (Time.time - startTime) * speed;
+        float fractionOfJourney = distanceCovered / endDistance;
+        
+        float curvedFraction = takeDownCurve.Evaluate(Mathf.Clamp01(fractionOfJourney));
+        
+        return curvedFraction;
+    }
+    
 }
