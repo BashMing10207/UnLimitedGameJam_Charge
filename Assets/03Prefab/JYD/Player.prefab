@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b24fa94dd60ab5469e03801535809b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashType: 1
   _playerManagerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: 7961c0b96d71ad746aa01b380295824b, type: 2}
 --- !u!114 &5432457615222919477
@@ -465,6 +466,7 @@ GameObject:
   - component: {fileID: 4022495640943388545}
   - component: {fileID: 832022459931218920}
   - component: {fileID: 4654506172547798985}
+  - component: {fileID: 4660775733831698416}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -590,6 +592,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50b0ec57610e784c89107d40f3dd839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4660775733831698416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4660272859460995278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62447f2df139d3a44b791ae6db90957d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetSpriteRenderer: {fileID: 3693657962144148358}
+  _prefab: {fileID: 5422565726652862742, guid: b7f265151861221428ec2b81dedac56d, type: 3}
+  _lifeTime: 0.1
 --- !u!1 &6903118207493378797
 GameObject:
   m_ObjectHideFlags: 0
