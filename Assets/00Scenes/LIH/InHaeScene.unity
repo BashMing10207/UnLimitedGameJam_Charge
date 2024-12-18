@@ -420,6 +420,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  leftLaser: {fileID: 0}
+  rightLaser: {fileID: 0}
 --- !u!4 &307990785
 Transform:
   m_ObjectHideFlags: 0
@@ -1064,6 +1066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3693657962144148358, guid: f9411729e27cc9643843733e00503422, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7590177362201923779, guid: f9411729e27cc9643843733e00503422, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.332
@@ -1107,7 +1113,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4660272859460995278, guid: f9411729e27cc9643843733e00503422, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2143908369}
   m_SourcePrefab: {fileID: 100100000, guid: f9411729e27cc9643843733e00503422, type: 3}
 --- !u!1 &1825922275
 GameObject:
@@ -1814,6 +1823,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2143908363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4660272859460995278, guid: f9411729e27cc9643843733e00503422, type: 3}
+  m_PrefabInstance: {fileID: 1290401892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2143908368 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3693657962144148358, guid: f9411729e27cc9643843733e00503422, type: 3}
+  m_PrefabInstance: {fileID: 1290401892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2143908369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143908363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62447f2df139d3a44b791ae6db90957d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetSpriteRenderer: {fileID: 2143908368}
+  _prefab: {fileID: 5422565726652862742, guid: b7f265151861221428ec2b81dedac56d, type: 3}
+  _lifeTime: 0.1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

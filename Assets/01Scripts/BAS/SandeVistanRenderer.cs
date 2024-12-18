@@ -19,7 +19,9 @@ public class SandeVistanRenderer : MonoBehaviour
         if (_duration > 0f)
         {
             _duration -= Time.fixedDeltaTime;
-            Instantiate(_prefab, transform.position, transform.rotation).sprite = _targetSpriteRenderer.sprite; //게임잼 특: Instatiate를 적극 활용함.
+            SpriteRenderer sprite = Instantiate(_prefab, transform.position, transform.rotation); //게임잼 특: Instatiate를 적극 활용함.
+            sprite.sprite = _targetSpriteRenderer.sprite;
+            StartCoroutine(DelayedDelete(sprite.gameObject));
         }
     }
 
