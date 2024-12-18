@@ -175,7 +175,6 @@ public class GolemBoss : MonoBehaviour
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
         ShakeCamera(2);
         
-        yield return new WaitForSeconds(0.4f);
         yield return StartCoroutine(MoveToPosition(rightHand, originalPosition, _speed/4));
         
         isRightHandMoving = false;
