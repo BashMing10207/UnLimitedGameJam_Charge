@@ -141,13 +141,13 @@ public class GolemBoss : Entity
         isLeftHandMoving = true;
         
         Vector3 originalPosition = leftHand.position;
-        Vector3 liftTarget = _target.position + Vector3.up * 1.3f;
+        Vector3 liftTarget = _target.position + Vector3.up * 2.5f;
         Vector3 strikeTarget = _target.position;
 
         yield return StartCoroutine(MoveToPosition(leftHand, liftTarget, _speed));
-    
+        
         yield return new WaitForSeconds(0.8f);
-    
+        
         yield return StartCoroutine(MoveToPosition(leftHand, strikeTarget, _downSpeed));
         ShakeCamera(2);
                 
@@ -165,7 +165,7 @@ public class GolemBoss : Entity
         isRightHandMoving = true;
         
         Vector3 originalPosition = rightHand.position;
-        Vector3 liftTarget = _target.position + Vector3.up * 2f;
+        Vector3 liftTarget = _target.position + Vector3.up * 2.5f;
         Vector3 strikeTarget = _target.position;
 
         yield return StartCoroutine(MoveToPosition(rightHand, liftTarget, _speed));
@@ -175,7 +175,6 @@ public class GolemBoss : Entity
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
         ShakeCamera(2);
         
-        yield return new WaitForSeconds(0.4f);
         yield return StartCoroutine(MoveToPosition(rightHand, originalPosition, _speed/4));
         
         isRightHandMoving = false;
@@ -197,8 +196,8 @@ public class GolemBoss : Entity
         Vector3 originalLeftPosition = leftHand.position;
         Vector3 originalRightPosition = rightHand.position;
 
-        Vector3 leftSidePosition = _target.position + _target.right * -3f;
-        Vector3 rightSidePosition = _target.position + _target.right * 3f;
+        Vector3 leftSidePosition = _target.position + _target.right * -5f;
+        Vector3 rightSidePosition = _target.position + _target.right * 5f;
                 
         Coroutine leftMove = StartCoroutine(MoveToPosition(leftHand, leftSidePosition, _speed));
         Coroutine rightMove = StartCoroutine(MoveToPosition(rightHand, rightSidePosition, _speed));
