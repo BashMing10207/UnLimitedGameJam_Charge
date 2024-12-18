@@ -32,7 +32,7 @@ public abstract class Entity : MonoBehaviour
             .ToList().ForEach(afterInitCompo => afterInitCompo.AfterInit());
     }
 
-    public T GetCompo<T>(bool isDerived = false) where T : IEntityComponent
+    public T GetEntityCompo<T>(bool isDerived = false) where T : IEntityComponent
     {
         if (_components.TryGetValue(typeof(T), out IEntityComponent component))
         {
