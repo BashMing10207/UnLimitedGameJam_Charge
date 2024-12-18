@@ -1,6 +1,7 @@
 using System.Collections;
 using DG.Tweening;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(CinemachineImpulseSource))]
@@ -12,11 +13,11 @@ public class GolemBoss : Entity
 
     [SerializeField] private Transform leftSolder;
     [SerializeField] private Transform rightSolder;
-
+    
     [Space]
     
     [SerializeField] private GameEventChannelSO SpawnChanel;
-    [SerializeField] private float bulletSpeed = 5f;
+    [SerializeField] private ParticleSystem impactParticle;
         
     [SerializeField] private Transform TestTarget;
 
@@ -133,7 +134,6 @@ public class GolemBoss : Entity
     public void TakeDownLeft(float _speed , float _downSpeed)
     {
         StartCoroutine(TakDownLeftHandRoutine(TestTarget,_speed,_downSpeed));
-        
     }
     public void TakeDownRight(float _speed , float _downSpeed)
     {
@@ -156,15 +156,17 @@ public class GolemBoss : Entity
         yield return new WaitForSeconds(0.3f);
         
         yield return StartCoroutine(MoveToPosition(leftHand, strikeTarget, _downSpeed));
-        ShakeCamera(2);
-                
+        PlayImpacts(strikeTarget);
+
         yield return new WaitForSeconds(0.4f);
     
         yield return StartCoroutine(MoveToPosition(leftHand, originalPosition, _speed/4));
         
         isLeftHandMoving = false;
     }
-    
+
+
+
     private IEnumerator TakDownRightHandRoutine(Transform _target,float _speed,float _downSpeed)
     {
         if(isRightHandMoving) yield break;
@@ -180,7 +182,7 @@ public class GolemBoss : Entity
         yield return new WaitForSeconds(0.3f);
     
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
-        ShakeCamera(2);
+        PlayImpacts(strikeTarget);
         
         yield return StartCoroutine(MoveToPosition(rightHand, originalPosition, _speed/4));
         
@@ -219,8 +221,8 @@ public class GolemBoss : Entity
         
         yield return leftMove;
         yield return rightMove;
-    
-        ShakeCamera(2);
+
+        PlayImpacts(leftHand.position);
         
         yield return new WaitForSeconds(0.15f);
         
@@ -249,9 +251,8 @@ public class GolemBoss : Entity
         Vector3 leftHandOriginPosition = leftHand.position;
         
         yield return StartCoroutine(MoveToPosition(leftHand, leftHand.position + new Vector3(0, 2, 0), _speed));
-                    
         yield return StartCoroutine(MoveToPosition(leftHand, leftHandOriginPosition, _downSpeed));
-        ShakeCamera(1.4f);
+        PlayImpacts(leftHand.position);
         
         ApplyCircleShot(leftHand, bulletCount);
     }
@@ -261,9 +262,9 @@ public class GolemBoss : Entity
         Vector3 rightHandOriginPosition = rightHand.position;
         
         yield return StartCoroutine(MoveToPosition(rightHand, rightHand.position + new Vector3(0, 2, 0), _speed));
-        
         yield return StartCoroutine(MoveToPosition(rightHand, rightHandOriginPosition, _downSpeed));
-        ShakeCamera(1.4f);
+        PlayImpacts(leftHand.position);
+        
         ApplyCircleShot(rightHand, bulletCount);
     }
     #endregion
@@ -282,7 +283,7 @@ public class GolemBoss : Entity
         }
     }
     
-    private void ShakeCamera(float power) =>ImpulseSource.GenerateImpulse(power);
+    private void ShakeCamera(float power) => ImpulseSource.GenerateImpulse(power);
 
     private float GetEasing(float startTime,  float endDistance , float speed)
     {
@@ -292,6 +293,16 @@ public class GolemBoss : Entity
         float curvedFraction = takeDownCurve.Evaluate(Mathf.Clamp01(fractionOfJourney));
         
         return curvedFraction;
+    }
+    
+    private void PlayImpacts(Vector3 _pos)
+    {
+        ShakeCamera(2);
+
+        impactParticle.transform.position = _pos;
+        
+        impactParticle.Simulate(0);
+        impactParticle.Play();
     }
     
     public void ActiveLaser(bool isActive)
