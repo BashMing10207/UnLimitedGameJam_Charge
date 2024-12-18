@@ -50354,6 +50354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b24fa94dd60ab5469e03801535809b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashType: 1
   _playerManagerSO: {fileID: 0}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: 7961c0b96d71ad746aa01b380295824b, type: 2}
 --- !u!4 &1347230858
