@@ -15,7 +15,7 @@ public partial class CanAttackCondition : Condition
     {
         int rand = Random.Range(0,10);
         
-        if (lastAttackTime + CoolDown.Value > Time.time || rand < 2)
+        if (lastAttackTime + CoolDown.Value < Time.time || rand < 2)
         {
             lastAttackTime = Time.time;
             return true;

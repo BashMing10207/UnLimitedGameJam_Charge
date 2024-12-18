@@ -9,6 +9,11 @@ public class GolemBoss : Entity
     [SerializeField] private Transform leftHand;
     [SerializeField] private Transform rightHand;
     [SerializeField] private Transform chest;
+
+    [SerializeField] private Transform leftSolder;
+    [SerializeField] private Transform rightSolder;
+    
+    [Space]
     
     [SerializeField] private GameObject bulletPrefab; 
     [SerializeField] private float bulletSpeed = 5f;
@@ -31,11 +36,7 @@ public class GolemBoss : Entity
     }
 
     #region Bullet
-    public void CircleShot(int bulletCount)
-    {
-        ApplyCircleShot(leftHand,bulletCount);
-        ApplyCircleShot(rightHand,bulletCount);
-    }
+    
     private void ApplyCircleShot(Transform _firePos, int bulletCount, float _angle = 360)
     {
         float angleStep = _angle / bulletCount;
@@ -59,10 +60,12 @@ public class GolemBoss : Entity
         }
     }
     
-    public void SpinShot(int bulletCount)
+    public void SpinShot(int bulletCount,bool isLeft)
     {
-        StartCoroutine(ApplySpinShot(leftHand, bulletCount,360));
+        StartCoroutine(ApplySpinShot(isLeft ? leftSolder : rightSolder, bulletCount,360));
     }
+    
+    
     private IEnumerator ApplySpinShot(Transform _firePos,int bulletCount,int _bulletAmount)
     {
         float angleStep = 360f / bulletCount; 
