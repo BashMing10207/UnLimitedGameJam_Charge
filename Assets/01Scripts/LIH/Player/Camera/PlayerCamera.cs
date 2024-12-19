@@ -6,9 +6,15 @@ using Random = UnityEngine.Random;
 
 public class PlayerCamera : MonoBehaviour
 {
+    [SerializeField] private Transform _player;
+    [SerializeField] private Transform _target;
+    
     [SerializeField] private GameEventChannelSO _cameraChannel;
     [SerializeField] private float _distanceChangeRate = 1.5f, _distanceThreshold = 0.25f, _shakeThreshold = 0.1f;
     [SerializeField] private CinemachineImpulseSource _impulseSource;
+
+    [SerializeField] private float _minDistance = 8f;
+    [SerializeField] private float _maxDistance = 12f;
 
     private bool _isChangeComplete;
 
@@ -79,14 +85,19 @@ public class PlayerCamera : MonoBehaviour
 
     private void Update()
     {
+        UpdateDefault();
         UpdateCameraDistance();
+    }
+
+    private void UpdateDefault()
+    {
+        float distance = Vector3.Distance(_target.position, _player.position);
+        _targetDistance = Mathf.Clamp(distance, 7, 13);
+        _isChangeComplete = false;
     }
 
     private void UpdateCameraDistance()
     {
-        if (_isChangeComplete)
-            return;
-
         float currentDistance = _vCam.Lens.OrthographicSize;
         if (Mathf.Abs(currentDistance - _targetDistance) < _distanceThreshold)
         {
