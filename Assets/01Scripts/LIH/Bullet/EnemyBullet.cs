@@ -8,10 +8,14 @@ public class EnemyBullet : Bullet
 
     private void OnEnable()
     {
-        var evt = SoundEvents.PlaySfxEvent;
-        evt.clipData = fireAudio;
-        
-        soundChannelSo.RaiseEvent(evt);
+        if (soundChannelSo != null)
+        {
+            var evt = SoundEvents.PlaySfxEvent;
+            evt.clipData = fireAudio;
+
+            soundChannelSo.RaiseEvent(evt);
+        }
+
 
     }
 }
