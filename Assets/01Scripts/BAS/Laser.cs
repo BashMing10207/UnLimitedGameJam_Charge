@@ -13,7 +13,9 @@ public class Laser : MonoBehaviour
     
     private Sequence sequence;
     private Transform player = null;
-    
+
+    [SerializeField] private ParticleSystem _laserCover;
+
     private void Start()
     {
         sequence = DOTween.Sequence();
