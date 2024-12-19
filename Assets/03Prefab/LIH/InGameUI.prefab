@@ -1009,7 +1009,6 @@ MonoBehaviour:
   _fillImage: {fileID: 1374178318292613013}
   _boss: {fileID: 0}
   _playerManagerSo: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
-  _predictionImage: {fileID: 0}
 --- !u!1 &1847654635015403285
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,6 +3034,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138420c978791b94a9e53dee883a4145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameEventChannelSo: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
+  _so: {fileID: 11400000, guid: 6350d5c0571d9e64b8f1e629cea4e21c, type: 2}
   _alphaTime: 2
   animator: {fileID: 2496444822730694924}
 --- !u!1 &5499080100824437842

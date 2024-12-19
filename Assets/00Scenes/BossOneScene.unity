@@ -11987,6 +11987,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3169858693025154290, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: _so
+      value: 
+      objectReference: {fileID: 11400000, guid: 6350d5c0571d9e64b8f1e629cea4e21c, type: 2}
+    - target: {fileID: 3169858693025154290, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: _gameEventChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
     - target: {fileID: 5464524560634472707, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
       propertyPath: _boss
       value: 

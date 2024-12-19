@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameOverPannel : MonoBehaviour
 {
+    [SerializeField] private GameEventChannelSO _gameEventChannelSo;
+    [SerializeField] private SoundSO _so;
+    
     [SerializeField] private float _alphaTime;
     [SerializeField] private Animator animator;
     
