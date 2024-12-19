@@ -27,6 +27,11 @@ public class BulletSpawner : MonoBehaviour
         bullet.transform.position = evt.position;
         bullet.transform.localScale = Vector3.one * evt.size; 
         bullet.Shoot(evt.dir, evt.damage, evt.speed);
+
+        if (bullet is EnemyBullet enemyBullet)
+        {
+            enemyBullet.PlaySound();
+        }
     }
 
     private void HandleSmokeParticleSpawn(SmokeParticleCreate evt)
