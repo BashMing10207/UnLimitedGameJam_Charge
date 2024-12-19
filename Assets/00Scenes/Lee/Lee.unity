@@ -153,6 +153,11 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!4 &9483965 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8965503902422697842, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+  m_PrefabInstance: {fileID: 7272493005001245026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &51995189
 GameObject:
   m_ObjectHideFlags: 0
@@ -17007,6 +17012,7 @@ MonoBehaviour:
   _distanceThreshold: 0.05
   _shakeThreshold: 0.1
   _impulseSource: {fileID: 1897433938}
+  Boss: {fileID: 9483965}
 --- !u!114 &1897433938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17481,6 +17487,34 @@ PrefabInstance:
     - target: {fileID: 5638670453060161118, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907684564921361678, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907684564921361678, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907684564921361678, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1897433937}
+    - target: {fileID: 6907684564921361678, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907684564921361678, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907684564921361678, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerCamera, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907684564921361678, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8458409845888390399, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: portal
