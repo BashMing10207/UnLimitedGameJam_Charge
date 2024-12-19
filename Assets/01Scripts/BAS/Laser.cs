@@ -39,7 +39,7 @@ public class Laser : MonoBehaviour
 
     void Update()
     {
-        Vector2 resultPos = transform.position + transform.up * 100;
+        Vector2 resultPos = transform.position + transform.up * 200;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 100, _whatisTarget);
         
         if (hit)
@@ -69,11 +69,12 @@ public class Laser : MonoBehaviour
         }
         
         float distance = Vector2.Distance(transform.position, resultPos);
+        Debug.Log(distance);
         
         _laserBody.up = (resultPos - (Vector2)transform.position).normalized;
         
-        float laserSizeX = player == null ? originSizeX : 0.8f;
-        _laserBody.localScale = new Vector3(laserSizeX, distance - 1.5f, _laserBody.localScale.z);
+        float laserSizeX = player == null ? originSizeX : 1.5f;
+        _laserBody.localScale = new Vector3(laserSizeX, distance + 1, _laserBody.localScale.z);
         
         _laserHit.position = resultPos;
         
