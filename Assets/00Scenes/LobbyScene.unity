@@ -17536,6 +17536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db101d31a1458546998b6ae3ed6a62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _target: {fileID: 0}
   _cameraChannel: {fileID: 11400000, guid: 147bcbf0355179142878d71f4e703d84, type: 2}
   _distanceChangeRate: 1.5
   _distanceThreshold: 0.05
