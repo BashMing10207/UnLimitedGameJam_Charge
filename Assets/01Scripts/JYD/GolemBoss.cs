@@ -45,10 +45,12 @@ public class GolemBoss : Entity
     [SerializeField] private GameEventChannelSO soundEvent;
     
     [Space]
+    [SerializeField] private SoundSO bgm;
+    
+    [Space]
     [SerializeField] private SoundSO golemImpactSound;
     [SerializeField] private SoundSO golemHitSound;
-   
-    
+        
     [SerializeField] private PlayerManagerSO _playerManagerSo;
     
     private void Start()
@@ -60,6 +62,10 @@ public class GolemBoss : Entity
 
 
         player = _playerManagerSo.PlayerTrm;
+
+        var evt = SoundEvents.PlayBGMEvent;
+        evt.clipData = bgm;
+        soundEvent.RaiseEvent(evt);
     }
 
     #region Bullet

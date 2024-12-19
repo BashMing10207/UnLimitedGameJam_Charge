@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LaserHit
   m_EditorClassIdentifier: 
   audioType: 0
-  clip: {fileID: 8300000, guid: 65354cb2c1e55c04bbf6619c68877c68, type: 3}
+  clip: {fileID: 8300000, guid: 501fef944975be141af1717ac158d9cc, type: 3}
   isLoop: 0
   isRandomizePitch: 0
   is3DSound: 0

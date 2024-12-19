@@ -1843,6 +1843,8 @@ MonoBehaviour:
   rightLaser: {fileID: 2977993215654190980}
   minSize: {x: -8, y: -12}
   maxSize: {x: 8, y: 1}
+  soundEvent: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
+  bgm: {fileID: 11400000, guid: a996b9fcc651ad344b388138e0a9e589, type: 2}
   golemImpactSound: {fileID: 11400000, guid: cb044a5cecff90842b7cd58c4c92484a, type: 2}
   golemHitSound: {fileID: 11400000, guid: 786be81fa1a74084da6e429b23901778, type: 2}
   _playerManagerSo: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
