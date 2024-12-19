@@ -100,10 +100,24 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0.2
+    functionName: PlayMing
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 396ef0510fa412b40873bda535d5e9b3, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.28333333
     functionName: ProjectileAttack
     data: 
     objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.68333334
+    functionName: PlayMing
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 396ef0510fa412b40873bda535d5e9b3, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

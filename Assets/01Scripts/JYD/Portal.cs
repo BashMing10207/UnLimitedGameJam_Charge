@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Portal : MonoBehaviour
 {
-    [SerializeField] private string nextSceneName;
+    [SerializeField] private int nextSceneName;
     [SerializeField] private TextMeshProUGUI text;
     
     [Space]
@@ -48,7 +48,7 @@ public class Portal : MonoBehaviour
         {
             fade.DOFade(1,0.7f).OnComplete(() =>
             {
-                //SceneManager.LoadScene(nextSceneName)
+                SceneManager.LoadScene(nextSceneName);
             });
         }
     }

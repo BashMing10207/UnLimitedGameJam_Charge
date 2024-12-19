@@ -11,9 +11,11 @@ public class EnemyBullet : Bullet
         if (soundChannelSo != null)
         {
             var evt = SoundEvents.PlaySfxEvent;
-            evt.clipData = fireAudio;
 
+            evt.clipData = fireAudio;
             soundChannelSo.RaiseEvent(evt);
+
         }
+
     }
 }

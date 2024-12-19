@@ -38,6 +38,8 @@ public class SecondBoss : Enemy
     [SerializeField]
     private GameEventChannelSO _spawnChanel;
 
+    [SerializeField] private GameObject portal;
+    
     //private StatModifierSO _dashSpeed;
     protected override void Awake()
     {   
@@ -160,5 +162,10 @@ public class SecondBoss : Enemy
     public void TestInflic()
     {
         GetEntityCompo<Health>().ApplyDamage(50);
+    }
+
+    public void SetPortal()
+    {
+        portal.gameObject.SetActive(true);
     }
 }
