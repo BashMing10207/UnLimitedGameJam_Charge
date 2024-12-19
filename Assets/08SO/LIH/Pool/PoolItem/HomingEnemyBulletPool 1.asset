@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a521dac98c54e1eb4738b6d075aa816, type: 3}
   m_Name: HomingEnemyBulletPool 1
   m_EditorClassIdentifier: 
-  poolType: 4
+  poolType: 7
   prefab: {fileID: 4911851546177521202, guid: db6afadc32bb81449ae371ea9b827a75, type: 3}
   initCount: 15

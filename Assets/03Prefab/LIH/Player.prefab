@@ -897,7 +897,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5745647498535725116}
   - component: {fileID: 3937012898979883079}
-  - component: {fileID: 7743109892779279978}
   m_Layer: 6
   m_Name: PlayerWeaponHolder
   m_TagString: Untagged
@@ -1011,21 +1010,6 @@ MonoBehaviour:
   _minChargingValue: 10
   _chargingDelayTime: 0.5
   currentWeapon: {fileID: 6795604172505319246}
---- !u!114 &7743109892779279978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9110869209135092583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b82eac08f98bef499329f9db77462a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slowValue: 0.5
-  _duration: 0.4
-  _slowPowerMin: 50
 --- !u!1001 &3914558610327068466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1040,8 +1024,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1829517081116200836, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3028607353194621955, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: _bullet
+      value: 
+      objectReference: {fileID: 3559990087977567739, guid: 65876b3286555fd4683dd111b65f93e2, type: 3}
+    - target: {fileID: 3028607353194621955, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: _maxSize
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028607353194621955, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: _particleMaxSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028607353194621955, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: _playerMuzzleEffect
+      value: 
+      objectReference: {fileID: -3855530709568660124, guid: 45cef6d08d2751444b10a6be7ce32e93, type: 3}
     - target: {fileID: 5321637510711600709, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8
@@ -1138,7 +1138,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1829517081116200836, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704666356674990178, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
+      propertyPath: _maxSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704666356674990178, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
+      propertyPath: _maxSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704666356674990178, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
+      propertyPath: _particleMaxSize
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6225506212967671946, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
       propertyPath: m_LocalPosition.x

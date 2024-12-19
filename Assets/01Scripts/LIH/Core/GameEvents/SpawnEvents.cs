@@ -16,6 +16,7 @@ public class BulletCreate : GameEvent
     public Vector2 dir;
     public float damage;
     public float speed = 1f;
+    public float size = 1f;
 }
 
 public class SmokeParticleCreate : GameEvent
