@@ -19,7 +19,7 @@ public class HitStop : MonoBehaviour
     IEnumerator HitStopRoutine()
     {
         Time.timeScale = hitTime;
-        yield return new WaitForSeconds(hitStopDuration);
+        yield return new WaitForSecondsRealtime(hitStopDuration);
         Time.timeScale = 1;
     }
     

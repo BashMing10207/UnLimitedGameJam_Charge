@@ -4,6 +4,9 @@ public static class SpawnEvents
 {
     public static BulletCreate BulletCreate = new BulletCreate();
     public static SmokeParticleCreate SmokeParticleCreate = new SmokeParticleCreate();
+    public static RockCreate RockCreate = new RockCreate();
+    public static ExplosionCreate ExplosionCreate = new ExplosionCreate();
+
 }
 
 public class BulletCreate : GameEvent
@@ -19,5 +22,18 @@ public class SmokeParticleCreate : GameEvent
 {
     public PoolType poolType ;
     public Vector2 position;
-    public Vector2 dir;
+}
+
+public class RockCreate : GameEvent
+{
+    public PoolType poolType ;
+    public Vector2 position;
+    public Vector2 direction;
+    public float fallTime;
+}
+
+public class ExplosionCreate : GameEvent
+{
+    public PoolType poolType ;
+    public Vector2 position;
 }

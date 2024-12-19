@@ -7,6 +7,7 @@ public class GolemHand : MonoBehaviour
     [SerializeField] private LayerMask whatIsTarget;
     [SerializeField] private BoxCollider2D _collider2D;
 
+    [SerializeField] private float damage;
 
     public void SetActiveCollider(float _activeTime)
     {
@@ -25,7 +26,7 @@ public class GolemHand : MonoBehaviour
         if ((whatIsTarget & (1 << other.gameObject.layer)) != 0)
         {
             other.TryGetComponent<IDamageable>(out IDamageable health);
-            print("플레이어 맞음");
+            health.ApplyDamage(damage);
         }
     }
 }
