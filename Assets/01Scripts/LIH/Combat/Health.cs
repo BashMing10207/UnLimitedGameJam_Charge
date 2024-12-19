@@ -111,7 +111,7 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
     
         evt.position = (Vector2)transform.position + Random.insideUnitCircle;
         evt.fontColor = Color.red;
-        evt.fontSize = Mathf.Clamp(1, 2, _damage);
+        evt.fontSize = Mathf.Clamp(0.4f, 1, _damage);
     
         _spawnEventChannel.RaiseEvent(evt);
     }
