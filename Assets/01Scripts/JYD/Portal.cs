@@ -48,7 +48,7 @@ public class Portal : MonoBehaviour
         {
             fade.DOFade(1,0.7f).OnComplete(() =>
             {
-                //SceneManager.LoadScene(nextSceneName)
+                SceneManager.LoadScene(nextSceneName);
             });
         }
     }
