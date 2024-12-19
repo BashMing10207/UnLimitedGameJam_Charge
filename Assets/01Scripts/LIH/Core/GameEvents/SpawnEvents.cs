@@ -6,7 +6,7 @@ public static class SpawnEvents
     public static SmokeParticleCreate SmokeParticleCreate = new SmokeParticleCreate();
     public static RockCreate RockCreate = new RockCreate();
     public static ExplosionCreate ExplosionCreate = new ExplosionCreate();
-
+    public static TextCreate TextCreateEvent = new TextCreate();
 }
 
 public class BulletCreate : GameEvent
@@ -37,4 +37,13 @@ public class ExplosionCreate : GameEvent
 {
     public PoolType poolType ;
     public Vector2 position;
+}
+
+public class TextCreate : GameEvent
+{
+    public PoolType poolType;
+    public Vector3 position;
+    public string value;
+    public float fontSize;
+    public Color fontColor;
 }

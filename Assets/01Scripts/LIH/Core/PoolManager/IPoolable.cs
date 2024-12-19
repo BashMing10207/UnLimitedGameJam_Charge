@@ -10,7 +10,8 @@ public enum PoolType
     Rock,
     Particle,
     EnemyHomingBullet,
-    EnemyFastBullet
+    EnemyFastBullet,
+    PopUpText,
 }
 
 public interface IPoolable

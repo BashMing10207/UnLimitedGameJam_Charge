@@ -2,9 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitable
 {
+    [SerializeField] private GameEventChannelSO _spawnEventChannel;
+    
     [SerializeField] private StatSO _healthStat;
     private float _maxHealth;
     private float _currentHealth;
@@ -59,6 +62,15 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
             OnInvincibilityEvent?.Invoke();
             return;
         }
+
+        var evt = SpawnEvents.TextCreateEvent;
+        evt.poolType = PoolType.PopUpText;
+        evt.value = damage.ToString("0");
+        evt.position = (Vector2)transform.position + Random.insideUnitCircle;
+        evt.fontColor = Color.red;
+        evt.fontSize = Mathf.Clamp(1, 2, _damage);
+
+        _spawnEventChannel.RaiseEvent(evt);
         
         _damage = damage;
         _currentHealth = Mathf.Clamp(_currentHealth - damage, 0, _maxHealth);

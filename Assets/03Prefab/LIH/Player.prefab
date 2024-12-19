@@ -668,6 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c161c621fe40472bbc2565489517956b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnEventChannel: {fileID: 11400000, guid: 6944cce5058946943ac30c78e150d1b4, type: 2}
   _healthStat: {fileID: 11400000, guid: c6bebaea503719749b5f5870c30e6e06, type: 2}
   OnHit:
     m_PersistentCalls:
