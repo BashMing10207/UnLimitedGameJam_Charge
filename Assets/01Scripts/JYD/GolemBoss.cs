@@ -1,9 +1,6 @@
 using System.Collections;
-using DG.Tweening;
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(CinemachineImpulseSource))]
 public class GolemBoss : Entity
@@ -14,7 +11,7 @@ public class GolemBoss : Entity
 
     [SerializeField] private Transform leftSolder;
     [SerializeField] private Transform rightSolder;
-    
+
     [Space]
     
     [SerializeField] private GameEventChannelSO SpawnChanel;
@@ -31,10 +28,16 @@ public class GolemBoss : Entity
     
     private bool isLeftHandMoving;
     private bool isRightHandMoving;
+
+    private GolemHand leftHandCompo;
+    private GolemHand rightHandCompo;
     
     private void Start()
     {
         ImpulseSource = GetComponent<CinemachineImpulseSource>();
+        
+        leftHandCompo = leftHand.GetComponent<GolemHand>();
+        rightHandCompo = rightHand.GetComponent<GolemHand>();
     }
 
     #region Bullet
@@ -157,6 +160,7 @@ public class GolemBoss : Entity
         yield return new WaitForSeconds(0.3f);
         
         yield return StartCoroutine(MoveToPosition(leftHand, strikeTarget, _downSpeed));
+        leftHandCompo.SetActiveCollider(0.3f);
         PlayImpacts(strikeTarget);
         yield return new WaitForSeconds(0.4f);
     
@@ -177,8 +181,9 @@ public class GolemBoss : Entity
         yield return StartCoroutine(MoveToPosition(rightHand, liftTarget, _speed));
         
         yield return new WaitForSeconds(0.3f);
-    
+        
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
+        rightHandCompo.SetActiveCollider(0.3f);
         PlayImpacts(strikeTarget);
         yield return new WaitForSeconds(0.4f);
         
@@ -221,6 +226,8 @@ public class GolemBoss : Entity
         yield return rightMove;
 
         PlayImpacts(leftHand.position);
+        leftHandCompo.SetActiveCollider(0.2f);
+        rightHandCompo.SetActiveCollider(0.2f);
         
         yield return new WaitForSeconds(0.15f);
         
@@ -295,7 +302,7 @@ public class GolemBoss : Entity
     private void PlayImpacts(Vector3 _pos)
     {
         ShakeCamera(2);
-
+        
         impactParticle.transform.position = _pos;
         
         impactParticle.Simulate(0);
@@ -306,6 +313,9 @@ public class GolemBoss : Entity
     {
         leftLaser.gameObject.SetActive(isActive);
         rightLaser.gameObject.SetActive(isActive);
+        
+       
+        
     }
     
     
