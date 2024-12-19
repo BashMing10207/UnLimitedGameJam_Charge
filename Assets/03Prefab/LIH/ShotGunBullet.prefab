@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5583430653186301336}
   - component: {fileID: 3158702842138421919}
   m_Layer: 7
-  m_Name: PlayerBullet
+  m_Name: ShotGunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trail: {fileID: 3738361170782467865}
-  _maxWidth: 2
+  _maxWidth: 0.6
   _maxWidthPower: 100
 --- !u!1 &7274914345019908897
 GameObject:
