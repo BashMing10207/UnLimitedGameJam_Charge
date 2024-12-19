@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class SecondBoss : Enemy
@@ -18,6 +20,11 @@ public class SecondBoss : Enemy
     [SerializeField]
     private SpriteRenderer _spriteRenderer;
     private bool _isFilpable=true;
+    [SerializeField]
+    private StatSO _healthSO;
+
+    public UnityEvent PostPage2;
+    public UnityEvent Page2Start;
     //private StatModifierSO _dashSpeed;
     protected override void Awake()
     {   
@@ -67,6 +74,18 @@ public class SecondBoss : Enemy
         }
     }
 
+
+    private void OnPostPage2()
+    {
+        PostPage2?.Invoke();
+        
+    }
+
+    public void Page2StartEventExcuter()
+    {
+        Page2Start?.Invoke();
+    }
+
     // 이 아래는 애니메이션 트리거 날먹
     public void DashAttack()
     {
@@ -83,5 +102,25 @@ public class SecondBoss : Enemy
     {
         GetEntityCompo<EnemyFSM>().StateEnd();
         //_isFilpable = true;
+    }
+
+    //이 아래는 이벤트 날먹...
+    public void IsPage2(float damage)
+    {
+        if (GetEntityCompo<Health>().GetCurrentHealth() <= GetEntityCompo<EntityStat>().GetStat(_healthSO).BaseValue/2)
+        {
+            OnPostPage2();
+        }
+    }
+
+    public void Page2Anim()
+    {
+        GetComponentInChildren<Animator>().SetTrigger("Page2");
+    }
+
+    [ContextMenu("testDamage")]
+    public void TestInflic()
+    {
+        GetEntityCompo<Health>().ApplyDamage(50);
     }
 }

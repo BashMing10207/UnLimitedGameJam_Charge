@@ -22,6 +22,8 @@ public class SecondBossMinian : Enemy
     private Transform _firePos;
     [SerializeField]
     private GameEventChannelSO _spawnChanel;
+    [SerializeField]
+    private float _attackCoolDown = 3f;
     //private StatModifierSO _dashSpeed;
     protected override void Awake()
     {
@@ -71,7 +73,7 @@ public class SecondBossMinian : Enemy
         var fsm = GetEntityCompo<EnemyFSM>();
         while (true)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(_attackCoolDown);
             fsm.SetState(_attack);
         }
     }
