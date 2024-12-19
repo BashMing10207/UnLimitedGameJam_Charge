@@ -5,6 +5,9 @@ public class ShotGunWeapon : Weapon
     [SerializeField] private float _oneBulletPower;
     [SerializeField] private float _spreadValue;
     
+    [SerializeField] private float _maxSize = 1.25f;
+    [SerializeField] private float _maxSpeed = 3f;
+
     public override void Charging(float chargingTime, float chargingSpeed)
     {
         base.Charging(chargingTime,chargingSpeed);
@@ -29,6 +32,13 @@ public class ShotGunWeapon : Weapon
             evt.speed = Random.Range(1f, 1.5f);
             evt.dir = dir.normalized;
             evt.position = _fireTrm.position;
+            
+            float sizet = Mathf.InverseLerp(0, 100f, power);
+            evt.size = Mathf.Lerp(1f, _maxSize, sizet);
+        
+            float speed = Mathf.InverseLerp(0, 100f, power);
+            evt.speed = Mathf.Lerp(1f, _maxSpeed, speed);
+            
             _spawnChannel.RaiseEvent(evt);
         }
         base.Fire(power);

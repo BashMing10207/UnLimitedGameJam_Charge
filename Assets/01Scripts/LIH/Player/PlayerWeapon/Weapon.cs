@@ -50,7 +50,7 @@ public abstract class Weapon : MonoBehaviour
             _currentEmisiion.transform.SetParent(transform);
         }
 
-        float inverseLerp = Mathf.InverseLerp(0, 3f, chargingTime);
+        float inverseLerp = Mathf.InverseLerp(0, 7f, chargingTime);
         float size = Mathf.Lerp(0.1f, _particleMaxSize, inverseLerp);
         _currentEmisiion.transform.localScale = new Vector3(size, size, size);
         _currentEmisiion.ChangeEmission(size);

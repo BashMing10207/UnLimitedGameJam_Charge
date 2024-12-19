@@ -25,6 +25,7 @@ public class BulletSpawner : MonoBehaviour
     {
         Bullet bullet = _poolManager.Pop(evt._bulletType) as Bullet;
         bullet.transform.position = evt.position;
+        bullet.transform.localScale = Vector3.one * evt.size; 
         bullet.Shoot(evt.dir, evt.damage, evt.speed);
     }
 
