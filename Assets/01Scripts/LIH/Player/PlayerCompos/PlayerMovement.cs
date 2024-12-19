@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour, IPlayerCompo
 {
-    [FormerlySerializedAs("_dashEvent")] public UnityEvent<float, float> _dashCoolEvent;
+    public UnityEvent<float, float> _dashCoolEvent;
     
     [Header("Stat")]
     [SerializeField] private StatSO _moveSpeedStat;
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         _moveSpeed = _statCompo.GetStat(_moveSpeedStat).Value;
         _dashSpeed = _statCompo.GetStat(_dashSpeedStat).Value;
         _dashCoolTime = _statCompo.GetStat(_dashCoolStat).Value;
-        
+
         _player.PlayerInput.DashEvent += HandleDashEvent;
         _playerWeaponController.chargingEvent.AddListener(HandleSetChargingSpeed);
         _playerWeaponController.fireEvent.AddListener(HandleResetChargingSpeed);

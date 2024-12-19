@@ -22,8 +22,6 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     private PlayerInputSO _playerInput;
     private PlayerRender _playerRender;
     
-    private EntityStat _statCompo;
-
     private Vector2 _lookDir;
     private bool _isChargingStart;
 
@@ -38,7 +36,6 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
         _player = player;
         _playerInput = player.PlayerInput;
         _playerRender = player.GetPlayerCompo<PlayerRender>();
-        _statCompo = player.GetEntityCompo<EntityStat>();
 
         currentWeapon.SetOwner(_player);
         fireEvent.AddListener(currentWeapon.Fire);
