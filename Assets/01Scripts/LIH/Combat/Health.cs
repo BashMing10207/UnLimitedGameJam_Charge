@@ -24,7 +24,10 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
     private void Update()
     {
         if (Keyboard.current.nKey.wasPressedThisFrame)
+        {
             ApplyDamage(3f);
+            Debug.Log(_currentHealth);
+        }
     }
 
     public void Initialize(Entity entity)

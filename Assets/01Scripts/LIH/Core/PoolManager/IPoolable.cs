@@ -5,6 +5,9 @@ public enum PoolType
     PlayerBullet,
     EnemyBullet,
     SoundPlayer,
+    ImpactParticle,
+    ExplosionParticle,
+    Rock,
     Particle,
     EnemyHomingBullet,
     EnemyFastBullet

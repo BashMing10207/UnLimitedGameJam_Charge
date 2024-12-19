@@ -48,8 +48,8 @@ public abstract class Bullet : MonoBehaviour, IPoolable
             if (root.TryGetComponent(out IDamageable health))
             {
                 health.ApplyDamage(_power);
+                _myPool.Push(this);
             }
-            _myPool.Push(this);
         }
     }
 
