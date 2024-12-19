@@ -7,7 +7,7 @@ public enum PoolType
     SoundPlayer,
     ImpactParticle,
     ExplosionParticle,
-    Rock
+    Rock,
     Particle,
     EnemyHomingBullet,
     EnemyFastBullet
