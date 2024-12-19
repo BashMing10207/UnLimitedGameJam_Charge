@@ -4845,7 +4845,6 @@ GameObject:
   - component: {fileID: 6991691344842775800}
   - component: {fileID: 9182794759490993154}
   - component: {fileID: 4524776481243551233}
-  - component: {fileID: 380333282006363356}
   - component: {fileID: 4463772546962356378}
   - component: {fileID: 547159994289562303}
   m_Layer: 7
@@ -4989,24 +4988,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.4
---- !u!114 &380333282006363356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4911851546177521202}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a230c76231b4f0408401a31db7dcd66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _poolType: 1
-  _lifeTime: 8
-  _defaultBulletSpeed: 25
-  whatIsTarget:
-    serializedVersion: 2
-    m_Bits: 192
 --- !u!114 &4463772546962356378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5019,12 +5000,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0149ab55b19db254ab42a4eef4a32f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolType: 4
+  _poolType: 7
   _lifeTime: 8
   _defaultBulletSpeed: 1
   whatIsTarget:
     serializedVersion: 2
-    m_Bits: 193
+    m_Bits: 64
+  BulletInit:
+    m_PersistentCalls:
+      m_Calls: []
+  fireAudio: {fileID: 0}
+  soundChannelSo: {fileID: 0}
   _playerManager: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
   _homingPower: 0
 --- !u!95 &547159994289562303

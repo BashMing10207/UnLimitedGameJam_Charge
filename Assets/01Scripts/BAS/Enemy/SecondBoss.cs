@@ -168,4 +168,24 @@ public class SecondBoss : Enemy
     {
         portal.gameObject.SetActive(true);
     }
+
+    public Animator Animator;
+    [SerializeField] private GameEventChannelSO _channelSo;
+    [SerializeField] private EnemyMovement _enemyMovement;
+    
+    public void SetDead()
+    {
+        Animator.enabled = false;
+        _enemyMovement.enabled = false;
+        this.enabled = false;
+        
+        for (int i = 0; i < 5; i++)
+        {
+            var ex = SpawnEvents.ExplosionCreate;
+            ex.position = transform.position;
+            ex.poolType = PoolType.ExplosionParticle;
+            
+            _channelSo.RaiseEvent(ex);
+        }
+    }
 }
