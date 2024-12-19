@@ -17841,10 +17841,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 8341269987227250967, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8965503902422697842, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

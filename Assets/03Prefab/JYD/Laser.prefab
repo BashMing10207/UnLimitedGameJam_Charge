@@ -4886,7 +4886,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 836811857
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9720,7 +9720,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 836811857
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_RenderMode: 5
   m_MeshDistribution: 0
@@ -9809,7 +9809,7 @@ MonoBehaviour:
   _laserBody: {fileID: 1156221955624438765}
   _laserHit: {fileID: 4291676570903792974}
   originSizeX: 0.1
-  originSizeX: 0
+  coreSprite: {fileID: 0}
 --- !u!199 &7362193059134142538
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -24369,7 +24369,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 836811857
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
