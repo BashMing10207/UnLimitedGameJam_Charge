@@ -213,7 +213,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 3640860587419563608, guid: f21e59dc31ab9214191f4723d1b9d288, type: 3}
-  m_Color: {r: 0.74840534, g: 0.32133323, b: 0.7830189, a: 0}
+  m_Color: {r: 0.11764706, g: 0.023529412, b: 0.52156866, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
   nextSceneName: Menu
   text: {fileID: 3172126835509238946}
   isEffect: 1
-  portal: {fileID: 4142581850844036019}
+  portal: {fileID: 2202304272821116507}
   fade: {fileID: 0}
 --- !u!58 &2697920353429382773
 CircleCollider2D:
