@@ -86,7 +86,8 @@ public class GolemBoss : Entity
             evt.position = _firePos.position;
             evt.dir = bulletMoveDirection;
             evt._bulletType = PoolType.EnemyBullet;
-            evt.damage = 10;
+            evt.damage = 5;
+            evt.speed = 0.5f;
             
             SpawnChanel.RaiseEvent(evt);
             
@@ -114,7 +115,8 @@ public class GolemBoss : Entity
             evt.position = _firePos.position;
             evt.dir = bulletMoveDirection;
             evt._bulletType = PoolType.EnemyBullet;
-            evt.damage = 30;
+            evt.damage = 5;
+            evt.speed = 0.5f;
             
             SpawnChanel.RaiseEvent(evt);
             
@@ -360,6 +362,7 @@ public class GolemBoss : Entity
         var evt = SpawnEvents.SmokeParticleCreate;
         evt.position = _pos + new Vector3(0,-1.5f,0);
         evt.poolType = PoolType.ImpactParticle;
+        
         
         SpawnChanel.RaiseEvent(evt);
         

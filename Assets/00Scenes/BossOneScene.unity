@@ -11967,6 +11967,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1231882925929573877, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231882925929573877, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231882925929573877, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2032805799649827635, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -11982,6 +11994,18 @@ PrefabInstance:
     - target: {fileID: 6012751077543140762, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
       propertyPath: m_Name
       value: InGameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380270511079187239, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380270511079187239, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380270511079187239, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17098,9 +17122,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4751940564771460975, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5638670453060161118, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192953646832142065, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8458409845888390399, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: portal
@@ -17145,6 +17177,10 @@ PrefabInstance:
     - target: {fileID: 8965503902422697842, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037722684579950279, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: _statOverrides.Array.data[0]._overrideValue
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

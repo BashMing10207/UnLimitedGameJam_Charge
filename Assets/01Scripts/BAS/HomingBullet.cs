@@ -6,6 +6,9 @@ public class HomingBullet : EnemyBullet
     private PlayerManagerSO _playerManager;
     [SerializeField]
     private float _homingPower = 1f;
+    
+    
+    
     private void FixedUpdate()
     {
         _rigidbody2D.AddForce((_playerManager.PlayerTrm.position - transform.position).normalized * _homingPower, ForceMode2D.Impulse);

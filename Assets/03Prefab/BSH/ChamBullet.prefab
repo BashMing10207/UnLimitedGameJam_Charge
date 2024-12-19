@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8568443657021733443}
   - component: {fileID: 2992713712314028072}
   - component: {fileID: 6335956425739994832}
-  - component: {fileID: 2794206772403054287}
   - component: {fileID: 222924677722676591}
   - component: {fileID: 3292116247545744492}
   - component: {fileID: 8239927631579043408}
@@ -120,29 +119,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &2794206772403054287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796644235908449852}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a230c76231b4f0408401a31db7dcd66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _poolType: 1
-  _lifeTime: 8
-  _defaultBulletSpeed: 25
-  whatIsTarget:
-    serializedVersion: 2
-    m_Bits: 192
-  BulletInit:
-    m_PersistentCalls:
-      m_Calls: []
-  fireAudio: {fileID: 0}
-  soundChannelSo: {fileID: 0}
 --- !u!114 &222924677722676591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,12 +131,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0149ab55b19db254ab42a4eef4a32f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolType: 4
+  _poolType: 8
   _lifeTime: 1.8
   _defaultBulletSpeed: 2.5
   whatIsTarget:
     serializedVersion: 2
-    m_Bits: 193
+    m_Bits: 64
   BulletInit:
     m_PersistentCalls:
       m_Calls: []
