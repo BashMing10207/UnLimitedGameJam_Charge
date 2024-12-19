@@ -46,17 +46,17 @@ TagManager:
   - name: Entity
     uniqueID: 817031933
     locked: 0
+  - name: Core
+    uniqueID: 766097559
+    locked: 0
   - name: Gun
     uniqueID: 980112813
     locked: 0
   - name: Effect
     uniqueID: 360931705
     locked: 0
-  - name: UI
-    uniqueID: 2325622279
-    locked: 0
   - name: Player
-    uniqueID: 836811857
+    uniqueID: 854918179
     locked: 0
   m_RenderingLayers:
   - Default
