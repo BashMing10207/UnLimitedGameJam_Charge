@@ -78,7 +78,7 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     {
         _lookDir = _player.LookDir();
         float z = Mathf.Atan2(_lookDir.y, _lookDir.x) * Mathf.Rad2Deg;
-        Debug.Log(z);
+        //Debug.Log(z);
         if (_playerRender.FacingDirection <= 0f)
             z = -z + 180f;
         

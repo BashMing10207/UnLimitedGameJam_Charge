@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fbff41a594600924ea14edd4e5e0894c, type: 2}
+  - {fileID: 2100000, guid: 11b0146b109d3cd4482822e887ae3db9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 980112813
-  m_SortingLayer: 3
-  m_SortingOrder: 2
+  m_SortingLayerID: 854918179
+  m_SortingLayer: 5
+  m_SortingOrder: 100
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4885,9 +4885,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 836811857
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 854918179
+  m_SortingLayer: 5
+  m_SortingOrder: 101
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9719,9 +9719,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 836811857
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 854918179
+  m_SortingLayer: 5
+  m_SortingOrder: 101
   m_RenderMode: 5
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9804,9 +9804,9 @@ MonoBehaviour:
   _whatisTarget:
     serializedVersion: 2
     m_Bits: 64
-  _laserBody: {fileID: 1156221955624438765}
+  _laserBody: {fileID: 4510766196078834608}
   _laserHit: {fileID: 4291676570903792974}
-  originSizeX: 0.1
+  originSizeX: 1
   coreSprite: {fileID: 0}
 --- !u!1 &7036804662670549400
 GameObject:
@@ -9834,7 +9834,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1156221955624438765}
