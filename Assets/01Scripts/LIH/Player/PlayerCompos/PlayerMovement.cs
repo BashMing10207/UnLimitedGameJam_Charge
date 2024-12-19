@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class PlayerMovement : MonoBehaviour, IPlayerCompo, IAfterInitable
+public class PlayerMovement : MonoBehaviour, IPlayerCompo
 {
     public UnityEvent<float, float> _dashCoolEvent;
     
@@ -53,18 +53,15 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo, IAfterInitable
         _statCompo = _player.GetEntityCompo<EntityStat>();
         _playerRender = player.GetPlayerCompo<PlayerRender>();
         _health = player.GetEntityCompo<Health>();
+        
+        _moveSpeed = _statCompo.GetStat(_moveSpeedStat).Value;
+        _dashSpeed = _statCompo.GetStat(_dashSpeedStat).Value;
+        _dashCoolTime = _statCompo.GetStat(_dashCoolStat).Value;
 
         _player.PlayerInput.DashEvent += HandleDashEvent;
         _playerWeaponController.chargingEvent.AddListener(HandleSetChargingSpeed);
         _playerWeaponController.fireEvent.AddListener(HandleResetChargingSpeed);
         _playerWeaponController.resetEvent.AddListener(ResetCharging);
-    }
-    
-    public void AfterInit()
-    {
-        _moveSpeed = _statCompo.GetStat(_moveSpeedStat).Value;
-        _dashSpeed = _statCompo.GetStat(_dashSpeedStat).Value;
-        _dashCoolTime = _statCompo.GetStat(_dashCoolStat).Value;
     }
 
     private void OnDestroy()
