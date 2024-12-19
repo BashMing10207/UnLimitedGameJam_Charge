@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 1240496425826831781}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.07, y: 0.133, z: 0}
-  m_LocalScale: {x: 1, y: 10, z: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 920519146665026928}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 854918179
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 100
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4887,7 +4887,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 854918179
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 101
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9721,7 +9721,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 854918179
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 101
   m_RenderMode: 5
   m_MeshDistribution: 0
@@ -9808,6 +9808,7 @@ MonoBehaviour:
   _laserHit: {fileID: 4291676570903792974}
   originSizeX: 1
   coreSprite: {fileID: 0}
+  damage: 5
   _laserCover: {fileID: 2092484128719754632}
 --- !u!1 &7036804662670549400
 GameObject:
