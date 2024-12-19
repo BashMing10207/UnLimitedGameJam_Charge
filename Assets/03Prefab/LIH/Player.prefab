@@ -171,7 +171,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 854918179
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 159929021, guid: 552b0f28a585cd5468447308980f164f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -623,6 +623,8 @@ MonoBehaviour:
   dashType: 1
   _playerManagerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: 7961c0b96d71ad746aa01b380295824b, type: 2}
+  _soundChannelSo: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
+  _hitSound: {fileID: 11400000, guid: 9ef7abd0b1c295e4b8478ebabf015751, type: 2}
 --- !u!114 &9019860469428591133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,10 +640,13 @@ MonoBehaviour:
   _dashCoolEvent:
     m_PersistentCalls:
       m_Calls: []
+  _soundChannelSo: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
+  _dashSound: {fileID: 11400000, guid: e03ad4243c0d67f4d90236dc1932f1fd, type: 2}
   _moveSpeedStat: {fileID: 11400000, guid: 505ee74f875bf374ba48fdab976a7355, type: 2}
   _dashSpeedStat: {fileID: 11400000, guid: ba023ed7b49a8744ca30686b3093033a, type: 2}
   _dashCoolStat: {fileID: 11400000, guid: 2e6dce52016d8af4bbdc841a9831b9b1, type: 2}
   _dashTime: 0.3
+  _dashInvincibilityTime: 0.2
   _knockBackTime: 0.2
   _applyKnockBackMaxPower: 15
   _maxKnockBackChargingValue: 50
@@ -667,6 +672,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8325619383609594194}
         m_TargetAssemblyTypeName: FeedbackPlayer, Assembly-CSharp
         m_MethodName: PlayFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 400182491908706482}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: HitSoundPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -880,7 +897,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5745647498535725116}
   - component: {fileID: 3937012898979883079}
-  - component: {fileID: 7743109892779279978}
   m_Layer: 6
   m_Name: PlayerWeaponHolder
   m_TagString: Untagged
@@ -897,7 +913,7 @@ Transform:
   m_GameObject: {fileID: 9110869209135092583}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -917,6 +933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27413610620e1e42b8d7ccd7e29fac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundChannelSo: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
+  _shotSound: {fileID: 11400000, guid: 92f80e10b4a21714ca7fb0571a971b90, type: 2}
+  _chargingSound: {fileID: 11400000, guid: 365e1373ad5b2424784f202cbebf267a, type: 2}
   chargingEvent:
     m_PersistentCalls:
       m_Calls:
@@ -991,21 +1010,6 @@ MonoBehaviour:
   _minChargingValue: 10
   _chargingDelayTime: 0.5
   currentWeapon: {fileID: 6795604172505319246}
---- !u!114 &7743109892779279978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9110869209135092583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b82eac08f98bef499329f9db77462a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slowValue: 0.5
-  _duration: 0.4
-  _slowPowerMin: 50
 --- !u!1001 &3914558610327068466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1022,13 +1026,41 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3028607353194621955, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: _maxSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028607353194621955, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: _particleMaxSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321637510711600709, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321637510711600709, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225506212967671946, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225506212967671946, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225506212967671946, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6225506212967671946, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 6225506212967671946, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.45300007
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 6225506212967671946, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1061,6 +1093,18 @@ PrefabInstance:
     - target: {fileID: 6225506212967671946, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225506212967671946, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018232785350671802, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018232785350671802, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 980112813
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1088,13 +1132,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2704666356674990178, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
+      propertyPath: _maxSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704666356674990178, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
+      propertyPath: _maxSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704666356674990178, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
+      propertyPath: _particleMaxSize
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6225506212967671946, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6225506212967671946, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.453
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: 6225506212967671946, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1127,6 +1183,10 @@ PrefabInstance:
     - target: {fileID: 6225506212967671946, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225506212967671946, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

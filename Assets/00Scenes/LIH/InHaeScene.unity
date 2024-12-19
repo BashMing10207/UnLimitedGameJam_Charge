@@ -2605,7 +2605,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 8
+    OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -11902,7 +11902,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -12013,6 +12013,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1231882925929573877, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231882925929573877, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1231882925929573877, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2032805799649827635, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -12028,6 +12040,18 @@ PrefabInstance:
     - target: {fileID: 6012751077543140762, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
       propertyPath: m_Name
       value: InGameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380270511079187239, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380270511079187239, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380270511079187239, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17721,6 +17745,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2041406097833653041, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: _maxSize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2104282569732724808, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.14
@@ -17764,10 +17792,6 @@ PrefabInstance:
     - target: {fileID: 6806739803688944786, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9019860469428591133, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
-      propertyPath: _dashInvincibilityTime
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17843,12 +17867,12 @@ SceneRoots:
   - {fileID: 1608829469}
   - {fileID: 1268974993}
   - {fileID: 666771816}
-  - {fileID: 7237002504775245578}
   - {fileID: 1013204749}
   - {fileID: 367919855}
   - {fileID: 1022312837}
   - {fileID: 959264302}
   - {fileID: 1324886388}
+  - {fileID: 7237002504775245578}
   - {fileID: 7213253369593065535}
   - {fileID: 1868641985}
   - {fileID: 1663306856}

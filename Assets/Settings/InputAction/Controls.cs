@@ -62,6 +62,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Equit1"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd60a74f-e546-491c-8a7b-912509baf529"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Equit2"",
+                    ""type"": ""Button"",
+                    ""id"": ""36cb89f8-f359-440a-8484-6690c99d7a76"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -293,6 +311,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouseMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b93b3ef2-1047-4a90-8f7a-bd7b46f5591e"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Equit1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38c68d95-2852-4c7a-9cc6-e89269df8441"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Equit2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -904,6 +944,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_MouseMove = m_Player.FindAction("MouseMove", throwIfNotFound: true);
+        m_Player_Equit1 = m_Player.FindAction("Equit1", throwIfNotFound: true);
+        m_Player_Equit2 = m_Player.FindAction("Equit2", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -988,6 +1030,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_MouseMove;
+    private readonly InputAction m_Player_Equit1;
+    private readonly InputAction m_Player_Equit2;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -996,6 +1040,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @MouseMove => m_Wrapper.m_Player_MouseMove;
+        public InputAction @Equit1 => m_Wrapper.m_Player_Equit1;
+        public InputAction @Equit2 => m_Wrapper.m_Player_Equit2;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1017,6 +1063,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @MouseMove.started += instance.OnMouseMove;
             @MouseMove.performed += instance.OnMouseMove;
             @MouseMove.canceled += instance.OnMouseMove;
+            @Equit1.started += instance.OnEquit1;
+            @Equit1.performed += instance.OnEquit1;
+            @Equit1.canceled += instance.OnEquit1;
+            @Equit2.started += instance.OnEquit2;
+            @Equit2.performed += instance.OnEquit2;
+            @Equit2.canceled += instance.OnEquit2;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1033,6 +1085,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @MouseMove.started -= instance.OnMouseMove;
             @MouseMove.performed -= instance.OnMouseMove;
             @MouseMove.canceled -= instance.OnMouseMove;
+            @Equit1.started -= instance.OnEquit1;
+            @Equit1.performed -= instance.OnEquit1;
+            @Equit1.canceled -= instance.OnEquit1;
+            @Equit2.started -= instance.OnEquit2;
+            @Equit2.performed -= instance.OnEquit2;
+            @Equit2.canceled -= instance.OnEquit2;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1227,6 +1285,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnMouseMove(InputAction.CallbackContext context);
+        void OnEquit1(InputAction.CallbackContext context);
+        void OnEquit2(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

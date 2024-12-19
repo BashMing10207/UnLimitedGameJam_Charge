@@ -15,16 +15,16 @@ public partial class CircleShotAction : Action
     [SerializeReference] public BlackboardVariable<GolemBoss> Golem;
     
     [SerializeReference] public BlackboardVariable<bool> IsLeft;
-    
+    [SerializeReference] public BlackboardVariable<Pattern> pattern;
     protected override Status OnStart()
     {
         if (IsLeft.Value)
         {
-            Golem.Value.TakeDownLeftAndCircleShot(BulletCount.Value,Speed.Value , DownSpeed.Value);
+            Golem.Value.TakeDownLeftAndCircleShot(BulletCount.Value,Speed.Value , DownSpeed.Value,pattern.Value);
         }
         else
         {
-            Golem.Value.TakeDownRightAndCircleShot(BulletCount.Value,Speed.Value , DownSpeed.Value);
+            Golem.Value.TakeDownRightAndCircleShot(BulletCount.Value,Speed.Value , DownSpeed.Value , pattern.Value);
         }
         
         return Status.Success;

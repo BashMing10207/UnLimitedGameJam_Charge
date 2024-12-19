@@ -16,6 +16,10 @@ public class Player : Entity
     [field: SerializeField] public PlayerInputSO PlayerInput { get; set; }
 
     private Dictionary<Type, IPlayerCompo> _playerCompos;
+    
+    [Header("Sound")]
+    [SerializeField] private GameEventChannelSO _soundChannelSo;
+    [SerializeField] private SoundSO _hitSound;
 
     protected override void Awake()
     {
@@ -49,4 +53,11 @@ public class Player : Entity
     }
 
     public Vector2 LookDir() => (PlayerInput.MousePos - (Vector2)transform.position).normalized;
+
+    public void HitSoundPlay()
+    {
+        var evt = SoundEvents.PlaySfxEvent;
+        evt.clipData = _hitSound;
+        _soundChannelSo.RaiseEvent(evt);
+    }
 }

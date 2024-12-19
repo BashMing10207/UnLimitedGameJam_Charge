@@ -2,6 +2,12 @@ using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 
+public enum Pattern
+{
+    Bullet,
+    Rock
+}
+
 [RequireComponent(typeof(CinemachineImpulseSource))]
 public class GolemBoss : Entity
 {
@@ -11,24 +17,29 @@ public class GolemBoss : Entity
 
     [SerializeField] private Transform leftSolder;
     [SerializeField] private Transform rightSolder;
-
+    
     [Space]
     
     [SerializeField] private GameEventChannelSO SpawnChanel;
     [SerializeField] private Transform TestTarget;
-
+    
     [SerializeField] private CinemachineImpulseSource ImpulseSource;
-
+    
     [SerializeField] private AnimationCurve handMoveCurve;
     
     [SerializeField] private Laser leftLaser;
     [SerializeField] private Laser rightLaser;
+
+    [SerializeField] private Vector2 minSize;
+    [SerializeField] private Vector2 maxSize;
     
     private bool isLeftHandMoving;
     private bool isRightHandMoving;
 
     private GolemHand leftHandCompo;
     private GolemHand rightHandCompo;
+
+    [Space] [SerializeField] private SoundSO golemBossHitClip;
     
     private void Start()
     {
@@ -142,7 +153,6 @@ public class GolemBoss : Entity
         StartCoroutine(TakDownRightHandRoutine(TestTarget, _speed, _downSpeed));
     }
     
-    
     private IEnumerator TakDownLeftHandRoutine(Transform _target,float _speed,float _downSpeed)
     {
         if(isLeftHandMoving) yield break;
@@ -159,9 +169,9 @@ public class GolemBoss : Entity
         
         yield return StartCoroutine(MoveToPosition(leftHand, strikeTarget, _downSpeed));
         leftHandCompo.SetActiveCollider(0.3f);
-        PlayImpacts(strikeTarget );
+        PlayImpacts(strikeTarget);
         yield return new WaitForSeconds(0.4f);
-    
+        
         yield return StartCoroutine(MoveToPosition(leftHand, originalPosition, _speed));
         
         isLeftHandMoving = false;
@@ -241,17 +251,17 @@ public class GolemBoss : Entity
         isRightHandMoving = false;
     }
     
-    public void TakeDownLeftAndCircleShot(int bulletCount, float _speed,float _downSpeed)
+    public void TakeDownLeftAndCircleShot(int bulletCount, float _speed,float _downSpeed,Pattern pattern)
     {
-        StartCoroutine(TakeDownLeftAndShootCoroutine(bulletCount, _speed,_downSpeed));
+        StartCoroutine(TakeDownLeftAndShootCoroutine(bulletCount, _speed,_downSpeed,pattern));
     }
     
-    public void TakeDownRightAndCircleShot(int bulletCount, float _speed,float _downSpeed)
+    public void TakeDownRightAndCircleShot(int bulletCount, float _speed,float _downSpeed,Pattern pattern)
     {
-        StartCoroutine(TakeDownRightAndShootCoroutine(bulletCount, _speed,_downSpeed));
+        StartCoroutine(TakeDownRightAndShootCoroutine(bulletCount, _speed,_downSpeed,pattern));
     }
 
-    private IEnumerator TakeDownLeftAndShootCoroutine(int bulletCount, float _speed,float _downSpeed)
+    private IEnumerator TakeDownLeftAndShootCoroutine(int bulletCount, float _speed,float _downSpeed,Pattern pattern)
     {
         Vector3 leftHandOriginPosition = leftHand.position;
         
@@ -259,10 +269,31 @@ public class GolemBoss : Entity
         yield return StartCoroutine(MoveToPosition(leftHand, leftHandOriginPosition, _downSpeed));
         PlayImpacts(leftHand.position );
         
-        ApplyCircleShot(leftHand, bulletCount);
+        if(pattern == Pattern.Bullet)
+            ApplyCircleShot(leftHand, bulletCount);
+        if (pattern == Pattern.Rock)
+            CreateRock(bulletCount);
     }
-    
-    private IEnumerator TakeDownRightAndShootCoroutine(int bulletCount, float _speed,float _downSpeed)
+
+    private void CreateRock(int rockCount)
+    {
+        for (int i = 0; i < rockCount; i++)
+        {
+            float randX = Random.Range(minSize.x, maxSize.x);
+            float randY = Random.Range(minSize.y, maxSize.y);
+
+            var evt = SpawnEvents.RockCreate;
+            evt.position = new Vector2(randX, 12); 
+            evt.poolType = PoolType.Rock;
+            evt.direction = new Vector2(randX, randY);
+            evt.fallTime = 1.5f;
+
+            SpawnChanel.RaiseEvent(evt);
+        }
+    }
+
+
+    private IEnumerator TakeDownRightAndShootCoroutine(int bulletCount, float _speed,float _downSpeed,Pattern pattern)
     {
         Vector3 rightHandOriginPosition = rightHand.position;
         
@@ -270,7 +301,10 @@ public class GolemBoss : Entity
         yield return StartCoroutine(MoveToPosition(rightHand, rightHandOriginPosition, _downSpeed));
         PlayImpacts(leftHand.position );
         
-        ApplyCircleShot(rightHand, bulletCount);
+        if(pattern == Pattern.Bullet)
+            ApplyCircleShot(rightHand, bulletCount);
+        if(pattern == Pattern.Rock)
+            CreateRock(bulletCount);
     }
     #endregion
     
@@ -302,10 +336,14 @@ public class GolemBoss : Entity
     private void PlayImpacts(Vector3 _pos)
     {
         ShakeCamera(2);
-        
+
+        var soundEvt = SoundEvents.PlaySfxEvent;
+        soundEvt.clipData = golemBossHitClip;
+        SpawnChanel.RaiseEvent(soundEvt);
+                
         var evt = SpawnEvents.SmokeParticleCreate;
         evt.position = _pos + new Vector3(0,-1.5f,0);
-        evt.poolType = PoolType.Particle;
+        evt.poolType = PoolType.ImpactParticle;
         
         SpawnChanel.RaiseEvent(evt);
     }
@@ -314,10 +352,5 @@ public class GolemBoss : Entity
     {
         leftLaser.gameObject.SetActive(isActive);
         rightLaser.gameObject.SetActive(isActive);
-        
-       
-        
     }
-    
-    
 }

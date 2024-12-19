@@ -12,7 +12,7 @@ public class VolumeManager : MonoBehaviour
     private bool _isBlooding;
     private Color _vignetteDefaultColor;
     private float _defaultVignetteIntensity;
-
+    
     private void Awake()
     {
         _volume = GetComponent<Volume>();

@@ -10,6 +10,7 @@ public class PlayerInputSO : ScriptableObject, Controls.IPlayerActions, Controls
     public event Action<Vector2> MouseMoveEvent;
     public event Action OpenMenuEvent;
     public event Action<bool> MovementEvent;
+    public event Action<int> SlotChangeEvent;
     
     public Vector2 InputDirection { get; private set; }
     public Vector2 MousePos { get; private set; }
@@ -64,6 +65,18 @@ public class PlayerInputSO : ScriptableObject, Controls.IPlayerActions, Controls
         
         if (context.performed)
             MouseMoveEvent?.Invoke(MousePos);
+    }
+
+    public void OnEquit1(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            SlotChangeEvent?.Invoke(0);
+    }
+
+    public void OnEquit2(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            SlotChangeEvent?.Invoke(1);
     }
 
     public void OnOpenMenu(InputAction.CallbackContext context)

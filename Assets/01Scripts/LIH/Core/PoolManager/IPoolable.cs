@@ -5,7 +5,12 @@ public enum PoolType
     PlayerBullet,
     EnemyBullet,
     SoundPlayer,
-    Particle
+    ImpactParticle,
+    ExplosionParticle,
+    Rock,
+    Particle,
+    EnemyHomingBullet,
+    EnemyFastBullet
 }
 
 public interface IPoolable
