@@ -29,6 +29,8 @@ public class PlayerAnimator : MonoBehaviour, IPlayerCompo
 
     private void Update()
     {
+        if(isDead)return;
+        
         if (_rigidbody2D.linearVelocity.normalized.sqrMagnitude <= 0)
             HandleMoveAnim(false);
         else
@@ -44,8 +46,9 @@ public class PlayerAnimator : MonoBehaviour, IPlayerCompo
     public void SetDead()
     {
         if(isDead)return;
-
-        movement.StopImmediately(false);
+        
+        movement.StopImmediately(true);
+        
         _weaponController.resetEvent?.Invoke();
         
         isDead = true;
