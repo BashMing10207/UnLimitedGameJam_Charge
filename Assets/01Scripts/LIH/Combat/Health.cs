@@ -23,7 +23,9 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
     private bool _isInvincibility;
     
     public bool IsDead { get; set; }
-
+    
+    private float _lastSpawnTime = -1f; 
+    
     private void Update()
     {
         if (Keyboard.current.nKey.wasPressedThisFrame)
@@ -63,14 +65,7 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
             return;
         }
 
-        var evt = SpawnEvents.TextCreateEvent;
-        evt.poolType = PoolType.PopUpText;
-        evt.value = damage.ToString("0");
-        evt.position = (Vector2)transform.position + Random.insideUnitCircle;
-        evt.fontColor = Color.red;
-        evt.fontSize = Mathf.Clamp(1, 2, _damage);
-
-        _spawnEventChannel.RaiseEvent(evt);
+        CreateTextFeedback(damage);
         
         _damage = damage;
         _currentHealth = Mathf.Clamp(_currentHealth - damage, 0, _maxHealth);
@@ -98,4 +93,27 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
     {
         return Mathf.Clamp(_currentHealth - damage / _maxHealth, 0f, 1f);
     }
+    
+    private void CreateTextFeedback(float damage)
+    {
+        float currentTime = Time.time; 
+        if (_lastSpawnTime >= 0 && currentTime - _lastSpawnTime < 0.3f)
+        {
+            return;
+        }
+
+        _lastSpawnTime = currentTime; 
+
+        var evt = SpawnEvents.TextCreateEvent;
+        evt.poolType = PoolType.PopUpText;
+
+        evt.value = damage < 0.1f ? "1" : damage.ToString("0");
+    
+        evt.position = (Vector2)transform.position + Random.insideUnitCircle;
+        evt.fontColor = Color.red;
+        evt.fontSize = Mathf.Clamp(0.4f, 1, _damage);
+    
+        _spawnEventChannel.RaiseEvent(evt);
+    }
+
 }

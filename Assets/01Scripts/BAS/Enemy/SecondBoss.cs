@@ -25,6 +25,9 @@ public class SecondBoss : Enemy
 
     public UnityEvent PostPage2;
     public UnityEvent Page2Start;
+
+    [SerializeField]
+    private Animator _anim;
     //private StatModifierSO _dashSpeed;
     protected override void Awake()
     {   
@@ -57,6 +60,7 @@ public class SecondBoss : Enemy
                 fsm.SetState(_battlebeginner);
                 //fsm.enabled = true;
             }
+            _anim.SetFloat("Battle", 1, 0.7f, 0.08f);
         }
         else
         {
@@ -66,6 +70,7 @@ public class SecondBoss : Enemy
                 fsm.SetState(_idle);
                 //fsm.enabled = false;
             }
+            _anim.SetFloat("Battle", 0, 0.7f, 0.08f);
         }
 
         if(_isFilpable)
@@ -115,7 +120,7 @@ public class SecondBoss : Enemy
 
     public void Page2Anim()
     {
-        GetComponentInChildren<Animator>().SetTrigger("Page2");
+        _anim.SetTrigger("Page2");
     }
 
     [ContextMenu("testDamage")]
