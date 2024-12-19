@@ -71,7 +71,7 @@ public class Laser : MonoBehaviour
         }
         
         float distance = Vector2.Distance(transform.position, resultPos);
-        Debug.Log(distance);
+        //Debug.Log(distance);
         
         _laserBody.up = (resultPos - (Vector2)transform.position).normalized;
         
@@ -79,7 +79,11 @@ public class Laser : MonoBehaviour
         _laserBody.localScale = new Vector3(laserSizeX, distance + 1, _laserBody.localScale.z);
         
         _laserHit.position = resultPos;
-        
-        //ParticleSystem.ShapeModule
+
+        ParticleSystem.ShapeModule shape = _laserCover.shape;
+        ParticleSystem.EmissionModule emission = _laserCover.emission;
+        shape.scale = new Vector3(laserSizeX, _laserBody.localScale.y,distance * 2.5f + 1);
+        emission.rateOverTime = (int)(distance*1.5f) + 15;
+        //emission.SetBurst(0,)
     }
 }
