@@ -11,7 +11,7 @@ public class DefaultWeapon : Weapon
     {
         var evt = SpawnEvents.BulletCreate;
         evt._bulletType = PoolType.PlayerBullet;
-        evt.power = power;
+        evt.damage = power;
         evt.dir = _player.LookDir();
         evt.position = _fireTrm.position;
         
