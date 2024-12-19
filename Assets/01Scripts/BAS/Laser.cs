@@ -85,7 +85,7 @@ public class Laser : MonoBehaviour
         
         _laserBody.up = (resultPos - (Vector2)transform.position).normalized;
 
-        float laserSizeX = player == null ? originSizeX : 1.5f;
+        float laserSizeX = player == null ? originSizeX : 0.8f;
         _laserBody.localScale = new Vector3(laserSizeX, distance + 1, _laserBody.localScale.z);
 
         _laserHit.position = resultPos;
