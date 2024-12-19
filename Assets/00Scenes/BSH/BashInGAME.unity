@@ -661,11 +661,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db101d31a1458546998b6ae3ed6a62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _target: {fileID: 0}
   _cameraChannel: {fileID: 11400000, guid: 147bcbf0355179142878d71f4e703d84, type: 2}
   _distanceChangeRate: 1.5
   _distanceThreshold: 0.05
   _shakeThreshold: 0.1
   _impulseSource: {fileID: 223226283}
+  Boss: {fileID: 0}
 --- !u!114 &223226283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40991,8 +40994,8 @@ AudioDistortionFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659042826}
-  m_Enabled: 0
-  m_DistortionLevel: 0.35
+  m_Enabled: 1
+  m_DistortionLevel: 0
 --- !u!1 &1660670083
 GameObject:
   m_ObjectHideFlags: 0
