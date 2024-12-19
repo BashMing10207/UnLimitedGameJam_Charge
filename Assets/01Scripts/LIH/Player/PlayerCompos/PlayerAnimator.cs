@@ -9,6 +9,7 @@ public class PlayerAnimator : MonoBehaviour, IPlayerCompo
 
     private readonly int _moveHash = Animator.StringToHash("Move");
     private readonly int _idleHash = Animator.StringToHash("Idle");
+    private readonly int _deadHash = Animator.StringToHash("Dead");
     
     public void Initialize(Player player)
     {
@@ -31,4 +32,13 @@ public class PlayerAnimator : MonoBehaviour, IPlayerCompo
         _animator.SetBool(_moveHash, isMove);
         _animator.SetBool(_idleHash, !isMove);
     }
+
+    public void SetDead()
+    {
+        _animator.SetBool(_moveHash, false);
+        _animator.SetBool(_idleHash, false);
+        
+        _animator.SetBool(_deadHash, true);
+    }
+    
 }

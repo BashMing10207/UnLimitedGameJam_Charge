@@ -1,6 +1,8 @@
 using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Serialization;
 
 public enum Pattern
 {
@@ -21,7 +23,7 @@ public class GolemBoss : Entity
     [Space]
     
     [SerializeField] private GameEventChannelSO SpawnChanel;
-    [SerializeField] private Transform TestTarget;
+    [SerializeField] private Transform player;
     
     [SerializeField] private CinemachineImpulseSource ImpulseSource;
     
@@ -35,11 +37,19 @@ public class GolemBoss : Entity
     
     private bool isLeftHandMoving;
     private bool isRightHandMoving;
-
+    
     private GolemHand leftHandCompo;
     private GolemHand rightHandCompo;
 
-    [Space] [SerializeField] private SoundSO golemBossHitClip;
+    [Space]
+    [SerializeField] private GameEventChannelSO soundEvent;
+    
+    [Space]
+    [SerializeField] private SoundSO golemImpactSound;
+    [SerializeField] private SoundSO golemHitSound;
+   
+    
+    [SerializeField] private PlayerManagerSO _playerManagerSo;
     
     private void Start()
     {
@@ -47,6 +57,9 @@ public class GolemBoss : Entity
         
         leftHandCompo = leftHand.GetComponent<GolemHand>();
         rightHandCompo = rightHand.GetComponent<GolemHand>();
+
+
+        player = _playerManagerSo.PlayerTrm;
     }
 
     #region Bullet
@@ -146,11 +159,11 @@ public class GolemBoss : Entity
     #region Punch
     public void TakeDownLeft(float _speed , float _downSpeed)
     {
-        StartCoroutine(TakDownLeftHandRoutine(TestTarget,_speed,_downSpeed));
+        StartCoroutine(TakDownLeftHandRoutine(player,_speed,_downSpeed));
     }
     public void TakeDownRight(float _speed , float _downSpeed)
     {
-        StartCoroutine(TakDownRightHandRoutine(TestTarget, _speed, _downSpeed));
+        StartCoroutine(TakDownRightHandRoutine(player, _speed, _downSpeed));
     }
     
     private IEnumerator TakDownLeftHandRoutine(Transform _target,float _speed,float _downSpeed)
@@ -192,7 +205,8 @@ public class GolemBoss : Entity
         
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
         rightHandCompo.SetActiveCollider(0.3f);
-        PlayImpacts(strikeTarget );
+        PlayImpacts(strikeTarget);
+        
         yield return new WaitForSeconds(0.4f);
         
         yield return StartCoroutine(MoveToPosition(rightHand, originalPosition, _speed));
@@ -201,7 +215,7 @@ public class GolemBoss : Entity
     }
     public void CrossHand(float _speed , float _crossSpeed)
     {
-        StartCoroutine(CrossHandRoutine(TestTarget,_speed,_crossSpeed));
+        StartCoroutine(CrossHandRoutine(player,_speed,_crossSpeed));
     }
     private IEnumerator CrossHandRoutine(Transform _target,float _speed ,float _crossSpeed)
     {
@@ -336,21 +350,30 @@ public class GolemBoss : Entity
     private void PlayImpacts(Vector3 _pos)
     {
         ShakeCamera(2);
-
-        var soundEvt = SoundEvents.PlaySfxEvent;
-        soundEvt.clipData = golemBossHitClip;
-        SpawnChanel.RaiseEvent(soundEvt);
                 
         var evt = SpawnEvents.SmokeParticleCreate;
         evt.position = _pos + new Vector3(0,-1.5f,0);
         evt.poolType = PoolType.ImpactParticle;
         
         SpawnChanel.RaiseEvent(evt);
+        
+        var soundEvt = SoundEvents.PlaySfxEvent;
+        soundEvt.clipData = golemImpactSound;
+        soundEvent.RaiseEvent(soundEvt);
+        
     }
     
     public void ActiveLaser(bool isActive)
     {
         leftLaser.gameObject.SetActive(isActive);
         rightLaser.gameObject.SetActive(isActive);
+    }
+
+    public void GolemHitSoundPlay()
+    {
+        var evt = SoundEvents.PlaySfxEvent;
+        evt.clipData = golemHitSound;
+        
+        soundEvent.RaiseEvent(evt);
     }
 }

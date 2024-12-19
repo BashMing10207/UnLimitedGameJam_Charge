@@ -1813,7 +1813,7 @@ MonoBehaviour:
   leftSolder: {fileID: 771211919558392661}
   rightSolder: {fileID: 6499924449850806105}
   SpawnChanel: {fileID: 11400000, guid: 6944cce5058946943ac30c78e150d1b4, type: 2}
-  TestTarget: {fileID: 0}
+  player: {fileID: 0}
   ImpulseSource: {fileID: 8275954186079003205}
   handMoveCurve:
     serializedVersion: 2
@@ -1839,11 +1839,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  leftLaser: {fileID: 0}
-  rightLaser: {fileID: 0}
+  leftLaser: {fileID: 1105726870854384258}
+  rightLaser: {fileID: 2977993215654190980}
   minSize: {x: -8, y: -12}
   maxSize: {x: 8, y: 1}
-  golemBossHitClip: {fileID: 0}
+  golemImpactSound: {fileID: 11400000, guid: cb044a5cecff90842b7cd58c4c92484a, type: 2}
+  golemHitSound: {fileID: 11400000, guid: 786be81fa1a74084da6e429b23901778, type: 2}
+  _playerManagerSo: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
 --- !u!114 &8275954186079003205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2022,6 +2024,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: HitStop, Assembly-CSharp
         m_MethodName: StartHitStop
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 172769806777398677}
+        m_TargetAssemblyTypeName: GolemBoss, Assembly-CSharp
+        m_MethodName: GolemHitSoundPlay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2521,6 +2535,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 41431012465671165, guid: 4a9777c6378532241b0279da1a136967, type: 3}
   m_PrefabInstance: {fileID: 946532024550058841}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1105726870854384258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 178619407134052827, guid: 4a9777c6378532241b0279da1a136967, type: 3}
+  m_PrefabInstance: {fileID: 946532024550058841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa737b03e8cd6d41b03eb80a4091e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3110123029189889631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2598,6 +2623,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a9777c6378532241b0279da1a136967, type: 3}
+--- !u!114 &2977993215654190980 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 178619407134052827, guid: 4a9777c6378532241b0279da1a136967, type: 3}
+  m_PrefabInstance: {fileID: 3110123029189889631}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa737b03e8cd6d41b03eb80a4091e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3150920104193258914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 41431012465671165, guid: 4a9777c6378532241b0279da1a136967, type: 3}

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c456edd6f0447ce83385849f374bd48, type: 3}
-  m_Name: GolemHit
+  m_Name: GolemFire
   m_EditorClassIdentifier: 
   audioType: 0
-  clip: {fileID: 8300000, guid: 87d2399c734344e41993b25e0694e690, type: 3}
+  clip: {fileID: 8300000, guid: 86cd4aa0a977d07469f677412cba626f, type: 3}
   isLoop: 0
   isRandomizePitch: 0
   is3DSound: 0
-  randomPitchModifier: 0.137
-  volume: 1
-  pitch: 1.36
+  randomPitchModifier: 0.1
+  volume: 0.949
+  pitch: 1
   startTime: 0

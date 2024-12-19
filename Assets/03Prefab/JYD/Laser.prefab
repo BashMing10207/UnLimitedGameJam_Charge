@@ -9810,6 +9810,9 @@ MonoBehaviour:
   coreSprite: {fileID: 0}
   damage: 5
   _laserCover: {fileID: 2092484128719754632}
+  laserSound: {fileID: 11400000, guid: b122e9cb05612394caeb5ed48c8bc226, type: 2}
+  laserHitSound: {fileID: 11400000, guid: 4013371a5ddfe68428e4158e10c7a64b, type: 2}
+  soundChannel: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
 --- !u!1 &7036804662670549400
 GameObject:
   m_ObjectHideFlags: 0
