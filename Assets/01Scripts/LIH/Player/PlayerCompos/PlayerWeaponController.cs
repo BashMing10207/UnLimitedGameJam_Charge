@@ -29,6 +29,7 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     private PlayerRender _playerRender;
     
     private bool _isChargingStart;
+    public bool IsChargingStart => _isChargingStart;
 
     private float _currentCharging;
     private float _currentChargingTime;
@@ -60,6 +61,9 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
 
     private void HandleSlotChange(int index)
     {
+        if(_isChargingStart)
+            return;
+        
         if(index==0)
             WeaponChange<DefaultWeapon>();
         else
