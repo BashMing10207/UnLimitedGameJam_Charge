@@ -171,7 +171,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 854918179
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 159929021, guid: 552b0f28a585cd5468447308980f164f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -623,6 +623,8 @@ MonoBehaviour:
   dashType: 1
   _playerManagerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: 7961c0b96d71ad746aa01b380295824b, type: 2}
+  _soundChannelSo: {fileID: 0}
+  _hitSound: {fileID: 0}
 --- !u!114 &9019860469428591133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,11 +1028,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1829517081116200836, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6225506212967671946, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 6225506212967671946, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1068,6 +1070,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7018232785350671802, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018232785350671802, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 980112813
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1092,7 +1102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1829517081116200836, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6225506212967671946, guid: fc555dfc09ae47f4486ba3d78ca7a5c1, type: 3}
       propertyPath: m_LocalPosition.x

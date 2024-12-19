@@ -36,6 +36,7 @@ public class MenuCanvasUI : MonoBehaviour
 
         var evt2 = SoundEvents.PlaySfxEvent;
         evt2.clipData = _openSound;
+        evt2.clipData.startTime = 0.05f;
         _soundChannelSo.RaiseEvent(evt2);
         
         if (_windowStatus == UIWindowStatus.Opened) //열려있다면 닫아야 한다.

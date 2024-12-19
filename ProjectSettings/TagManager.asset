@@ -49,11 +49,11 @@ TagManager:
   - name: Core
     uniqueID: 766097559
     locked: 0
-  - name: Gun
-    uniqueID: 980112813
-    locked: 0
   - name: Player
     uniqueID: 854918179
+    locked: 0
+  - name: Gun
+    uniqueID: 980112813
     locked: 0
   - name: Effect
     uniqueID: 360931705
