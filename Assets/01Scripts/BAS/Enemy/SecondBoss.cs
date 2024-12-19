@@ -39,6 +39,8 @@ public class SecondBoss : Enemy
     private GameEventChannelSO _spawnChanel;
 
     [SerializeField] private GameObject portal;
+
+    public GameObject EnemyMom;
     
     //private StatModifierSO _dashSpeed;
     protected override void Awake()
@@ -129,7 +131,8 @@ public class SecondBoss : Enemy
             _isHasSummon = false;
             if (GetEntityCompo<Health>().GetCurrentHealth() <= GetEntityCompo<EntityStat>().GetStat(_healthSO).BaseValue / 2)
             {
-                OnPostPage2();
+               // OnPostPage2();
+               EnemyMom.SetActive(true);
             }
         }
 
