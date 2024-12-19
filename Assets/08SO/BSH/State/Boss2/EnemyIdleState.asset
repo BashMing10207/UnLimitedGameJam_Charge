@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9d09ae8e69fba4d9df349576ef1672, type: 3}
   m_Name: EnemyIdleState
   m_EditorClassIdentifier: 
-  StateName: 
-  AnimState: {fileID: 0}
-  NextState: {fileID: 0}
-  _playerSO: {fileID: 0}
+  StateName: Idle
+  AnimState: {fileID: 11400000, guid: 0821d57ed70c72b4b87fd5d7bbc9c635, type: 2}
+  NextState: {fileID: 11400000, guid: 2fcc9ec326078d648b62eb05ad948cca, type: 2}
+  _playerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
   _statModifier: {fileID: 0}

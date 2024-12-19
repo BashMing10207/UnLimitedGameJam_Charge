@@ -16,7 +16,7 @@ MonoBehaviour:
   description: "\uC560\uB108\uBBF8\uAC00 \uC6C0\uC9C1\uC774\uB294 \uC18D\uB3C4\uBC0D"
   icon: {fileID: 0}
   displayName: 
-  _baseValue: 55
+  _baseValue: 60
   _minValue: 0
-  _maxValue: 1024
+  _maxValue: 2048
   <IsPercent>k__BackingField: 0

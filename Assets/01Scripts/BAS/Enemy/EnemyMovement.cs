@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour,IEntityComponent
         {
             maxSpeed = stat.Value;
         }
-        _rbCompo.AddForce(BashUtils.LimitedSpeed(_rbCompo.linearVelocity,dir,maxSpeed),ForceMode2D.Impulse);
+        _rbCompo.AddForce(BashUtils.LimitedSpeed(_rbCompo.linearVelocity,dir*maxSpeed/3f,maxSpeed),ForceMode2D.Impulse);
     }
     public void Knockback(Vector2 dir)
     {

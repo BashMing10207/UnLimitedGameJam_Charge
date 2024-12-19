@@ -8,16 +8,16 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     public GameObject GameObject => gameObject;
     public PoolType Type => _poolType;
 
-    [SerializeField] private float _lifeTime;
-    [SerializeField] private float _defaultBulletSpeed;
-    [SerializeField] private LayerMask whatIsTarget;
-    private Rigidbody2D _rigidbody2D;
+    [SerializeField] protected float _lifeTime;
+    [SerializeField] protected float _defaultBulletSpeed;
+    [SerializeField] protected LayerMask whatIsTarget;
+    protected Rigidbody2D _rigidbody2D;
 
-    private float _power;
+    protected float _power;
 
-    private Pool _myPool;
+    protected Pool _myPool;
 
-    private float _currentTime;
+    protected float _currentTime;
     
     private void Awake()
     {

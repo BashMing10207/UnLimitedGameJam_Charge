@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StateName: Boss2Chase
   AnimState: {fileID: 11400000, guid: 786ef6387e9bdd941b722e36a26945e8, type: 2}
-  NextState: {fileID: 11400000}
+  NextState: {fileID: 11400000, guid: 2fcc9ec326078d648b62eb05ad948cca, type: 2}
   _playerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
-  _statModifier: {fileID: 11400000, guid: a8e635ed88503fe459fc7855554239b6, type: 2}
+  _statModifier: {fileID: 11400000, guid: d76bbf7d2556c774cb20434a26c955bc, type: 2}
