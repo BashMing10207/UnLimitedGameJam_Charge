@@ -20,6 +20,9 @@ public class SlotChangeUI : MonoBehaviour
 
     private void HandleSlotChange(int index)
     {
+        if(_playerManagerSo.Player.GetPlayerCompo<PlayerWeaponController>().IsChargingStart)
+            return;
+        
         if (index == 0)
         {
             _slot1Check.gameObject.SetActive(true);

@@ -7,8 +7,6 @@ public class BossHealthBar : HudBarUI
 {
     [SerializeField] private Entity _boss;
     [SerializeField] private PlayerManagerSO _playerManagerSo;
-    [SerializeField] private Image _predictionImage;
-    
     private Player _player;
     
     private void Start()
@@ -18,13 +16,6 @@ public class BossHealthBar : HudBarUI
         _boss.GetEntityCompo<Health>().OnDead.AddListener(HandleDisableEvent);
         _boss.GetEntityCompo<Health>().OnHit.AddListener(HandleFillEvent);
         //_player.GetPlayerCompo<PlayerWeaponController>().chargingEvent.AddListener(HandlePredictionEvent);
-    }
-
-    private void HandlePredictionEvent(float time, float value)
-    {
-        float fillAmount = _boss.GetEntityCompo<Health>().GetPredictionNormalizeHealth(value);
-        Debug.Log(fillAmount);
-        _predictionImage.DOFillAmount(1f- fillAmount, 0.3f);
     }
 
     protected override void HandleDisableEvent()
