@@ -34,7 +34,7 @@ public class SecondBoss : Enemy
             (_playerManager.PlayerTrm.position - Camera.main.ScreenToWorldPoint(Mouse.current.position.value)))) < _activeDegree
             || Vector2.Distance(transform.position,_playerManager.PlayerTrm.position)<_activeDistance)
         {
-            //if(!Physics2D.Raycast(transform.position,_playerManager.PlayerTrm.position - transform.position, Vector2.Distance(_playerManager.PlayerTrm.position, transform.position),_whatisObstacle))
+            if(!Physics2D.Raycast(transform.position,_playerManager.PlayerTrm.position - transform.position, Vector2.Distance(_playerManager.PlayerTrm.position, transform.position),_whatisObstacle))
             _currentActiveTime =_activingTime;
         }
 
@@ -60,8 +60,11 @@ public class SecondBoss : Enemy
                 //fsm.enabled = false;
             }
         }
+
         if(_isFilpable)
-        _spriteRenderer.flipX = _playerManager.PlayerTrm.position.x < transform.position.x;
+        {
+            _spriteRenderer.flipX = _playerManager.PlayerTrm.position.x < transform.position.x;
+        }
     }
 
     // 이 아래는 애니메이션 트리거 날먹
@@ -74,11 +77,11 @@ public class SecondBoss : Enemy
     public void DashAttackEnd()
     {
         GetEntityCompo<EnemyMovement>().SetVelocity(Vector2.zero);
-
+        _isFilpable = true;
     }
     public void StateEnd()
     {
         GetEntityCompo<EnemyFSM>().StateEnd();
-        _isFilpable = true;
+        //_isFilpable = true;
     }
 }
