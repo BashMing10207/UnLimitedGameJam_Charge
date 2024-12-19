@@ -2846,7 +2846,6 @@ GameObject:
   - component: {fileID: 7535936457941545073}
   - component: {fileID: 733703197800029714}
   - component: {fileID: 3169858693025154290}
-  - component: {fileID: 1133199306701148246}
   m_Layer: 0
   m_Name: GameOverCanvas
   m_TagString: Untagged
@@ -2963,20 +2962,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _alphaTime: 2
   animator: {fileID: 0}
---- !u!114 &1133199306701148246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5332159745988442407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 138420c978791b94a9e53dee883a4145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _alphaTime: 2
-  animator: {fileID: 2496444822730694924}
 --- !u!1 &5499080100824437842
 GameObject:
   m_ObjectHideFlags: 0
