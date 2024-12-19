@@ -49,6 +49,9 @@ TagManager:
   - name: Gun
     uniqueID: 980112813
     locked: 0
+  - name: Effect
+    uniqueID: 360931705
+    locked: 0
   - name: UI
     uniqueID: 2325622279
     locked: 0
