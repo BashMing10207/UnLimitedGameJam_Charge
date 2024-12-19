@@ -91,6 +91,9 @@ public class PlayerCamera : MonoBehaviour
 
     private void UpdateDefault()
     {
+        if (_target == null || _player == null)
+            return;
+        
         float distance = Vector3.Distance(_target.position, _player.position);
         _targetDistance = Mathf.Clamp(distance, 7, 13);
         _isChangeComplete = false;
