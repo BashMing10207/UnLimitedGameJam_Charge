@@ -38,9 +38,8 @@ public class SecondBoss : Enemy
     [SerializeField]
     private GameEventChannelSO _spawnChanel;
 
-    [SerializeField]
-    private AudioDistortionFilter _filter;
-
+    [SerializeField] private GameObject portal;
+    
     //private StatModifierSO _dashSpeed;
     protected override void Awake()
     {   
@@ -71,7 +70,6 @@ public class SecondBoss : Enemy
             if(fsm.CurrentState == _idle)
             {
                 fsm.SetState(_battlebeginner);
-                //_filter.enabled = true;
                 //fsm.enabled = true;
             }
             _anim.SetFloat("Battle", 1, 0.7f, 0.08f);
@@ -82,7 +80,6 @@ public class SecondBoss : Enemy
             if (fsm.CurrentState != _idle)
             {
                 fsm.SetState(_idle);
-                //_filter.enabled = false;
                 //fsm.enabled = false;
             }
             _anim.SetFloat("Battle", 0, 0.7f, 0.08f);
@@ -165,5 +162,10 @@ public class SecondBoss : Enemy
     public void TestInflic()
     {
         GetEntityCompo<Health>().ApplyDamage(50);
+    }
+
+    public void SetPortal()
+    {
+        portal.gameObject.SetActive(true);
     }
 }

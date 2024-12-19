@@ -270,7 +270,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 518540844433904337}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3169858693025154290}
+        m_TargetAssemblyTypeName: GameOverPannel, Assembly-CSharp
+        m_MethodName: Lobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &741434202292403142
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,6 +2843,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3169858693025154290}
+        m_TargetAssemblyTypeName: GameOverPannel, Assembly-CSharp
+        m_MethodName: Lobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4986496389982081534
 GameObject:
   m_ObjectHideFlags: 0
@@ -3034,10 +3058,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138420c978791b94a9e53dee883a4145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerManagerSo: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
+  _currentScene: BossOneScene
   _gameEventChannelSo: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
   _so: {fileID: 11400000, guid: 6350d5c0571d9e64b8f1e629cea4e21c, type: 2}
   _alphaTime: 2
   animator: {fileID: 2496444822730694924}
+  _image: {fileID: 3467342591604454673}
 --- !u!1 &5499080100824437842
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,6 +3801,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3289539237484145683}
+        m_TargetAssemblyTypeName: ButtonSoundHelper, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4549,7 +4588,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5889855365048136902}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3169858693025154290}
+        m_TargetAssemblyTypeName: GameOverPannel, Assembly-CSharp
+        m_MethodName: ReStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7683818606365895029
 GameObject:
   m_ObjectHideFlags: 0
