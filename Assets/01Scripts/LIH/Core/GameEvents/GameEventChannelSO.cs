@@ -39,7 +39,7 @@ public class GameEventChannelSO : ScriptableObject
 {
     private Dictionary<Type, Action<GameEvent>> _events = new();
     private Dictionary<Delegate, Action<GameEvent>> _lookUp = new();
-
+    
     public void AddListener<T>(Action<T> handler) where T : GameEvent
     {
         if (_lookUp.ContainsKey(handler) == false) //이미 구독하는 매서드는 중복 제거

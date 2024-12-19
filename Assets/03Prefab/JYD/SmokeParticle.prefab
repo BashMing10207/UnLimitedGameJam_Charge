@@ -170,7 +170,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 2
-      minScalar: 1
+      minScalar: -2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 0.7
       minScalar: 0.5
       maxCurve:
         serializedVersion: 2
@@ -4865,9 +4865,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 854918179
+  m_SortingLayer: 5
+  m_SortingOrder: 101
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4911,8 +4911,9 @@ GameObject:
   - component: {fileID: 877175172503887719}
   - component: {fileID: 1585608043837989485}
   - component: {fileID: 280605012158645817}
+  - component: {fileID: 8244044644633928250}
   m_Layer: 0
-  m_Name: Impact
+  m_Name: SmokeParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4927,7 +4928,7 @@ Transform:
   m_GameObject: {fileID: 2451891382966862635}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 8.483754, y: 0.48959798, z: -6.3281035}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9758,9 +9759,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 360931705
+  m_SortingLayer: 4
+  m_SortingOrder: 101
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9793,6 +9794,21 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8244044644633928250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2451891382966862635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69d3c0e3e2e6a64a99adb518dbb5b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poolType: 3
+  _particleSystem: {fileID: 1585608043837989485}
+  lifeTime: 4
 --- !u!1 &6249703698787761762
 GameObject:
   m_ObjectHideFlags: 0
