@@ -20,3 +20,4 @@ MonoBehaviour:
   ChooseList:
   - {fileID: 11400000, guid: 8bd0cb29d30296e4b8fe2b3b95ba3aa7, type: 2}
   - {fileID: 11400000, guid: 2fcc9ec326078d648b62eb05ad948cca, type: 2}
+  - {fileID: 11400000, guid: fb4e671dc29ab8141a27944ae464b8c0, type: 2}

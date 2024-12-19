@@ -11,7 +11,9 @@ public class Rock : MonoBehaviour,IPoolable
     [SerializeField] private PoolType _poolType;
     [SerializeField] private GameEventChannelSO ChannelSo;
     [SerializeField] private LayerMask whatIsTarget;
-        
+
+    private bool isDie;
+    
     public void SetUpPool(Pool pool)
     {
         _myPool = pool;
@@ -19,7 +21,7 @@ public class Rock : MonoBehaviour,IPoolable
 
     public void ResetItem()
     {
-        
+        isDie = false;
     }
     
     public void SetDirection(Vector2 direction,float _fallTime)   
@@ -29,9 +31,14 @@ public class Rock : MonoBehaviour,IPoolable
         
     public void StartExplosion()
     {
+        if(isDie)return;
+
+        isDie = true;
+        
         var evt = SpawnEvents.ExplosionCreate;
         evt.position = transform.position;
         evt.poolType = PoolType.ExplosionParticle;
+        
         ChannelSo.RaiseEvent(evt);
         
         float explosionRadius = 5f; 
@@ -41,7 +48,7 @@ public class Rock : MonoBehaviour,IPoolable
         {
             if (hitCollider.TryGetComponent<IDamageable>(out var damageable))
             {
-                damageable.ApplyDamage(10f); 
+                damageable.ApplyDamage(5f); 
             }
         }
         
