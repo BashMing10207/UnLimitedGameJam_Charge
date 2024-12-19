@@ -46,7 +46,7 @@ Material:
     - _QueueOffset: 0
     - _Scale: 1.26
     m_Colors:
-    - _Color: {r: 8.5038185, g: 1.3356782, b: 0, a: 1}
+    - _Color: {r: 17.007637, g: 2.6713564, b: 0, a: 1}
     - _LaserSpeed: {r: 0, g: -1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
