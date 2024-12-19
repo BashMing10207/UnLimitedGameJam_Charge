@@ -75,4 +75,4 @@ public class MenuCanvasUI : MonoBehaviour
             Time.timeScale = 1f;
         }, duration);
     }
-    }
+}
