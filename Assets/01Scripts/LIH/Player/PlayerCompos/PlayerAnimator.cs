@@ -10,6 +10,11 @@ public class PlayerAnimator : MonoBehaviour, IPlayerCompo
     private readonly int _moveHash = Animator.StringToHash("Move");
     private readonly int _idleHash = Animator.StringToHash("Idle");
     private readonly int _deadHash = Animator.StringToHash("Dead");
+
+    [SerializeField] private GameObject gun;
+    [SerializeField] private PlayerMovement movement;
+
+    private bool isDead = false;
     
     public void Initialize(Player player)
     {
@@ -35,10 +40,18 @@ public class PlayerAnimator : MonoBehaviour, IPlayerCompo
 
     public void SetDead()
     {
+        if(isDead)return;
+
+        movement.StopImmediately(false);
+        
+        isDead = true;
+        
         _animator.SetBool(_moveHash, false);
         _animator.SetBool(_idleHash, false);
-        
         _animator.SetBool(_deadHash, true);
+        
+        gun.SetActive(false);
+        movement.enabled = false;
     }
     
 }
