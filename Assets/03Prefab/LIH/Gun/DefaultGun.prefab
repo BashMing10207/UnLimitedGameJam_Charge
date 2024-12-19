@@ -47,8 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerMuzzleEffect: {fileID: 4730605180681999947, guid: 87868998d15b8224ca4b6158f8d150fc, type: 3}
+  _emisiion: {fileID: 274920118559522386, guid: 99351249d1ad11a4f84b9b0cbdd91eda, type: 3}
   _spawnChannel: {fileID: 11400000, guid: 6944cce5058946943ac30c78e150d1b4, type: 2}
   _bullet: {fileID: 3559990087977567739, guid: 52ebaf3d6b432144e9f1cdef1b09471c, type: 3}
+  _particleMaxSize: 3
   _recoilTime: 0.1
   _recoilXValue: 0.6
   _minPower: 10
@@ -157,7 +159,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 980112813
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 6879118450950661895, guid: dad7e8a40dfce244d9c9374ba301995c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

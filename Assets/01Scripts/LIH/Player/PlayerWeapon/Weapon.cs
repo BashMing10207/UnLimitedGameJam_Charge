@@ -44,11 +44,21 @@ public abstract class Weapon : MonoBehaviour
     
     public virtual void Charging(float chargingTime ,float chargingValue)
     {
-        
+        if (_currentEmisiion == null)
+        {
+            _currentEmisiion = Instantiate(_emisiion, _fireTrm.position, Quaternion.identity);
+            _currentEmisiion.transform.SetParent(transform);
+        }
+
+        float inverseLerp = Mathf.InverseLerp(0, 3f, chargingTime);
+        float size = Mathf.Lerp(0.1f, _particleMaxSize, inverseLerp);
+        _currentEmisiion.transform.localScale = new Vector3(size, size, size);
+        _currentEmisiion.ChangeEmission(size);
     }
 
     public virtual void Fire(float power)
     {
+        HandleEmmisionReset();
         InstantiateMuzzle();
         Recoil(power);
     }
@@ -79,7 +89,6 @@ public abstract class Weapon : MonoBehaviour
         if(_currentEmisiion == null)
             return;
 
-        _currentEmisiion.GetComponentsInChildren<ParticleSystem>().ToList().ForEach(x 
-            => x.loop = false);
+        _currentEmisiion.transform.DOScale(Vector3.zero, 0.1f).OnComplete(() => Destroy(_currentEmisiion.gameObject));
     }
 }
