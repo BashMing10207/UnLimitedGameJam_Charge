@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -28,6 +29,15 @@ public class SecondBoss : Enemy
 
     [SerializeField]
     private Animator _anim;
+
+    [SerializeField]
+    private bool _isHasSummon = true;
+
+    [SerializeField]
+    private Transform _firePos;
+    [SerializeField]
+    private GameEventChannelSO _spawnChanel;
+
     //private StatModifierSO _dashSpeed;
     protected override void Awake()
     {   
@@ -112,10 +122,33 @@ public class SecondBoss : Enemy
     //이 아래는 이벤트 날먹...
     public void IsPage2(float damage)
     {
-        if (GetEntityCompo<Health>().GetCurrentHealth() <= GetEntityCompo<EntityStat>().GetStat(_healthSO).BaseValue/2)
+        if(_isHasSummon)
         {
-            OnPostPage2();
+            _isHasSummon = false;
+            if (GetEntityCompo<Health>().GetCurrentHealth() <= GetEntityCompo<EntityStat>().GetStat(_healthSO).BaseValue / 2)
+            {
+                OnPostPage2();
+            }
         }
+
+    }
+
+    public void ProjectileAttack()
+    {
+        Vector2 dir = (_playerManager.PlayerTrm.position - transform.position).normalized * 2;
+
+        _firePos.up = dir.normalized;
+        
+        var evt = SpawnEvents.BulletCreate;
+        evt.position = _firePos.position;
+        evt.dir = dir;
+        evt._bulletType = PoolType.EnemyFastBullet;
+        evt.damage = 30;
+
+        _spawnChanel.RaiseEvent(evt);
+
+        //GetEntityCompo<EnemyMovement>().Knockback(dir.normalized * (_dashSpeed + dir.magnitude));
+        _isFilpable = false;
     }
 
     public void Page2Anim()

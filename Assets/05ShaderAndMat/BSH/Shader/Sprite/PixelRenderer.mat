@@ -75,7 +75,7 @@ Material:
     - _DstBlend: 10
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Resolution: 32
+    - _Resolution: -3.5
     - _SrcBlend: 5
     - _Surface: 1
     - _ZTest: 4
