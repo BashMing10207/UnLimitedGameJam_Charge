@@ -1,12 +1,13 @@
+using System;
 using UnityEngine;
 
-public abstract class EnemyStateSO : ScriptableObject
+public abstract class EnemyStateSO : ScriptableObject,ICloneable
 {
     public string StateName;
 
     public AnimStateSO AnimState;
 
-    protected Entity _entity;
+    protected Enemy _enemy;
 
     public EnemyStateSO NextState;
 
@@ -23,7 +24,11 @@ public abstract class EnemyStateSO : ScriptableObject
 
     public virtual void DoExit()
     {
-        _entity.GetEntityCompo<EnemyFSM>().SetState(NextState);
+        _enemy.GetEntityCompo<EnemyFSM>().SetState(NextState);
     }
 
+    public object Clone()
+    {
+        return Instantiate(this);
+    }
 }

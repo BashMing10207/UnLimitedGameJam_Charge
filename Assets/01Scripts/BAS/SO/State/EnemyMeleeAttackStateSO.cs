@@ -7,7 +7,7 @@ public class EnemyMeleeAttackStateSO : EnemyStateSO
     private AnimStateSO _attackParm;
     public override void OnEnter(Entity entity)
     {
-        _entity = entity;
+        _enemy = entity as Enemy;
         if (_statModifier != null)
             entity.GetEntityCompo<EntityStat>().AddModifier(_statModifier.TargetStat, _statModifier, _statModifier.Value);
         entity.GetComponentInChildren<Animator>().SetBool(_attackParm.HashValue, true);
@@ -16,8 +16,8 @@ public class EnemyMeleeAttackStateSO : EnemyStateSO
     public override void OnExit()
     {
         if (_statModifier != null)
-            _entity.GetEntityCompo<EntityStat>().RemoveModifier(_statModifier.TargetStat, _statModifier);
-        _entity.GetComponentInChildren<Animator>().SetBool(_attackParm.HashValue, false);
+            _enemy.GetEntityCompo<EntityStat>().RemoveModifier(_statModifier.TargetStat, _statModifier);
+        _enemy.GetComponentInChildren<Animator>().SetBool(_attackParm.HashValue, false);
     }
 
     public override void Update()

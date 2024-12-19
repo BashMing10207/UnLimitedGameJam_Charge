@@ -15,8 +15,6 @@ public class GolemBoss : Entity
     [Space]
     
     [SerializeField] private GameEventChannelSO SpawnChanel;
-    [SerializeField] private ParticleSystem impactParticle;
-        
     [SerializeField] private Transform TestTarget;
 
     [SerializeField] private CinemachineImpulseSource ImpulseSource;
@@ -58,7 +56,7 @@ public class GolemBoss : Entity
             evt.position = _firePos.position;
             evt.dir = bulletMoveDirection;
             evt._bulletType = PoolType.EnemyBullet;
-            evt.power = 10;
+            evt.damage = 10;
             
             SpawnChanel.RaiseEvent(evt);
             
@@ -86,7 +84,7 @@ public class GolemBoss : Entity
             evt.position = _firePos.position;
             evt.dir = bulletMoveDirection;
             evt._bulletType = PoolType.EnemyBullet;
-            evt.power = 30;
+            evt.damage = 30;
             
             SpawnChanel.RaiseEvent(evt);
             
@@ -161,7 +159,7 @@ public class GolemBoss : Entity
         
         yield return StartCoroutine(MoveToPosition(leftHand, strikeTarget, _downSpeed));
         leftHandCompo.SetActiveCollider(0.3f);
-        PlayImpacts(strikeTarget);
+        PlayImpacts(strikeTarget );
         yield return new WaitForSeconds(0.4f);
     
         yield return StartCoroutine(MoveToPosition(leftHand, originalPosition, _speed));
@@ -184,7 +182,7 @@ public class GolemBoss : Entity
         
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
         rightHandCompo.SetActiveCollider(0.3f);
-        PlayImpacts(strikeTarget);
+        PlayImpacts(strikeTarget );
         yield return new WaitForSeconds(0.4f);
         
         yield return StartCoroutine(MoveToPosition(rightHand, originalPosition, _speed));
@@ -225,7 +223,9 @@ public class GolemBoss : Entity
         yield return leftMove;
         yield return rightMove;
 
-        PlayImpacts(leftHand.position);
+        PlayImpacts(leftHand.position );
+        PlayImpacts(rightHand.position);
+        
         leftHandCompo.SetActiveCollider(0.2f);
         rightHandCompo.SetActiveCollider(0.2f);
         
@@ -257,7 +257,7 @@ public class GolemBoss : Entity
         
         yield return StartCoroutine(MoveToPosition(leftHand, leftHand.position + new Vector3(0, 2, 0), _speed));
         yield return StartCoroutine(MoveToPosition(leftHand, leftHandOriginPosition, _downSpeed));
-        PlayImpacts(leftHand.position);
+        PlayImpacts(leftHand.position );
         
         ApplyCircleShot(leftHand, bulletCount);
     }
@@ -268,7 +268,7 @@ public class GolemBoss : Entity
         
         yield return StartCoroutine(MoveToPosition(rightHand, rightHand.position + new Vector3(0, 2, 0), _speed));
         yield return StartCoroutine(MoveToPosition(rightHand, rightHandOriginPosition, _downSpeed));
-        PlayImpacts(leftHand.position);
+        PlayImpacts(leftHand.position );
         
         ApplyCircleShot(rightHand, bulletCount);
     }
@@ -303,10 +303,11 @@ public class GolemBoss : Entity
     {
         ShakeCamera(2);
         
-        impactParticle.transform.position = _pos;
+        var evt = SpawnEvents.SmokeParticleCreate;
+        evt.position = _pos + new Vector3(0,-1.5f,0);
+        evt.poolType = PoolType.Particle;
         
-        impactParticle.Simulate(0);
-        impactParticle.Play();
+        SpawnChanel.RaiseEvent(evt);
     }
     
     public void ActiveLaser(bool isActive)

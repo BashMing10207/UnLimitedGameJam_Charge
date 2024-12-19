@@ -5,8 +5,7 @@ public class EnemyAttackChooseStateSO : EnemyStateSO
 {
     public List<EnemyStateSO> ChooseList = new List<EnemyStateSO>();
 
-    private Enemy _enemy;
-
+    
     public override void OnEnter(Entity entity)
     {
         _enemy = entity as Enemy;
