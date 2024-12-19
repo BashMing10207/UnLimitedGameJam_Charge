@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
@@ -22,14 +23,14 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     private PlayerInputSO _playerInput;
     private PlayerRender _playerRender;
     
-    private Vector2 _lookDir;
     private bool _isChargingStart;
 
-    private float _chargingSpeed;
     private float _currentCharging;
     private float _currentChargingTime;
     private float _currentChargingDelayTime;
     public int CurrentLevelIndex { get; private set; }
+    
+    private Dictionary<Type, Weapon> _weapons;
     
     public void Initialize(Player player)
     {
@@ -37,9 +38,9 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
         _playerInput = player.PlayerInput;
         _playerRender = player.GetPlayerCompo<PlayerRender>();
 
-        currentWeapon.SetOwner(_player);
-        fireEvent.AddListener(currentWeapon.Fire);
-        chargingEvent.AddListener(currentWeapon.Charging);
+        _weapons = new Dictionary<Type, Weapon>();
+        GetComponentsInChildren<Weapon>(true).ToList().ForEach(x => _weapons.Add(x.GetType(), x));
+        WeaponChange<DefaultWeapon>();
         
         _playerInput.AttackEvent += HandleChargingEvent;
     }
@@ -67,6 +68,15 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            WeaponChange<DefaultWeapon>();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            WeaponChange<ShotGunWeapon>();
+        }
+        
         if (_isChargingStart)
         {
             ChargingLogic();
@@ -92,20 +102,24 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     
     private void GunRotate()
     {
-        _lookDir = _player.LookDir();
-        float z = Mathf.Atan2(_lookDir.y, _lookDir.x) * Mathf.Rad2Deg;
+        float z = Mathf.Atan2(_player.LookDir().y, _player.LookDir().x) * Mathf.Rad2Deg;
         if (_playerRender.FacingDirection <= 0f)
             z = -z + 180f;
         
         currentWeapon.transform.localEulerAngles = new Vector3(0,0, z);
     }
 
-    private void WeaponChange(Weapon weapon)
+    private void WeaponChange<T>()
     {
-        fireEvent.RemoveListener(currentWeapon.Fire);
-        chargingEvent.RemoveListener(currentWeapon.Charging);
+        if (currentWeapon != null)
+        {
+            fireEvent.RemoveListener(currentWeapon.Fire);
+            chargingEvent.RemoveListener(currentWeapon.Charging);
+            currentWeapon.gameObject.SetActive(false);
+        }
         
-        currentWeapon = weapon;
+        currentWeapon = _weapons[typeof(T)];
+        currentWeapon.gameObject.SetActive(true);
         
         currentWeapon.SetOwner(_player);
         fireEvent.AddListener(currentWeapon.Fire);
