@@ -15,6 +15,8 @@ public class Laser : MonoBehaviour
 
     [SerializeField] private float damage = 5;
     
+    [SerializeField] private ParticleSystem _laserCover;
+
     private void Start()
     {
         sequence = DOTween.Sequence();
