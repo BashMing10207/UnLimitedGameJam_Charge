@@ -19614,7 +19614,7 @@ GameObject:
   - component: {fileID: 46846242008126772}
   - component: {fileID: 4730605180681999947}
   m_Layer: 0
-  m_Name: PlayerMuzzleEffect
+  m_Name: DefaultMuzzleEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

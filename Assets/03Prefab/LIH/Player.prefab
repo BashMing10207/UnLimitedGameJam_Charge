@@ -1027,13 +1027,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3028607353194621955, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: _bullet
+      value: 
+      objectReference: {fileID: 3559990087977567739, guid: 65876b3286555fd4683dd111b65f93e2, type: 3}
+    - target: {fileID: 3028607353194621955, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: _maxSize
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3028607353194621955, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: _particleMaxSize
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3028607353194621955, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
+      propertyPath: _playerMuzzleEffect
+      value: 
+      objectReference: {fileID: -3855530709568660124, guid: 45cef6d08d2751444b10a6be7ce32e93, type: 3}
     - target: {fileID: 5321637510711600709, guid: 9d1150c11aa030a4cbeb84e7957052ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8

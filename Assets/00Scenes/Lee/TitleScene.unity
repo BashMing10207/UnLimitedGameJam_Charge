@@ -19417,6 +19417,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _collider2D: {fileID: 4806511330446119087}
+  damage: 0
 --- !u!61 &4806511330446119087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20192,6 +20193,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _collider2D: {fileID: 5607877955538287232}
+  damage: 0
 --- !u!1 &8199900609501621021
 GameObject:
   m_ObjectHideFlags: 0
