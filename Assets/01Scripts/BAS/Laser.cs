@@ -16,7 +16,11 @@ public class Laser : MonoBehaviour
     [SerializeField] private float damage = 5;
     
     [SerializeField] private ParticleSystem _laserCover;
-
+    
+    [SerializeField] private SoundSO laserSound;
+    [SerializeField] private SoundSO laserHitSound;
+    [SerializeField] private GameEventChannelSO soundChannel;
+    
     private void Start()
     {
         sequence = DOTween.Sequence();
@@ -29,6 +33,10 @@ public class Laser : MonoBehaviour
     private void OnEnable()
     {
         player = null;
+        var evt = SoundEvents.PlaySfxEvent;
+        evt.clipData = laserSound;
+        soundChannel.RaiseEvent(evt);
+        
         
         transform.localScale = new Vector3(originSizeX , transform.localScale.y , transform.localScale.z);
         transform.rotation = Quaternion.Euler(0, 0, -60);
@@ -47,6 +55,10 @@ public class Laser : MonoBehaviour
 
         if (hit)
         {
+            var evt = SoundEvents.PlaySfxEvent;
+            evt.clipData = laserHitSound;
+            soundChannel.RaiseEvent(evt);
+                        
             if (hit.transform != null)
             {
                 if (player == null && hit.transform.TryGetComponent<Player>(out Player playerCompo))
