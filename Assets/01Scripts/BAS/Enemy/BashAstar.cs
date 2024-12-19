@@ -51,8 +51,6 @@ public class BashAstar : MonoBehaviour,IEntityComponent //나는 이게 Astar가 아니
                     _distances[i] = 1024;
                 }
             }
-            Debug.Log(_dirs.Count);
-            Debug.Log(_distances.Count);
             _maxtmp = _dirs[_distances.IndexOf(_distances.Min())];
         }
     }

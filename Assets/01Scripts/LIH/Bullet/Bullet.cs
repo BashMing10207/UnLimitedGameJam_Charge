@@ -1,6 +1,7 @@
 using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class Bullet : MonoBehaviour, IPoolable
 {
@@ -18,6 +19,8 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     protected Pool _myPool;
 
     protected float _currentTime;
+
+    public UnityEvent<float> BulletInit;
     
     private void Awake()
     {
@@ -28,6 +31,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     {
         _power = Mathf.RoundToInt(power);
         _rigidbody2D.AddForce(dir * _defaultBulletSpeed * speed, ForceMode2D.Impulse);
+        BulletInit?.Invoke(power);
     }
 
     private void Update()
