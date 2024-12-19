@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Laser
   m_EditorClassIdentifier: 
   audioType: 0
-  clip: {fileID: 8300000, guid: bef22abd268837c408cb27a6209da2d1, type: 3}
+  clip: {fileID: 8300000, guid: 23dedfdec5cb45843b2c1c398c977320, type: 3}
   isLoop: 0
   isRandomizePitch: 0
   is3DSound: 0

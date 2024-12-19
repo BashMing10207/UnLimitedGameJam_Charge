@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
 
     private SoundPlayer _currentBGMPlayer = null;
     private SoundPlayer _currentSFXPlayer = null;
-
+    
     private void Awake()
     {
         _soundChannel.AddListener<PlaySFXEvent>(HandlePlaySFXEvent);

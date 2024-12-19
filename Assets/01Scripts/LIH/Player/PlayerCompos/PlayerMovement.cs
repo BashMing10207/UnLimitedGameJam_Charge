@@ -156,7 +156,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         _rigidbody2D.linearVelocity = _moveDir * _moveSpeed / _chargingMoveMultiplier;
     }
     
-    private void StopImmediately(bool isYAxisToo = false)
+    public void StopImmediately(bool isYAxisToo = false)
     {
         if(isYAxisToo)
             _rigidbody2D.linearVelocity = Vector2.zero;

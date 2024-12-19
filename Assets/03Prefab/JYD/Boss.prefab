@@ -1843,7 +1843,8 @@ MonoBehaviour:
   rightLaser: {fileID: 2977993215654190980}
   minSize: {x: -8, y: -12}
   maxSize: {x: 8, y: 1}
-  soundEvent: {fileID: 0}
+  soundEvent: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
+  bgm: {fileID: 11400000, guid: a996b9fcc651ad344b388138e0a9e589, type: 2}
   golemImpactSound: {fileID: 11400000, guid: cb044a5cecff90842b7cd58c4c92484a, type: 2}
   golemHitSound: {fileID: 11400000, guid: 786be81fa1a74084da6e429b23901778, type: 2}
   _playerManagerSo: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
@@ -2005,7 +2006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c161c621fe40472bbc2565489517956b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnEventChannel: {fileID: 11400000, guid: 6944cce5058946943ac30c78e150d1b4, type: 2}
   _healthStat: {fileID: 11400000, guid: c6bebaea503719749b5f5870c30e6e06, type: 2}
   OnHit:
     m_PersistentCalls:
