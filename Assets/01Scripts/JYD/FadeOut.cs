@@ -8,7 +8,8 @@ public class FadeOut : MonoBehaviour
     void Start()
     {
         fade.DOFade(0,0.7f);
+        print("123");
     }
-
+        
     
 }

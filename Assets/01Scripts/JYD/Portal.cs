@@ -40,16 +40,17 @@ public class Portal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         text.text = "F";
+        fade.DOFade(1,0.7f).OnComplete(() =>
+        {
+            SceneManager.LoadScene(nextSceneName);
+        });
     }
     
     private void OnTriggerStay2D(Collider2D other)
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            fade.DOFade(1,0.7f).OnComplete(() =>
-            {
-                SceneManager.LoadScene(nextSceneName);
-            });
+           
         }
     }
     
