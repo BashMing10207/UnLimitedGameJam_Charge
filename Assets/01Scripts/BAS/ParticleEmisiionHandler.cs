@@ -8,7 +8,6 @@ public class ParticleEmisiionHandler : MonoBehaviour
     public void ChangeEmission(float aa)
     {
         ParticleSystem.EmissionModule emission = _particleSystem.emission;
-
         emission.rateOverTime = aa;
     }
 }
