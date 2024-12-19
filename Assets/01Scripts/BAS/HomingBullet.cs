@@ -8,7 +8,7 @@ public class HomingBullet : EnemyBullet
     private float _homingPower = 1f;
     private void FixedUpdate()
     {
-        _rigidbody2D.AddForce(_playerManager.PlayerTrm.position - transform.position.normalized * _homingPower, ForceMode2D.Impulse);
-
+        _rigidbody2D.AddForce((_playerManager.PlayerTrm.position - transform.position).normalized * _homingPower, ForceMode2D.Impulse);
+        transform.up = _rigidbody2D.linearVelocity.normalized;
     }
 }
