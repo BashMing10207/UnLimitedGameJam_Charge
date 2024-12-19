@@ -14,7 +14,7 @@ public class GolemBoss : Entity
 
     [SerializeField] private Transform leftSolder;
     [SerializeField] private Transform rightSolder;
-    
+
     [Space]
     
     [SerializeField] private GameEventChannelSO SpawnChanel;
@@ -177,7 +177,7 @@ public class GolemBoss : Entity
         yield return StartCoroutine(MoveToPosition(rightHand, liftTarget, _speed));
         
         yield return new WaitForSeconds(0.3f);
-    
+        
         yield return StartCoroutine(MoveToPosition(rightHand, strikeTarget, _downSpeed));
         PlayImpacts(strikeTarget);
         yield return new WaitForSeconds(0.4f);
@@ -306,6 +306,9 @@ public class GolemBoss : Entity
     {
         leftLaser.gameObject.SetActive(isActive);
         rightLaser.gameObject.SetActive(isActive);
+        
+       
+        
     }
     
     

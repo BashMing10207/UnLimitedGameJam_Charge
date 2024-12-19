@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class Laser : MonoBehaviour
     [SerializeField] private Transform _laserBody, _laserHit;
     
     [SerializeField] private float originSizeX;
+
+    [SerializeField] private SpriteRenderer coreSprite;
     
     private Sequence sequence;
     private Transform player = null;
@@ -15,8 +18,9 @@ public class Laser : MonoBehaviour
     {
         sequence = DOTween.Sequence();
         
-        sequence.Append(transform.DORotate(new Vector3(0, 0, 90), 4, RotateMode.FastBeyond360));
-        sequence.SetLoops(-1, LoopType.Yoyo); 
+        sequence.Append(transform.DORotate(new Vector3(0, 0, 90), 8, RotateMode.FastBeyond360));
+        sequence.Join(coreSprite.DOFade(1,0.7f)).SetEase(Ease.InSine);
+        sequence.SetLoops(-1, LoopType.Yoyo);
     }
     
     private void OnEnable()
@@ -28,11 +32,16 @@ public class Laser : MonoBehaviour
         sequence.Restart();
     }
 
+    private void OnDisable()
+    {
+        coreSprite.color = new Color(coreSprite.color.r , coreSprite.color.g , coreSprite.color.b , 0);
+    }
+
     void Update()
     {
         Vector2 resultPos = transform.position + transform.up * 100;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 100, _whatisTarget);
-
+        
         if (hit)
         {
             if (sequence.IsPlaying())
@@ -63,8 +72,8 @@ public class Laser : MonoBehaviour
         
         _laserBody.up = (resultPos - (Vector2)transform.position).normalized;
         
-        float laserSizeX = player == null ? originSizeX : 1.15f;
-        _laserBody.localScale = new Vector3(laserSizeX, distance - 2, _laserBody.localScale.z);
+        float laserSizeX = player == null ? originSizeX : 0.8f;
+        _laserBody.localScale = new Vector3(laserSizeX, distance - 1.5f, _laserBody.localScale.z);
         
         _laserHit.position = resultPos;
         
