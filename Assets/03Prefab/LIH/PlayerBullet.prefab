@@ -168,4 +168,6 @@ MonoBehaviour:
   _poolType: 0
   _lifeTime: 3
   _defaultBulletSpeed: 10
-  _targetTag: Enemy
+  whatIsTarget:
+    serializedVersion: 2
+    m_Bits: 256

@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,8 +10,13 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     public UnityEvent<float> fireEvent;
     public UnityEvent resetEvent;
 
-    [SerializeField] private StatSO _chargingSpeedStat;
+    public List<float> levelSeconds;
+    public List<float> levelAdditiveValue;
+
     [SerializeField] private float _minChargingValue;
+    [SerializeField] private float _chargingDelayTime;
+    
+    public Weapon currentWeapon;
     
     private Player _player;
     private PlayerInputSO _playerInput;
@@ -16,14 +24,14 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     
     private EntityStat _statCompo;
 
-    public Weapon currentWeapon;
-
     private Vector2 _lookDir;
     private bool _isChargingStart;
 
     private float _chargingSpeed;
     private float _currentCharging;
     private float _currentChargingTime;
+    private float _currentChargingDelayTime;
+    public int CurrentLevelIndex { get; private set; }
     
     public void Initialize(Player player)
     {
@@ -31,8 +39,6 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
         _playerInput = player.PlayerInput;
         _playerRender = player.GetPlayerCompo<PlayerRender>();
         _statCompo = player.GetEntityCompo<EntityStat>();
-
-        _chargingSpeed = _statCompo.GetStat(_chargingSpeedStat).Value;
 
         currentWeapon.SetOwner(_player);
         fireEvent.AddListener(currentWeapon.Fire);
@@ -58,6 +64,7 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
             
             _currentChargingTime = 0f;
             _currentCharging = 0f;
+            _currentChargingDelayTime = 0f;
         }
     }
 
@@ -65,20 +72,31 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     {
         if (_isChargingStart)
         {
-            _currentChargingTime += Time.deltaTime;
-            _currentCharging += Time.deltaTime * _chargingSpeed;
+            ChargingLogic();
             chargingEvent?.Invoke(_currentChargingTime, _currentCharging);
-//            Debug.Log(_currentCharging);
         }
         
         GunRotate();
+    }
+
+    private void ChargingLogic()
+    {
+        _currentChargingTime += Time.deltaTime;
+        float maxValue = levelSeconds.Where(x => x <= _currentChargingTime).Max();
+        CurrentLevelIndex = levelSeconds.FindLastIndex(x => x <= maxValue);
+
+        _currentChargingDelayTime -= Time.deltaTime;
+        if (_currentChargingDelayTime <= 0)
+        {
+            _currentCharging += levelAdditiveValue[CurrentLevelIndex];
+            _currentChargingDelayTime = _chargingDelayTime;
+        }
     }
     
     private void GunRotate()
     {
         _lookDir = _player.LookDir();
         float z = Mathf.Atan2(_lookDir.y, _lookDir.x) * Mathf.Rad2Deg;
-        Debug.Log(z);
         if (_playerRender.FacingDirection <= 0f)
             z = -z + 180f;
         

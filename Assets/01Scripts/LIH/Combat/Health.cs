@@ -11,10 +11,13 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
 
     public UnityEvent<float> OnHit;
     public UnityEvent OnDead;
+    public UnityEvent OnInvincibilityEvent;
 
     private float _damage;
 
     private Entity _owner;
+
+    private bool _isInvincibility;
     
     public bool IsDead { get; set; }
 
@@ -28,6 +31,8 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
     {
         _owner = entity;
     }
+
+    public void SetInvincibility(bool isActive) => _isInvincibility = isActive;
     
     public void AfterInit()
     {
@@ -43,6 +48,15 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
 
     public void ApplyDamage(float damage)
     {
+        if (IsDead)
+            return;
+
+        if (_isInvincibility)
+        {
+            OnInvincibilityEvent?.Invoke();
+            return;
+        }
+        
         _damage = damage;
         _currentHealth = Mathf.Clamp(_currentHealth - damage, 0, _maxHealth);
         
@@ -58,5 +72,12 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
             OnDead?.Invoke();
         else
             OnHit?.Invoke(_damage);
+    }
+
+    public float GetNormalizeHealth() => _currentHealth / _maxHealth;
+
+    public float GetPredictionNormalizeHealth(float damage)
+    {
+        return Mathf.Clamp(_currentHealth - damage / _maxHealth, 0f, 1f);
     }
 }

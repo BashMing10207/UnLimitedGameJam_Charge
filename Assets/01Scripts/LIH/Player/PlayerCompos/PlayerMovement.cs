@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour, IPlayerCompo
 {
+    [FormerlySerializedAs("_dashEvent")] public UnityEvent<float, float> _dashCoolEvent;
+    
     [Header("Stat")]
     [SerializeField] private StatSO _moveSpeedStat;
     [SerializeField] private StatSO _dashSpeedStat;
@@ -26,6 +29,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
     private Player _player;
     private PlayerWeaponController _playerWeaponController;
     private PlayerRender _playerRender;
+    private Health _health;
     
     private Rigidbody2D _rigidbody2D;
     private EntityStat _statCompo;
@@ -48,6 +52,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         _rigidbody2D = player.GetComponent<Rigidbody2D>();
         _statCompo = _player.GetEntityCompo<EntityStat>();
         _playerRender = player.GetPlayerCompo<PlayerRender>();
+        _health = player.GetEntityCompo<Health>();
         
         _moveSpeed = _statCompo.GetStat(_moveSpeedStat).Value;
         _dashSpeed = _statCompo.GetStat(_dashSpeedStat).Value;
@@ -70,14 +75,18 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
     private void Update()
     {
         if (_currentDashCool >= 0)
+        {
             _currentDashCool -= Time.deltaTime;
+            _dashCoolEvent?.Invoke(_currentDashCool, _dashCoolTime);
+        }
     }
 
     private void HandleDashEvent()
     {
         if(_currentDashCool >= 0)
             return;
-        
+
+        _health.SetInvincibility(true);
         _playerRender.StartSande(_dashTime);
         CanMove = false;
         _currentDashCool = _dashCoolTime;
@@ -86,7 +95,11 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         Vector2 dir = SetDashDir();
         _rigidbody2D.linearVelocity = dir * _dashSpeed;
     
-        DOVirtual.DelayedCall(_dashTime, () => CanMove = true);
+        DOVirtual.DelayedCall(_dashTime, () =>
+        {
+            CanMove = true;
+            _health.SetInvincibility(false);
+        });
     }
 
     private Vector2 SetDashDir()
