@@ -38,6 +38,8 @@ public class GolemBoss : Entity
 
     private GolemHand leftHandCompo;
     private GolemHand rightHandCompo;
+
+    [Space] [SerializeField] private SoundSO golemBossHitClip;
     
     private void Start()
     {
@@ -335,11 +337,10 @@ public class GolemBoss : Entity
     {
         ShakeCamera(2);
 
-        /*var evt1 = SoundEvents.PlaySfxEvent;
-        evt1.clipData = 
-        
-        SpawnChanel.RaiseEvent();*/
-        
+        var soundEvt = SoundEvents.PlaySfxEvent;
+        soundEvt.clipData = golemBossHitClip;
+        SpawnChanel.RaiseEvent(soundEvt);
+                
         var evt = SpawnEvents.SmokeParticleCreate;
         evt.position = _pos + new Vector3(0,-1.5f,0);
         evt.poolType = PoolType.ImpactParticle;
