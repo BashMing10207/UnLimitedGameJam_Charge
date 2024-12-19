@@ -7,8 +7,10 @@ public class ChargeText : MonoBehaviour
     [SerializeField] private PlayerManagerSO _playerManagerSo;
     [SerializeField] private float _yellowValue;
     [SerializeField] private float _redValue;
+    [SerializeField] private float _textSpeed;
     
     private TextMeshProUGUI _text;
+    private float _beforeCharging;
 
     private void Awake()
     {
@@ -35,7 +37,10 @@ public class ChargeText : MonoBehaviour
         float rValue = Mathf.InverseLerp(_yellowValue, _redValue, chargingValue);
 
         _text.color = new Color(1, 1 - rValue, 1 - yValue);
-        _text.SetText(chargingValue.ToString("0") + "%");
+
+        DOTween.To(() => _beforeCharging, f => _beforeCharging = f, chargingValue, _textSpeed);
+        _text.SetText(_beforeCharging.ToString("0") + "%");
+        _beforeCharging = chargingValue;
     }
 
     public void SetChargePercentInit(float power)

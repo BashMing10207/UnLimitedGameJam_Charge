@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
 
     [Header("Dash Setting")]
     [SerializeField] private float _dashTime;
+    [SerializeField] private float _dashInvincibilityTime;
     
     [Header("knockBack Setting")]
     [SerializeField] private float _knockBackTime;
@@ -95,11 +96,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         Vector2 dir = SetDashDir();
         _rigidbody2D.linearVelocity = dir * _dashSpeed;
     
-        DOVirtual.DelayedCall(_dashTime, () =>
-        {
-            CanMove = true;
-            _health.SetInvincibility(false);
-        });
+        DOVirtual.DelayedCall(_dashInvincibilityTime, () => _health.SetInvincibility(false));
+        DOVirtual.DelayedCall(_dashTime, () => CanMove = true);
     }
 
     private Vector2 SetDashDir()
