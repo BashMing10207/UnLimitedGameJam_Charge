@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class EnableToggle : MonoBehaviour
 {
+    public GameObject aa;
     public void EnableToggler()
     {
-        gameObject.SetActive(!gameObject.activeInHierarchy);
+        aa.SetActive(!aa.activeInHierarchy);
     }
 }

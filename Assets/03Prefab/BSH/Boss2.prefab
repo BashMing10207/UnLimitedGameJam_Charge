@@ -962,7 +962,7 @@ MonoBehaviour:
   _isHasSummon: 1
   _firePos: {fileID: 8134932679681221574}
   _spawnChanel: {fileID: 11400000, guid: 6944cce5058946943ac30c78e150d1b4, type: 2}
-  _filter: {fileID: 0}
+  portal: {fileID: 0}
 --- !u!95 &9060575596877900434
 Animator:
   serializedVersion: 7
