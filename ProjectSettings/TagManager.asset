@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - FollowCam
+  - DamageText
   layers:
   - Default
   - TransparentFX
@@ -57,6 +58,9 @@ TagManager:
     locked: 0
   - name: Effect
     uniqueID: 360931705
+    locked: 0
+  - name: UI
+    uniqueID: 2373055761
     locked: 0
   m_RenderingLayers:
   - Default

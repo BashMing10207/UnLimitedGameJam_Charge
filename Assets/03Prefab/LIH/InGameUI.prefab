@@ -1058,6 +1058,7 @@ GameObject:
   - component: {fileID: 2882167528564646403}
   - component: {fileID: 7740466699055482279}
   - component: {fileID: 7202885167646207330}
+  - component: {fileID: 2496444822730694924}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -1112,7 +1113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4282696779333656208, guid: f81e89e3fa2b0054d8f3f60b8d3ad92a, type: 3}
+  m_Sprite: {fileID: -8500196181052930554, guid: 2485c9f19fca8214ab789a10c1834d00, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1122,6 +1123,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2496444822730694924
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204445787495669777}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21915e986bd1dcc409fa07edafedb851, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2256934019210085827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,6 +2846,7 @@ GameObject:
   - component: {fileID: 7535936457941545073}
   - component: {fileID: 733703197800029714}
   - component: {fileID: 3169858693025154290}
+  - component: {fileID: 1133199306701148246}
   m_Layer: 0
   m_Name: GameOverCanvas
   m_TagString: Untagged
@@ -2938,6 +2962,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _alphaTime: 2
+  animator: {fileID: 0}
+--- !u!114 &1133199306701148246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5332159745988442407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138420c978791b94a9e53dee883a4145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _alphaTime: 2
+  animator: {fileID: 2496444822730694924}
 --- !u!1 &5499080100824437842
 GameObject:
   m_ObjectHideFlags: 0

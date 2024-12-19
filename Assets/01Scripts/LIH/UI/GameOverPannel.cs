@@ -1,12 +1,15 @@
 using System;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameOverPannel : MonoBehaviour
 {
     [SerializeField] private float _alphaTime;
-
+    [SerializeField] private Animator animator;
+    
     private CanvasGroup _group;
+    
 
     private void Awake()
     {
@@ -16,7 +19,11 @@ public class GameOverPannel : MonoBehaviour
     public void OpenWindow()
     {
         gameObject.SetActive(true);
-        _group.DOFade(1, _alphaTime).OnComplete(() => Time.timeScale = 0f);
+        _group.DOFade(1, _alphaTime).OnComplete(() =>
+        {
+            Time.timeScale = 0f;
+            animator.SetTrigger("Die");
+        });
     }
 
     public void ReStart()
