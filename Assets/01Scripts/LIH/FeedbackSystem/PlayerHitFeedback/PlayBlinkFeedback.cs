@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayBlinkFeedback : Feedback
 {
-    [SerializeField] private SpriteRenderer[] _spriteRenderers;
     [SerializeField] private float _blinkTime = 0.2f;
 
+    private SpriteRenderer[] _spriteRenderers;
     private readonly int _blinkValueHash = Shader.PropertyToID("_BlinkValue");
 
     private List<Material> _targetMaterials;
@@ -14,7 +14,9 @@ public class PlayBlinkFeedback : Feedback
 
     protected override void Awake()
     {
+        _spriteRenderers = transform.root.GetComponentsInChildren<SpriteRenderer>();
         _targetMaterials = new List<Material>();
+        
         for (int i = 0; i < _spriteRenderers.Length; i++)
         {
             _targetMaterials.Add(_spriteRenderers[i].material);
@@ -25,7 +27,6 @@ public class PlayBlinkFeedback : Feedback
         _coroutine = StartCoroutine(BlinkCoroutine());
     }
     
-    //고도 , 언리얼
     private IEnumerator BlinkCoroutine()
     {
         Blink(0.5f);

@@ -21,7 +21,7 @@ public class BulletSpawner : MonoBehaviour
     {
         Bullet bullet = _poolManager.Pop(evt._bulletType) as Bullet;
         bullet.transform.position = evt.position;
-        bullet.Shoot(evt.dir, evt.damage);
+        bullet.Shoot(evt.dir, evt.damage, evt.speed);
     }
 
     private void HandleSmokeParticleSpawn(SmokeParticleCreate evt)
