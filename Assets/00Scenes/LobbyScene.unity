@@ -1224,7 +1224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5893136d0609ccc4abb3da05d39f5b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: BossTwoScene
+  nextSceneName: 3
   text: {fileID: 645650353}
   isEffect: 0
   portal: {fileID: 0}
@@ -9902,7 +9902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5893136d0609ccc4abb3da05d39f5b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: BossOneScene
+  nextSceneName: 2
   text: {fileID: 381297864}
   isEffect: 0
   portal: {fileID: 0}
@@ -15847,7 +15847,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 3640860587419563608, guid: 7024e5c594e6b6d4cbf768f4e87f9096, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.73922616, b: 0.3254717, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -26055,7 +26055,7 @@ Tilemap:
       - {fileID: -7974665818560188892, guid: 35f88a821abf99e48ab818f5422e2532, type: 3}
       - {fileID: -917178091245352321, guid: 35f88a821abf99e48ab818f5422e2532, type: 3}
       - {fileID: 2793878911130044867, guid: 35f88a821abf99e48ab818f5422e2532, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -7, y: -19, z: 0}
@@ -71062,7 +71062,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 3640860587419563608, guid: 7024e5c594e6b6d4cbf768f4e87f9096, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.03760237, g: 0.2989705, b: 0.6132076, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Portal : MonoBehaviour
 {
-    [SerializeField] private string nextSceneName;
+    [SerializeField] private int nextSceneName;
     [SerializeField] private TextMeshProUGUI text;
     
     [Space]
