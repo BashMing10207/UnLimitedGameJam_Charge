@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -13,12 +12,14 @@ public class Laser : MonoBehaviour
     
     private Sequence sequence;
     private Transform player = null;
+
+    [SerializeField] private float damage = 5;
     
     private void Start()
     {
         sequence = DOTween.Sequence();
         
-        sequence.Append(transform.DORotate(new Vector3(0, 0, 90), 8, RotateMode.FastBeyond360));
+        sequence.Append(transform.DORotate(new Vector3(0, 0, 60), 8, RotateMode.FastBeyond360));
         sequence.Join(coreSprite.DOFade(1,0.7f)).SetEase(Ease.InSine);
         sequence.SetLoops(-1, LoopType.Yoyo);
     }
@@ -28,7 +29,7 @@ public class Laser : MonoBehaviour
         player = null;
         
         transform.localScale = new Vector3(originSizeX , transform.localScale.y , transform.localScale.z);
-        transform.rotation = Quaternion.Euler(0, 0, -90);
+        transform.rotation = Quaternion.Euler(0, 0, -60);
         sequence.Restart();
     }
 
@@ -41,42 +42,44 @@ public class Laser : MonoBehaviour
     {
         Vector2 resultPos = transform.position + transform.up * 200;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 100, _whatisTarget);
-        
+
         if (hit)
         {
-            if (sequence.IsPlaying())
-                sequence.Pause();
             
-            if (player == null && hit.transform != null)
-                player = hit.transform;
-            
-            if (hit.transform.TryGetComponent<IDamageable>(out IDamageable target))
+
+            if (hit.transform != null)
             {
-                // target.ApplyDamage();
+                if (player == null && hit.transform.TryGetComponent<Player>(out Player playerCompo))
+                {
+                    player = hit.transform;
+                    
+                    if (sequence.IsPlaying())
+                        sequence.Pause();
+                }
+
+                if (hit.transform.TryGetComponent<IDamageable>(out IDamageable target))
+                {
+                    resultPos = hit.point; 
+                }
             }
-            
-            resultPos = hit.point;
-            
         }
-        
+
         if (player != null)
         {
             Vector2 directionToPlayer = (player.position - transform.position).normalized;
             float angle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
-            
+
             Quaternion targetRot = Quaternion.Euler(0, 0, angle - 90);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, Time.deltaTime * 5);
         }
         
         float distance = Vector2.Distance(transform.position, resultPos);
-        Debug.Log(distance);
-        
         _laserBody.up = (resultPos - (Vector2)transform.position).normalized;
-        
+
         float laserSizeX = player == null ? originSizeX : 1.5f;
         _laserBody.localScale = new Vector3(laserSizeX, distance + 1, _laserBody.localScale.z);
-        
+
         _laserHit.position = resultPos;
-        
     }
+
 }
