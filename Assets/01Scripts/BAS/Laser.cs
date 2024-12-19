@@ -72,13 +72,12 @@ public class Laser : MonoBehaviour
                 if (hit.transform.TryGetComponent<IDamageable>(out IDamageable target))
                 {
                     resultPos = hit.point; 
-                    target.ApplyDamage(5);
                 }
             }
             
             if (hit.transform.TryGetComponent<IDamageable>(out IDamageable target2))
             {
-                target2.ApplyDamage(1);
+                target2.ApplyDamage(damage);
             }
             
         }

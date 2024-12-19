@@ -234,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 9110869209135092583}
   movement: {fileID: 9019860469428591133}
+  _weaponController: {fileID: 3937012898979883079}
 --- !u!114 &3251179836980493791
 MonoBehaviour:
   m_ObjectHideFlags: 0
