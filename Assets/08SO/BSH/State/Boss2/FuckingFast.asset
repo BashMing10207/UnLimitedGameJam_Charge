@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FuckingFast
   m_EditorClassIdentifier: 
   TargetStat: {fileID: 11400000, guid: 4cd42c425eb3cf64d94e355a0ffd16d8, type: 2}
-  Value: 1024
+  Value: 110

@@ -1,33 +1,41 @@
 using UnityEngine;
 
-public class EnemyFSM : MonoBehaviour,IEntityComponent
+public class EnemyFSM : MonoBehaviour,IEntityComponent//,IAfterInitable
 {
     private Enemy _enemy;
 
-    [SerializeField]
-    private EnemyStateSO _currentState;
+    public EnemyStateSO CurrentState {  get; private set; }
+
+    private void Start()
+    {
+        CurrentState.OnEnter(_enemy);
+    }
 
     public void Initialize(Entity entity)
     {
         _enemy = entity as Enemy;
-        _currentState.OnEnter(_enemy);
+
     }
 
     public void SetState(EnemyStateSO state)
     {
-        _currentState.OnExit();
-        _currentState = state;
-        _currentState.OnEnter(_enemy);
+        if(CurrentState !=null)
+        {
+            CurrentState.OnExit();
+        }
+        CurrentState = state;
+        CurrentState.OnEnter(_enemy);
     }
 
     public void StateEnd()
     {
-        _currentState.DoExit();
+        Debug.LogWarning(CurrentState.StateName);
+        CurrentState.DoExit();
     }
 
     private void Update()
     {
-        _currentState.Update();
+        CurrentState.Update();
     }
 
 }

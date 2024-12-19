@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StateName: DashAndDodgeAndThrow
   AnimState: {fileID: 0}
-  NextState: {fileID: 0}
-  _playerSO: {fileID: 0}
+  NextState: {fileID: 11400000, guid: 8bd0cb29d30296e4b8fe2b3b95ba3aa7, type: 2}
+  _playerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
   _statModifier: {fileID: 0}
   ChooseList:
   - {fileID: 11400000, guid: 8bd0cb29d30296e4b8fe2b3b95ba3aa7, type: 2}

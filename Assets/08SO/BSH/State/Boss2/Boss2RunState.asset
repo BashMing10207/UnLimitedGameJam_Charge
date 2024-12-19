@@ -17,7 +17,7 @@ MonoBehaviour:
   NextState: {fileID: 11400000, guid: c9e590a5ee93e494381146320e0db4b5, type: 2}
   _playerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
   _statModifier: {fileID: 11400000, guid: ffe6218ccf3bbe843bf483737b032f59, type: 2}
-  _distance: -4
+  _distance: -7
   _isPierceObstacle: 0
   _whatisObstacle:
     serializedVersion: 2

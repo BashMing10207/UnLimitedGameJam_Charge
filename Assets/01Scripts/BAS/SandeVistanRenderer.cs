@@ -24,6 +24,7 @@ public class SandeVistanRenderer : MonoBehaviour
         {
             _duration -= Time.fixedDeltaTime;
             SpriteRenderer sprite = Instantiate(_prefab, transform.position, transform.rotation); 
+            sprite.transform.localScale = transform.localScale;
             sprite.sprite = _targetSpriteRenderer.sprite;
             _spriteLsit.Add(new BashPair<SpriteRenderer, float>(sprite, _lifeTime));
         }
@@ -32,6 +33,7 @@ public class SandeVistanRenderer : MonoBehaviour
         {
             for (int i = _spriteLsit.Count - 1; i >= 0; i--)
             {
+                _spriteLsit[i].First.color = _gradient.Evaluate(1-(_spriteLsit[i].Second/_lifeTime));
                 _spriteLsit[i].First.color = _gradient.Evaluate(_spriteLsit[i].Second / _lifeTime);
                 _spriteLsit[i].Second -= Time.fixedDeltaTime;
 
