@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolType: 4
-  _lifeTime: 3
-  _defaultBulletSpeed: 1
+  _lifeTime: 1.8
+  _defaultBulletSpeed: 2.5
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 193
@@ -167,7 +167,7 @@ MonoBehaviour:
   fireAudio: {fileID: 0}
   soundChannelSo: {fileID: 0}
   _playerManager: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
-  _homingPower: 0.05
+  _homingPower: 0
 --- !u!95 &3292116247545744492
 Animator:
   serializedVersion: 7
@@ -206,7 +206,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
