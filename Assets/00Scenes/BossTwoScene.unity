@@ -23527,6 +23527,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 785865366}
     - target: {fileID: 5071945095308195591, guid: 8930e07f6fa5a694da0f637659b4cbe5, type: 3}
+      propertyPath: EnemyMom
+      value: 
+      objectReference: {fileID: 1987086370}
+    - target: {fileID: 5071945095308195591, guid: 8930e07f6fa5a694da0f637659b4cbe5, type: 3}
       propertyPath: _firePos
       value: 
       objectReference: {fileID: 2130185962}
@@ -41606,6 +41610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ded01a7848879441a9cc7db385d1915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aa: {fileID: 1987086370}
 --- !u!114 &1987086372
 MonoBehaviour:
   m_ObjectHideFlags: 0
