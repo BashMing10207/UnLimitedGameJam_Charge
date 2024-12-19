@@ -18,6 +18,8 @@ public class GolemBossAnimatorController : MonoBehaviour
     private Material[] origins;
     [SerializeField] private Material BlinkMat;
 
+    [SerializeField] private GameObject portal;
+    
     private void Start()
     {
         origins = new Material[parts.Length];
@@ -50,6 +52,7 @@ public class GolemBossAnimatorController : MonoBehaviour
     
     public void SetDead()
     {
+        portal.gameObject.SetActive(true);
         BossAnimator.enabled = true;
         BossGraph.enabled = false;
         GolemBoss.ActiveLaser(false);
