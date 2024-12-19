@@ -12,7 +12,7 @@ public class SoundSO : ScriptableObject
     public AudioClip clip;
     public bool isLoop = false;
     public bool isRandomizePitch = false;
-    public bool is3DSound = true;
+    public bool is3DSound;
 
     [Range(0, 1f)]
     public float randomPitchModifier = 0.1f;

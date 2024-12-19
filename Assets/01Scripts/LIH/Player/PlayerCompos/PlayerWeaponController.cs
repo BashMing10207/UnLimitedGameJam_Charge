@@ -7,6 +7,11 @@ using UnityEngine.Events;
 
 public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
 {
+    [Header("Sound")]
+    [SerializeField] private GameEventChannelSO _soundChannelSo;
+    [SerializeField] private SoundSO _shotSound;
+    [SerializeField] private SoundSO _chargingSound;
+    
     public UnityEvent<float, float> chargingEvent;
     public UnityEvent<float> fireEvent;
     public UnityEvent resetEvent;
@@ -31,6 +36,7 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     public int CurrentLevelIndex { get; private set; }
     
     private Dictionary<Type, Weapon> _weapons;
+    private bool _onceChargingSound;
     
     public void Initialize(Player player)
     {
@@ -53,12 +59,30 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     private void HandleChargingEvent(bool isCharging)
     {
         _isChargingStart = isCharging;
+        if (_onceChargingSound == false)
+        {
+            var evt = SoundEvents.PlayLoopSFXEvent;
+            evt.clipData = _chargingSound;
+            _soundChannelSo.RaiseEvent(evt);
+            _onceChargingSound = true;
+        }
+        
         if (!isCharging)
         {
+            _onceChargingSound = false;
+            var evt2 = SoundEvents.StopLoopSFXEvent;
+            _soundChannelSo.RaiseEvent(evt2);
+            
             if (_currentCharging <= _minChargingValue)
                 resetEvent?.Invoke();
             else
+            {
+                var evt = SoundEvents.PlaySfxEvent;
+                evt.clipData = _shotSound;
+                
+                _soundChannelSo.RaiseEvent(evt);
                 fireEvent?.Invoke(_currentCharging);
+            }
             
             _currentChargingTime = 0f;
             _currentCharging = 0f;
@@ -68,21 +92,11 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            WeaponChange<DefaultWeapon>();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            WeaponChange<ShotGunWeapon>();
-        }
-        
         if (_isChargingStart)
         {
             ChargingLogic();
             chargingEvent?.Invoke(_currentChargingTime, _currentCharging);
         }
-        
         GunRotate();
     }
 

@@ -12025,6 +12025,10 @@ PrefabInstance:
       propertyPath: _boss
       value: 
       objectReference: {fileID: 1024877578}
+    - target: {fileID: 5464524560634472707, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
+      propertyPath: _predictionImage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6012751077543140762, guid: 80c8ae3cb7f013242bc3c1241f826bcd, type: 3}
       propertyPath: m_Name
       value: InGameUI
@@ -17721,6 +17725,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 400182491908706482, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: _hitSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ef7abd0b1c295e4b8478ebabf015751, type: 2}
+    - target: {fileID: 400182491908706482, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: _soundChannelSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
     - target: {fileID: 2104282569732724808, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.14
@@ -17761,13 +17773,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3123865200803724800, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123865200803724800, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123865200803724800, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7590177363227767157}
+    - target: {fileID: 3123865200803724800, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123865200803724800, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HitSoundPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123865200803724800, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123865200803724800, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6806739803688944786, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9019860469428591133, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
-      propertyPath: _dashInvincibilityTime
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17836,6 +17872,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2104282569732724808, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
   m_PrefabInstance: {fileID: 7213253369593065535}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7590177363227767157 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 400182491908706482, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+  m_PrefabInstance: {fileID: 7213253369593065535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b24fa94dd60ab5469e03801535809b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -17843,12 +17890,12 @@ SceneRoots:
   - {fileID: 1608829469}
   - {fileID: 1268974993}
   - {fileID: 666771816}
-  - {fileID: 7237002504775245578}
   - {fileID: 1013204749}
   - {fileID: 367919855}
   - {fileID: 1022312837}
   - {fileID: 959264302}
   - {fileID: 1324886388}
+  - {fileID: 7237002504775245578}
   - {fileID: 7213253369593065535}
   - {fileID: 1868641985}
   - {fileID: 1663306856}

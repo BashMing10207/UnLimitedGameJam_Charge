@@ -638,10 +638,13 @@ MonoBehaviour:
   _dashCoolEvent:
     m_PersistentCalls:
       m_Calls: []
+  _soundChannelSo: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
+  _dashSound: {fileID: 11400000, guid: e03ad4243c0d67f4d90236dc1932f1fd, type: 2}
   _moveSpeedStat: {fileID: 11400000, guid: 505ee74f875bf374ba48fdab976a7355, type: 2}
   _dashSpeedStat: {fileID: 11400000, guid: ba023ed7b49a8744ca30686b3093033a, type: 2}
   _dashCoolStat: {fileID: 11400000, guid: 2e6dce52016d8af4bbdc841a9831b9b1, type: 2}
   _dashTime: 0.3
+  _dashInvincibilityTime: 0.2
   _knockBackTime: 0.2
   _applyKnockBackMaxPower: 15
   _maxKnockBackChargingValue: 50
@@ -917,6 +920,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27413610620e1e42b8d7ccd7e29fac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundChannelSo: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
+  _shotSound: {fileID: 11400000, guid: 92f80e10b4a21714ca7fb0571a971b90, type: 2}
+  _chargingSound: {fileID: 11400000, guid: 365e1373ad5b2424784f202cbebf267a, type: 2}
   chargingEvent:
     m_PersistentCalls:
       m_Calls:

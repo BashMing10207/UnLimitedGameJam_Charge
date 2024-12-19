@@ -12,7 +12,10 @@ public class MenuCanvasUI : MonoBehaviour
     [SerializeField] private GameEventChannelSO _uiEventChannel;
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private PlayerInputSO _playerInput;
-    [SerializeField] private OptionUI _optionUI;
+    
+    [Header("Sound")]
+    [SerializeField] private GameEventChannelSO _soundChannelSo;
+    [SerializeField] private SoundSO _openSound;
 
     private UIWindowStatus _windowStatus = UIWindowStatus.Closed;
 
@@ -31,6 +34,10 @@ public class MenuCanvasUI : MonoBehaviour
         if (_windowStatus == UIWindowStatus.Closing || _windowStatus == UIWindowStatus.Opening)
             return; //진행중이라면 받지 않는다.
 
+        var evt2 = SoundEvents.PlaySfxEvent;
+        evt2.clipData = _openSound;
+        _soundChannelSo.RaiseEvent(evt2);
+        
         if (_windowStatus == UIWindowStatus.Opened) //열려있다면 닫아야 한다.
         {
             CloseWindow();
@@ -43,7 +50,6 @@ public class MenuCanvasUI : MonoBehaviour
 
     private void OpenWindow(float duration = 0.3f)
     {
-        Debug.Log("afaf");
         _windowStatus = UIWindowStatus.Opening;
         Time.timeScale = 0;
         _playerInput.SetPlayerInput(false);

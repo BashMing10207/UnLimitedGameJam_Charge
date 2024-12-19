@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
 {
     public UnityEvent<float, float> _dashCoolEvent;
     
+    [Header("Sound")]
+    [SerializeField] private GameEventChannelSO _soundChannelSo;
+    [SerializeField] private SoundSO _dashSound;
+    
     [Header("Stat")]
     [SerializeField] private StatSO _moveSpeedStat;
     [SerializeField] private StatSO _dashSpeedStat;
@@ -87,6 +91,10 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         if(_currentDashCool >= 0)
             return;
 
+        var evt = SoundEvents.PlaySfxEvent;
+        evt.clipData = _dashSound;
+        _soundChannelSo.RaiseEvent(evt);
+        
         _health.SetInvincibility(true);
         _playerRender.StartSande(_dashTime);
         CanMove = false;
