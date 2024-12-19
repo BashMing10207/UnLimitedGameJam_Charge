@@ -5,7 +5,9 @@ public enum PoolType
     PlayerBullet,
     EnemyBullet,
     SoundPlayer,
-    Particle
+    ImpactParticle,
+    ExplosionParticle,
+    Rock
 }
 
 public interface IPoolable

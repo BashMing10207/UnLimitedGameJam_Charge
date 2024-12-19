@@ -47,8 +47,6 @@ public class Laser : MonoBehaviour
 
         if (hit)
         {
-            
-
             if (hit.transform != null)
             {
                 if (player == null && hit.transform.TryGetComponent<Player>(out Player playerCompo))
@@ -62,8 +60,15 @@ public class Laser : MonoBehaviour
                 if (hit.transform.TryGetComponent<IDamageable>(out IDamageable target))
                 {
                     resultPos = hit.point; 
+                    target.ApplyDamage(5);
                 }
             }
+            
+            if (hit.transform.TryGetComponent<IDamageable>(out IDamageable target2))
+            {
+                target2.ApplyDamage(1);
+            }
+            
         }
 
         if (player != null)
