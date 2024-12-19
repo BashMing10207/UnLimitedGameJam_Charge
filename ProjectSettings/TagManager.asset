@@ -52,11 +52,11 @@ TagManager:
   - name: Gun
     uniqueID: 980112813
     locked: 0
-  - name: Effect
-    uniqueID: 360931705
-    locked: 0
   - name: Player
     uniqueID: 854918179
+    locked: 0
+  - name: Effect
+    uniqueID: 360931705
     locked: 0
   m_RenderingLayers:
   - Default

@@ -99,6 +99,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -106,12 +119,12 @@ TextureImporter:
       name: HPUI-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 64
-        height: 32
+        x: 6
+        y: 109
+        width: 52
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -128,12 +141,12 @@ TextureImporter:
       name: HPUI-Sheet_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 32
+        x: 15
+        y: 71
+        width: 15
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,12 +163,12 @@ TextureImporter:
       name: HPUI-Sheet_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 64
-        height: 32
+        x: 21
+        y: 50
+        width: 35
+        height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,12 +185,12 @@ TextureImporter:
       name: HPUI-Sheet_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 32
+        x: 17
+        y: 9
+        width: 11
+        height: 1
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -208,6 +221,7 @@ TextureImporter:
       HPUI-Sheet_1: -5583642160380858235
       HPUI-Sheet_2: 1356745976
       HPUI-Sheet_3: -1653383355
+      HPUI-Sheet_4: -520946307
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -74,6 +74,9 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
             OnHit?.Invoke(_damage);
     }
 
+    public float GetCurrentHealth() => _currentHealth;
+    public float GetMaxHealth() => _maxHealth;
+
     public float GetNormalizeHealth() => _currentHealth / _maxHealth;
 
     public float GetPredictionNormalizeHealth(float damage)

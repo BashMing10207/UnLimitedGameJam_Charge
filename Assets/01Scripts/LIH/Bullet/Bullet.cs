@@ -24,10 +24,10 @@ public abstract class Bullet : MonoBehaviour, IPoolable
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    public virtual void Shoot(Vector2 dir, float power)
+    public virtual void Shoot(Vector2 dir, float power, float speed)
     {
         _power = Mathf.RoundToInt(power);
-        _rigidbody2D.AddForce(dir * _defaultBulletSpeed, ForceMode2D.Impulse);
+        _rigidbody2D.AddForce(dir * _defaultBulletSpeed * speed, ForceMode2D.Impulse);
     }
 
     private void Update()
