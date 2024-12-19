@@ -49,11 +49,21 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
         WeaponChange<DefaultWeapon>();
         
         _playerInput.AttackEvent += HandleChargingEvent;
+        _playerInput.SlotChangeEvent += HandleSlotChange;
     }
 
     private void OnDestroy()
     {
         _playerInput.AttackEvent -= HandleChargingEvent;
+        _playerInput.SlotChangeEvent -= HandleSlotChange;
+    }
+
+    private void HandleSlotChange(int index)
+    {
+        if(index==0)
+            WeaponChange<DefaultWeapon>();
+        else
+            WeaponChange<ShotGunWeapon>();
     }
 
     private void HandleChargingEvent(bool isCharging)
