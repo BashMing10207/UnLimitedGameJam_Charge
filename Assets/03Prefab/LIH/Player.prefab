@@ -449,13 +449,13 @@ MonoBehaviour:
     _overrideValue: 8
   - _stat: {fileID: 11400000, guid: 2e6dce52016d8af4bbdc841a9831b9b1, type: 2}
     _isUseOverride: 1
-    _overrideValue: 1
+    _overrideValue: 0.5
   - _stat: {fileID: 11400000, guid: 33e25a6fb372d7e44b2aca5f1f6d54e5, type: 2}
     _isUseOverride: 1
     _overrideValue: 10
   - _stat: {fileID: 11400000, guid: c6bebaea503719749b5f5870c30e6e06, type: 2}
     _isUseOverride: 1
-    _overrideValue: 50
+    _overrideValue: 100
 --- !u!1 &6715007783182206426
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +648,7 @@ MonoBehaviour:
   _moveSpeedStat: {fileID: 11400000, guid: 505ee74f875bf374ba48fdab976a7355, type: 2}
   _dashSpeedStat: {fileID: 11400000, guid: ba023ed7b49a8744ca30686b3093033a, type: 2}
   _dashCoolStat: {fileID: 11400000, guid: 2e6dce52016d8af4bbdc841a9831b9b1, type: 2}
-  _dashTime: 0.3
+  _dashTime: 0.4
   _dashInvincibilityTime: 0.2
   _knockBackTime: 0.2
   _applyKnockBackMaxPower: 15
@@ -1035,7 +1035,7 @@ MonoBehaviour:
   - 4
   - 8
   - 16
-  _minChargingValue: 10
+  _minChargingValue: 3
   _chargingDelayTime: 0.5
   currentWeapon: {fileID: 6795604172505319246}
 --- !u!1001 &3914558610327068466
