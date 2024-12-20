@@ -10,8 +10,8 @@ public class TrailRendererSizeHandle : MonoBehaviour
         
     public void SetWidth(float width)
     {
-        float t = Mathf.InverseLerp(0, _maxWidthPower, width);
-        float lerp = Mathf.Lerp(1f, _maxWidth, t);
+        //float t = Mathf.InverseLerp(0, _maxWidthPower, width);
+        float lerp = Mathf.Lerp(0, _maxWidth, width/100) +0.02f;
         _trail.widthMultiplier = lerp;
     }
 }

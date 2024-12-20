@@ -111,7 +111,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -137,9 +137,12 @@ MonoBehaviour:
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
+  _delateTime: 0
+  _power: 0
   BulletInit:
     m_PersistentCalls:
       m_Calls: []
+  _trailRenderer: {fileID: 0}
   fireAudio: {fileID: 0}
   soundChannelSo: {fileID: 0}
   _playerManager: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
@@ -196,7 +199,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

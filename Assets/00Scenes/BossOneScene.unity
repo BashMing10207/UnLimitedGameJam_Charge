@@ -17122,10 +17122,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 148442608336980074, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e3f43802ca10234694f41dc3009c58f, type: 2}
+    - target: {fileID: 1105726870854384258, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: damage
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930166074411091440, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e3f43802ca10234694f41dc3009c58f, type: 2}
+    - target: {fileID: 2616251858327757811, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e3f43802ca10234694f41dc3009c58f, type: 2}
+    - target: {fileID: 2675159514784251372, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e3f43802ca10234694f41dc3009c58f, type: 2}
+    - target: {fileID: 2898612127829393982, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e3f43802ca10234694f41dc3009c58f, type: 2}
+    - target: {fileID: 2977993215654190980, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: damage
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480022144231742260, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e3f43802ca10234694f41dc3009c58f, type: 2}
     - target: {fileID: 4751940564771460975, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: damage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5612721468899575318, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e3f43802ca10234694f41dc3009c58f, type: 2}
     - target: {fileID: 5638670453060161118, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -17138,6 +17174,10 @@ PrefabInstance:
       propertyPath: portal
       value: 
       objectReference: {fileID: 1234799617}
+    - target: {fileID: 8817500324245058664, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e3f43802ca10234694f41dc3009c58f, type: 2}
     - target: {fileID: 8965503902422697842, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -17180,7 +17220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9037722684579950279, guid: e37357d5f5592ca40840a5904989be4b, type: 3}
       propertyPath: _statOverrides.Array.data[0]._overrideValue
-      value: 5000
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17591,9 +17631,33 @@ PrefabInstance:
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 523525542}
+    - target: {fileID: 3937012898979883079, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: _minChargingValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937012898979883079, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: _chargingDelayTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675214834343212108, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6806739803688944786, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937757027924129945, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: _statOverrides.Array.data[1]._isUseOverride
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937757027924129945, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: _statOverrides.Array.data[1]._overrideValue
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937757027924129945, guid: d8c2fe6435611a740b3b433c817d226c, type: 3}
+      propertyPath: _statOverrides.Array.data[2]._overrideValue
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

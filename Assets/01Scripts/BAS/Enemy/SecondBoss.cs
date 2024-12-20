@@ -58,7 +58,7 @@ public class SecondBoss : Enemy
             (_playerManager.PlayerTrm.position - Camera.main.ScreenToWorldPoint(Mouse.current.position.value)))) < _activeDegree
             || Vector2.Distance(transform.position,_playerManager.PlayerTrm.position)<_activeDistance)
         {
-            if(!Physics2D.Raycast(transform.position,_playerManager.PlayerTrm.position - transform.position, Vector2.Distance(_playerManager.PlayerTrm.position, transform.position),_whatisObstacle))
+           // if(!Physics2D.Raycast(transform.position,_playerManager.PlayerTrm.position - transform.position, Vector2.Distance(_playerManager.PlayerTrm.position, transform.position),_whatisObstacle))
             _currentActiveTime =_activingTime;
         }
 
@@ -73,6 +73,7 @@ public class SecondBoss : Enemy
             {
                 fsm.SetState(_battlebeginner);
                 //fsm.enabled = true;
+                EnemyMom.SetActive(true);
             }
             _anim.SetFloat("Battle", 1, 0.7f, 0.08f);
         }
@@ -82,6 +83,7 @@ public class SecondBoss : Enemy
             if (fsm.CurrentState != _idle)
             {
                 fsm.SetState(_idle);
+                EnemyMom.SetActive(false);
                 //fsm.enabled = false;
             }
             _anim.SetFloat("Battle", 0, 0.7f, 0.08f);
@@ -132,7 +134,7 @@ public class SecondBoss : Enemy
             if (GetEntityCompo<Health>().GetCurrentHealth() <= GetEntityCompo<EntityStat>().GetStat(_healthSO).BaseValue / 2)
             {
                // OnPostPage2();
-               EnemyMom.SetActive(true);
+               //EnemyMom.SetActive(true);
             }
         }
 
@@ -148,7 +150,7 @@ public class SecondBoss : Enemy
         evt.position = _firePos.position;
         evt.dir = dir;
         evt._bulletType = PoolType.EnemyFastBullet;
-        evt.damage = 30;
+        evt.damage = 5;
 
         _spawnChanel.RaiseEvent(evt);
 
