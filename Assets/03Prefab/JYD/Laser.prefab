@@ -9808,7 +9808,7 @@ MonoBehaviour:
   _laserHit: {fileID: 4291676570903792974}
   originSizeX: 1
   coreSprite: {fileID: 0}
-  damage: 0.01
+  damage: 0.02
   _laserCover: {fileID: 2092484128719754632}
   laserSound: {fileID: 11400000, guid: b122e9cb05612394caeb5ed48c8bc226, type: 2}
   laserHitSound: {fileID: 11400000, guid: 4013371a5ddfe68428e4158e10c7a64b, type: 2}
