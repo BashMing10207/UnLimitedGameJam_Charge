@@ -180,7 +180,7 @@ public class SecondBoss : Enemy
     {
         Animator.enabled = false;
         _enemyMovement.enabled = false;
-        this.enabled = false;
+        enabled = false;
         
         for (int i = 0; i < 5; i++)
         {
