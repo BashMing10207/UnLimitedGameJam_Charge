@@ -146,7 +146,7 @@ MonoBehaviour:
   fireAudio: {fileID: 0}
   soundChannelSo: {fileID: 0}
   _playerManager: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
-  _homingPower: 0
+  _homingPower: 0.1
 --- !u!95 &3292116247545744492
 Animator:
   serializedVersion: 7

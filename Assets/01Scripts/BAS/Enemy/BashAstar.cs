@@ -23,7 +23,7 @@ public class BashAstar : MonoBehaviour,IEntityComponent //나는 이게 Astar가 아니
 
     private void Awake()
     {
-        InvokeRepeating(nameof(Pathfind), 0, 0.2f);
+        InvokeRepeating(nameof(Pathfind), 0, 0.1f);
     }
     private void Pathfind()
     {
