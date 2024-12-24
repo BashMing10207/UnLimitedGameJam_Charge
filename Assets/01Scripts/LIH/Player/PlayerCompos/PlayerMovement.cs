@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         switch (_player.dashType)
         {
             case PlayerDashType.MouseDir:
-                dir = _player.LookDir();
+                dir = _player.LooDir;
                 break;
             case PlayerDashType.InputDir:
                 dir = _player.PlayerInput.InputDirection.normalized;
@@ -141,7 +141,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         float inverseLerp = Mathf.InverseLerp(0, _maxKnockBackChargingValue, power);
         float knockBackPower = Mathf.Lerp(0, _applyKnockBackMaxPower, inverseLerp);
         
-        _rigidbody2D.AddForce(-_player.LookDir() * knockBackPower, ForceMode2D.Impulse);
+        _rigidbody2D.AddForce(-_player.LooDir * knockBackPower, ForceMode2D.Impulse);
         DOVirtual.DelayedCall(_knockBackTime, () => CanMove = true);
     }
 

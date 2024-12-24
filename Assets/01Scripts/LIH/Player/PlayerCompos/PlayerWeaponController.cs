@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,7 +17,7 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
 
     public List<float> levelSeconds;
     public List<float> levelAdditiveValue;
-
+    
     [SerializeField] private float _minChargingValue;
     [SerializeField] private float _chargingDelayTime;
     
@@ -130,7 +129,7 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     
     private void GunRotate()
     {
-        float z = Mathf.Atan2(_player.LookDir().y, _player.LookDir().x) * Mathf.Rad2Deg;
+        float z = Mathf.Atan2(_player.LooDir.y, _player.LooDir.x) * Mathf.Rad2Deg;
         if (_playerRender.FacingDirection <= 0f)
             z = -z + 180f;
         

@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
         _spawnChannel.AddListener<SmokeParticleCreate>(HandleSmokeParticleSpawn);
         _spawnChannel.AddListener<RockCreate>(HandleRockSpawn);
         _spawnChannel.AddListener<ExplosionCreate>(HandleExplosionSpawn);
+        _spawnChannel.AddListener<HitImpactCreate>(HandleHitImpactSpawn);
     }
 
     private void OnDestroy()
@@ -19,6 +20,7 @@ public class Spawner : MonoBehaviour
         _spawnChannel.RemoveListener<SmokeParticleCreate>(HandleSmokeParticleSpawn);
         _spawnChannel.RemoveListener<RockCreate>(HandleRockSpawn);
         _spawnChannel.RemoveListener<ExplosionCreate>(HandleExplosionSpawn);
+        _spawnChannel.RemoveListener<HitImpactCreate>(HandleHitImpactSpawn);
     }
 
     private void HandleBulletSpawn(BulletCreate evt)
@@ -56,4 +58,12 @@ public class Spawner : MonoBehaviour
         ex.PlayParticle();
         
     }
+
+    private void HandleHitImpactSpawn(HitImpactCreate evt)
+    {
+        HitImpactParticle ex = _poolManager.Pop(evt.poolType) as HitImpactParticle;
+        ex.transform.position = evt.position;
+        ex.PlayParticle();
+    }
+    
 }
