@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour, IPlayerCompo
 {
@@ -47,7 +45,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
     private float _dashSpeed;
     private float _currentDashCool;
     private float _dashCoolTime;
-
+    
     private float _chargingMoveMultiplier = 1f;
 
     public void Initialize(Player player)
@@ -156,7 +154,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         _rigidbody2D.linearVelocity = _moveDir * _moveSpeed / _chargingMoveMultiplier;
     }
     
-    public void StopImmediately(bool isYAxisToo = false)
+    private void StopImmediately(bool isYAxisToo = false)
     {
         if(isYAxisToo)
             _rigidbody2D.linearVelocity = Vector2.zero;
@@ -164,6 +162,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
             _rigidbody2D.linearVelocityX = 0;
 
         _moveDir = Vector2.zero;
+    }
+
+    public void SetActiveCanMove(bool _isActive)
+    {
+        CanMove = _isActive;
+        StopImmediately();
     }
 
     private void HandleResetChargingSpeed(float power)

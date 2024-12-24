@@ -153,4 +153,9 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
         fireEvent.AddListener(currentWeapon.Fire);
         chargingEvent.AddListener(currentWeapon.Charging);
     }
+
+    public void SetActiveWeapon(bool _isActive)
+    {
+        gameObject.SetActive(_isActive);
+    }
 }

@@ -23,7 +23,7 @@ public class BashAstar : MonoBehaviour,IEntityComponent //나는 이게 Astar가 아니
 
     private void Awake()
     {
-        InvokeRepeating(nameof(Pathfind), 0, 0.3f);
+        InvokeRepeating(nameof(Pathfind), 0, 0.2f);
     }
     private void Pathfind()
     {
@@ -51,7 +51,12 @@ public class BashAstar : MonoBehaviour,IEntityComponent //나는 이게 Astar가 아니
                     _distances[i] = 1024;
                 }
             }
+
             _maxtmp = _dirs[_distances.IndexOf(_distances.Min())];
+            if (_dirs.Count == 0)
+            {
+                _maxtmp = -(Target - transform.position).normalized;
+            }
         }
     }
 }

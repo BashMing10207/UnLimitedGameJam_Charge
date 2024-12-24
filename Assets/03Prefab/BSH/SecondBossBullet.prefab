@@ -4965,7 +4965,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5001,18 +5001,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolType: 7
-  _lifeTime: 8
-  _defaultBulletSpeed: 1
+  _lifeTime: 1
+  _defaultBulletSpeed: 2
   whatIsTarget:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 67
+  _power: 0
   BulletInit:
     m_PersistentCalls:
       m_Calls: []
   fireAudio: {fileID: 0}
   soundChannelSo: {fileID: 0}
   _playerManager: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
-  _homingPower: 0
+  _homingPower: 1
 --- !u!95 &547159994289562303
 Animator:
   serializedVersion: 7

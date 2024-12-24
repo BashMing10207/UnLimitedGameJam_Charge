@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa9a6287a35f2742951d45670151744, type: 3}
   m_Name: Boss2RunState
   m_EditorClassIdentifier: 
-  StateName: Boss2Dodge
+  StateName: Boss2Dodge3
   AnimState: {fileID: 11400000, guid: b81265369d2cf0744918cdf70af4d5cf, type: 2}
   NextState: {fileID: 11400000, guid: c9e590a5ee93e494381146320e0db4b5, type: 2}
   _playerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
   _statModifier: {fileID: 11400000, guid: ffe6218ccf3bbe843bf483737b032f59, type: 2}
-  _distance: -7
-  _isPierceObstacle: 0
+  _distance: -8
+  _isPierceObstacle: 1
   _whatisObstacle:
     serializedVersion: 2
     m_Bits: 7

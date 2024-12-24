@@ -7,6 +7,7 @@ public class ShotGunWeapon : Weapon
     
     [SerializeField] private float _maxSize = 1.25f;
     [SerializeField] private float _maxSpeed = 3f;
+    [SerializeField] private float _damage = 2f;
 
     public override void Charging(float chargingTime, float chargingSpeed)
     {
@@ -15,13 +16,13 @@ public class ShotGunWeapon : Weapon
 
     public override void Fire(float power)
     {
-        float bulletCount = power / _oneBulletPower;
+        float bulletCount = power / _oneBulletPower/2+5;
 
         for (int i = 0; i < bulletCount; i++)
         {
             var evt = SpawnEvents.BulletCreate;
             evt._bulletType = PoolType.PlayerBullet;
-            evt.damage = power / bulletCount;
+            evt.damage = _damage*(1+power/10);
 
             Vector2 dir = _player.LookDir();
             float x = Random.Range(-_spreadValue, _spreadValue);

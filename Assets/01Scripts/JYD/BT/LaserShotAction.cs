@@ -12,7 +12,7 @@ public partial class LaserShotAction : Action
     
     protected override Status OnStart()
     {
-        Golem.Value.ActiveLaser(true);
+        Golem.Value.BulletPattern.ActiveLaser(true);
         
         return Status.Success;
     }

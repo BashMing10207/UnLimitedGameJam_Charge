@@ -30,7 +30,8 @@ public class SecondBossMinian : Enemy
         base.Awake();
         var fsm = GetEntityCompo<EnemyFSM>();
         fsm.SetState(_run);
-        StartCoroutine(AttackLoop());
+        //StartCoroutine(AttackLoop());'
+        InvokeRepeating(nameof(AttackLop),0,_attackCoolDown);
     }
 
     protected override void Update()
@@ -55,12 +56,14 @@ public class SecondBossMinian : Enemy
         evt.position = _firePos.position;
         evt.dir =dir;
         evt._bulletType = PoolType.EnemyHomingBullet;
-        evt.damage = 30;
+        evt.damage = 5;
 
         _spawnChanel.RaiseEvent(evt);
 
         //GetEntityCompo<EnemyMovement>().Knockback(dir.normalized * (_dashSpeed + dir.magnitude));
         _isFilpable = false;
+        
+        //GetComponentInChildren<Animator>(). SetBool("Attack", false);
     }
     public void DashAttackEnd()
     {
@@ -78,9 +81,16 @@ public class SecondBossMinian : Enemy
         }
     }
 
+    private void AttackLop()
+    {
+        var fsm = GetEntityCompo<EnemyFSM>();
+
+            fsm.SetState(_attack);
+    }
+
     public void StateEnd()
     {
-        GetEntityCompo<EnemyFSM>().StateEnd();
+        //GetEntityCompo<EnemyFSM>().StateEnd();
 
         var fsm = GetEntityCompo<EnemyFSM>();
 

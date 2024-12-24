@@ -1,53 +1,47 @@
-using System;
-using DG.Tweening;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using UnityEngine.InputSystem;
+
 
 public class Portal : MonoBehaviour
 {
-    [SerializeField] private int nextSceneName;
-    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private string nextSceneName;
+    [SerializeField] private LayerMask whatIsTarget;
+    [SerializeField] private FadeIn fade;
     
-    [Space]
-    [SerializeField] private bool isEffect;
-    [SerializeField] private SpriteRenderer portal;
     private readonly int _value = Shader.PropertyToID("_Value");
 
-    [SerializeField] private Image fade;
+    private PlayerInputSO _playerInput;
     
-    private SpriteRenderer frame => GetComponent<SpriteRenderer>();
     
-    private void OnEnable()
-    {
-        if (isEffect)
-        {
-            Material portalMaterial = frame.material;
-            float initialValue = portalMaterial.GetFloat(_value);
-            
-            DOVirtual.Float(initialValue, 1.1f, 3, value =>
-            {
-                portalMaterial.SetFloat(_value, value);
-            }).OnComplete(() =>
-            {
-                portal.DOFade(1, 1);
-            });
-        }
-    }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<Player>())
+        if (_playerInput == null)
         {
-            fade.DOFade(1,0.7f).OnComplete(() =>
-            {
-                SceneManager.LoadScene(nextSceneName);
-            });
+            _playerInput = other.GetComponent<Player>().PlayerInput;
         }
+        
+        if ((whatIsTarget & (1 << other.gameObject.layer)) != 0)
+        {
+            _playerInput.InteractEvent += TransitionScene;
+        }  
+                
     }
     
-        
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if ((whatIsTarget & (1 << other.gameObject.layer)) != 0)
+        {
+            _playerInput.InteractEvent -= TransitionScene;
+            _playerInput = null;
+        }  
+                
+    }
+
+    private void TransitionScene()
+    {
+        fade.FadeStart(nextSceneName);
+    }
+    
             
 }

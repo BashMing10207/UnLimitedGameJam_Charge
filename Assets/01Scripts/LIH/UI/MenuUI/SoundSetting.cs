@@ -7,7 +7,7 @@ public class SoundSetting : MonoBehaviour
     [SerializeField] private AudioMixer _audioMixer;
     [SerializeField] private Slider _sfxSlider;
     [SerializeField] private Slider _bgmSlider;
-
+    
     private void Start()
     {
         float t = Mathf.InverseLerp(-60f, 0f, GetAudioValue("SFX"));
@@ -18,6 +18,15 @@ public class SoundSetting : MonoBehaviour
 
         _sfxSlider.onValueChanged.AddListener(HandleSfxValueChange);
         _bgmSlider.onValueChanged.AddListener(HandleBGMValueChange);
+
+        
+        float bgmValue =  PlayerPrefs.GetFloat("BGM");
+        float sfxValue = PlayerPrefs.GetFloat("SFX");
+        
+        _sfxSlider.value = sfxValue;
+        _bgmSlider.value = bgmValue;
+        _audioMixer.SetFloat("BGM", Mathf.Log10(bgmValue) * 20);
+        _audioMixer.SetFloat("SFX", Mathf.Log10(sfxValue) * 20);
     }
 
     private void HandleBGMValueChange(float value)
@@ -33,6 +42,7 @@ public class SoundSetting : MonoBehaviour
     private void SetAudioValue(string audioType, float value)
     {
         _audioMixer.SetFloat(audioType, Mathf.Log10(value) * 20);
+        PlayerPrefs.SetFloat(audioType, value);
     }
     
     private float GetAudioValue(string audioType)

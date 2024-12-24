@@ -40,7 +40,7 @@ AnimationClip:
       value: {fileID: 8478961288863187848, guid: bd2c223a3529e8940b72707b69d2350f, type: 3}
     - time: 0.75
       value: {fileID: 739267767904319522, guid: bd2c223a3529e8940b72707b69d2350f, type: 3}
-    - time: 0.78333336
+    - time: 0.9166667
       value: {fileID: 7368763972854029938, guid: bd2c223a3529e8940b72707b69d2350f, type: 3}
     attribute: m_Sprite
     path: 
@@ -80,7 +80,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8
+    m_StopTime: 0.93333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -128,15 +128,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.78333336
-    functionName: StateEnd
+  - time: 0.76666665
+    functionName: DashAttackEnd
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.78333336
-    functionName: DashAttackEnd
+  - time: 0.9
+    functionName: StateEnd
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

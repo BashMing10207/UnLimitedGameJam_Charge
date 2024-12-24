@@ -11,7 +11,8 @@ public class PlayerInputSO : ScriptableObject, Controls.IPlayerActions, Controls
     public event Action OpenMenuEvent;
     public event Action<bool> MovementEvent;
     public event Action<int> SlotChangeEvent;
-    
+    public event Action InteractEvent;
+        
     public Vector2 InputDirection { get; private set; }
     public Vector2 MousePos { get; private set; }
     
@@ -77,6 +78,12 @@ public class PlayerInputSO : ScriptableObject, Controls.IPlayerActions, Controls
     {
         if (context.performed)
             SlotChangeEvent?.Invoke(1);
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            InteractEvent?.Invoke();
     }
 
     public void OnOpenMenu(InputAction.CallbackContext context)

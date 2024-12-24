@@ -4,7 +4,7 @@ public class EnemyFSM : MonoBehaviour,IEntityComponent//,IAfterInitable
 {
     private Enemy _enemy;
 
-    public EnemyStateSO CurrentState {  get; private set; }
+    public EnemyStateSO CurrentState;
 
     private void Start()
     {
@@ -19,6 +19,7 @@ public class EnemyFSM : MonoBehaviour,IEntityComponent//,IAfterInitable
 
     public void SetState(EnemyStateSO state)
     {
+
         if(CurrentState !=null)
         {
             CurrentState.OnExit();

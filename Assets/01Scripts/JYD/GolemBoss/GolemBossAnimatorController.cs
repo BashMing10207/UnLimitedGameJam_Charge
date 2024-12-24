@@ -1,32 +1,26 @@
-using System;
 using System.Threading.Tasks;
-using Unity.Behavior;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class GolemBossAnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator BossAnimator;
-    [SerializeField] private BehaviorGraphAgent BossGraph;
-
     [SerializeField] private int explosionCount;
-    
+        
     [SerializeField] private GameEventChannelSO ChannelSo;
     [SerializeField] private GolemBoss GolemBoss;
 
     [SerializeField] private SpriteRenderer[] parts;
-    private Material[] origins;
     [SerializeField] private Material BlinkMat;
-
-    [SerializeField] private GameObject portal;
+    private Material[] originsPartMats;
     
     private void Start()
     {
-        origins = new Material[parts.Length];
+        originsPartMats = new Material[parts.Length];
         
         for (int i = 0; i < parts.Length; i++)
         {
-            origins[i] = parts[i].material;
+            originsPartMats[i] = parts[i].material;
         }
         
     }
@@ -52,11 +46,10 @@ public class GolemBossAnimatorController : MonoBehaviour
     
     public void SetDead()
     {
-        portal.gameObject.SetActive(true);
+        GolemBoss.BulletPattern.ActiveLaser(false);
+        GolemBoss.Dead();
         BossAnimator.enabled = true;
-        BossGraph.enabled = false;
-        GolemBoss.ActiveLaser(false);
-        
+                
         BossAnimator.SetBool("Dead",true);
     }
 
@@ -71,7 +64,7 @@ public class GolemBossAnimatorController : MonoBehaviour
         
         for (int i = 0; i < parts.Length; i++)
         {
-            parts[i].material = origins[i];
+            parts[i].material = originsPartMats[i];
         }
     }
     

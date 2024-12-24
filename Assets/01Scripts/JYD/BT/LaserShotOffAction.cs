@@ -12,7 +12,7 @@ public partial class LaserShotOffAction : Action
     [SerializeReference] public BlackboardVariable<GolemBoss> GolemBoss;
     protected override Status OnStart()
     {
-        GolemBoss.Value.ActiveLaser(false);   
+        GolemBoss.Value.BulletPattern.ActiveLaser(false);   
         
         return Status.Success;
     }

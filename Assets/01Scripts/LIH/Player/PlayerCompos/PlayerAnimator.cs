@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour, IPlayerCompo
@@ -15,16 +14,14 @@ public class PlayerAnimator : MonoBehaviour, IPlayerCompo
     [SerializeField] private GameObject gun;
     [SerializeField] private PlayerMovement movement;
     [SerializeField] private PlayerWeaponController _weaponController;
-
-    private bool isDead = false;
-
     
+    private bool isDead = false;
+        
     public void Initialize(Player player)
     {
         _player = player;
         _rigidbody2D = player.GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-
     }
 
     private void Update()
@@ -43,22 +40,15 @@ public class PlayerAnimator : MonoBehaviour, IPlayerCompo
         _animator.SetBool(_idleHash, !isMove);
     }
 
-    public void SetDead()
+    public void PlayDeadAnim()
     {
-        if(isDead)return;
-        
-        movement.StopImmediately(true);
-        
-        _weaponController.resetEvent?.Invoke();
-        
         isDead = true;
         
-        _animator.SetBool(_moveHash, false);
         _animator.SetBool(_idleHash, false);
-        _animator.SetBool(_deadHash, true);
-        
-        gun.SetActive(false);
-        movement.enabled = false;
+        _animator.SetBool(_moveHash, false);
+
+        _animator.SetBool(_deadHash , true);
+
     }
     
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   displayName: DashSpeed
-  _baseValue: 15
+  _baseValue: 60
   _minValue: 15
-  _maxValue: 25
+  _maxValue: 999
   <IsPercent>k__BackingField: 0
