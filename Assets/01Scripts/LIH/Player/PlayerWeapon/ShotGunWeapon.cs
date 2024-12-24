@@ -22,18 +22,19 @@ public class ShotGunWeapon : Weapon
         {
             var evt = SpawnEvents.BulletCreate;
             evt._bulletType = PoolType.PlayerBullet;
-            evt.damage = _damage*(1+power/10);
+            evt.damage = _damage*(1 + power/10);
 
             Vector2 dir = _player.LooDir;
             float x = Random.Range(-_spreadValue, _spreadValue);
             float y = Random.Range(-_spreadValue, _spreadValue);
             dir.x += x;
             dir.y += y;
-
-            evt.speed = Random.Range(1f, 1.5f);
-            evt.dir = dir.normalized;
-            evt.position = _fireTrm.position;
             
+            evt.dir = dir.normalized * Mathf.Min(1+power/4 , 12);
+            //evt.speed = Random.Range(1f, 1.5f);
+            
+            evt.position = _fireTrm.position;
+                        
             float sizet = Mathf.InverseLerp(0, 100f, power);
             evt.size = Mathf.Lerp(1f, _maxSize, sizet);
         
