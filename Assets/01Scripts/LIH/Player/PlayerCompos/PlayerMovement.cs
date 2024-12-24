@@ -151,7 +151,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
             return;
         
         _moveDir = _player.PlayerInput.InputDirection;
-        _rigidbody2D.linearVelocity = _moveDir * _moveSpeed / _chargingMoveMultiplier;
+        _rigidbody2D.linearVelocity = _moveDir * (_moveSpeed * _chargingMoveMultiplier);
     }
     
     private void StopImmediately(bool isYAxisToo = false)
@@ -183,17 +183,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
 
     private void HandleSetChargingSpeed(float chargingTime, float chargingValue)
     {
-        if(CanMove == false)
+        if (CanMove == false)
             return;
 
-        if (chargingValue >= _zeroSpeedChargingValue)
-        {
-            StopImmediately(true);
-            CanMove = false;
-        }
-        else
-        {
-            _chargingMoveMultiplier = Mathf.Max(1,chargingValue);
-        }
+        chargingValue = Mathf.Min(chargingValue, 100);
+        
+        _chargingMoveMultiplier = Mathf.Lerp(1.0f, 0.3f, chargingValue / 100f);
     }
+
 }

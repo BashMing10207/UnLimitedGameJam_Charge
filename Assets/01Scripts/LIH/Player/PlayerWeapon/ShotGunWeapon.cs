@@ -31,15 +31,14 @@ public class ShotGunWeapon : Weapon
             dir.y += y;
             
             evt.dir = dir.normalized * Mathf.Min(1+power/4 , 12);
-            //evt.speed = Random.Range(1f, 1.5f);
-            
+                        
             evt.position = _fireTrm.position;
                         
             float sizet = Mathf.InverseLerp(0, 100f, power);
             evt.size = Mathf.Lerp(1f, _maxSize, sizet);
         
-            float speed = Mathf.InverseLerp(0, 100f, power);
-            evt.speed = Mathf.Lerp(1f, _maxSpeed, speed);
+            //float speed = Mathf.InverseLerp(0, 100f, power);
+            //evt.speed = Mathf.Lerp(1f, _maxSpeed, speed);
             
             _spawnChannel.RaiseEvent(evt);
         }

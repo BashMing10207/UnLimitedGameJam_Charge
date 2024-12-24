@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolType: 0
   _lifeTime: 3
-  _defaultBulletSpeed: 3
+  _defaultBulletSpeed: 8
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 256

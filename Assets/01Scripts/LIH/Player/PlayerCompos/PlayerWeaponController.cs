@@ -116,13 +116,18 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     private void ChargingLogic()
     {
         _currentChargingTime += Time.deltaTime;
+        
         float maxValue = levelSeconds.Where(x => x <= _currentChargingTime).Max();
         CurrentLevelIndex = levelSeconds.FindLastIndex(x => x <= maxValue);
-
+        
         _currentChargingDelayTime -= Time.deltaTime;
         if (_currentChargingDelayTime <= 0)
         {
-            _currentCharging += levelAdditiveValue[CurrentLevelIndex];
+            float curIncValue = levelAdditiveValue[CurrentLevelIndex];
+
+            curIncValue = _playerInput.InputDirection == Vector2.zero ? curIncValue : 1;
+            
+            _currentCharging += curIncValue;
             _currentChargingDelayTime = _chargingDelayTime;
         }
     }

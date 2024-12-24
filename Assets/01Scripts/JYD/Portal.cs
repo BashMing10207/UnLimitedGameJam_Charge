@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 public class Portal : MonoBehaviour
@@ -12,20 +11,17 @@ public class Portal : MonoBehaviour
 
     private PlayerInputSO _playerInput;
     
-    
-    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_playerInput == null)
-        {
-            _playerInput = other.GetComponent<Player>().PlayerInput;
-        }
-        
         if ((whatIsTarget & (1 << other.gameObject.layer)) != 0)
         {
+            if (_playerInput == null)
+            {
+                _playerInput = other.GetComponent<Player>().PlayerInput;
+            }
+            
             _playerInput.InteractEvent += TransitionScene;
         }  
-                
     }
     
     private void OnTriggerExit2D(Collider2D other)

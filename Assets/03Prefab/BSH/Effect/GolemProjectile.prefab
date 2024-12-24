@@ -4917,8 +4917,11 @@ MonoBehaviour:
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
+  _power: 0
   BulletInit:
     m_PersistentCalls:
       m_Calls: []
+  _trailRenderer: {fileID: 0}
+  _channelSo: {fileID: 11400000, guid: 6944cce5058946943ac30c78e150d1b4, type: 2}
   fireAudio: {fileID: 11400000, guid: 258d0caf7b3a0124382101134b9c5342, type: 2}
   soundChannelSo: {fileID: 11400000, guid: 596a11e1fb17f7f4bb93d34b877aa47d, type: 2}
