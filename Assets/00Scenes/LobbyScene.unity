@@ -26537,6 +26537,10 @@ PrefabInstance:
       propertyPath: fade
       value: 
       objectReference: {fileID: 1871732373}
+    - target: {fileID: 5735823686821125938, guid: 1b4ac644f3cbd6d418df9a5124b86bfa, type: 3}
+      propertyPath: nextSceneName
+      value: BossOneScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8374114614855108509, guid: 1b4ac644f3cbd6d418df9a5124b86bfa, type: 3}
       propertyPath: m_Name
       value: Potoal_0

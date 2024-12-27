@@ -23,6 +23,8 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     protected bool _isActiving = true;
 
     [SerializeField] private GameEventChannelSO _channelSo;
+
+    [SerializeField] private Material hitImpactMat;
     
     private void OnEnable()
     {
@@ -80,6 +82,7 @@ public abstract class Bullet : MonoBehaviour, IPoolable
                 var evt = SpawnEvents.HitImpactCreate;
                 evt.poolType = PoolType.HitImpact;
                 evt.position = transform.position;
+                evt.hitImpactMat = hitImpactMat;
                 _channelSo.RaiseEvent(evt);
                 
                 _myPool.Push(this);
