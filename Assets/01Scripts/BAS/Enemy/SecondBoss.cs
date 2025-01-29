@@ -13,7 +13,7 @@ public class SecondBoss : Enemy
     private float _activeDegree = 5,_activingTime=8;
 
     [SerializeField]
-    private EnemyStateSO _idle, _battlebeginner,_deadState;
+    private EnemyStateSO _idle, _battlebeginner;
     [SerializeField]
     private float _dashSpeed = 100,_activeDistance=1f;
     [SerializeField]
@@ -38,12 +38,9 @@ public class SecondBoss : Enemy
     [SerializeField]
     private GameEventChannelSO _spawnChanel;
 
-    [SerializeField]
-    private GameObject portal;
-    [SerializeField]
-    private AnimStateSO _deadParam;
-    [SerializeField]
-    private GameObject EnemyMom;
+    [SerializeField] private GameObject portal;
+
+    public GameObject EnemyMom;
     
     //private StatModifierSO _dashSpeed;
     protected override void Awake()
@@ -169,7 +166,7 @@ public class SecondBoss : Enemy
     [ContextMenu("testDamage")]
     public void TestInflic()
     {
-        GetEntityCompo<Health>().ApplyDamage(600);
+        GetEntityCompo<Health>().ApplyDamage(50);
     }
 
     public void SetPortal()
@@ -177,13 +174,13 @@ public class SecondBoss : Enemy
         portal.gameObject.SetActive(true);
     }
 
-    public Animator Animator; //언년이 이거 써놨노... 아가...
+    public Animator Animator;
     [SerializeField] private GameEventChannelSO _channelSo;
     [SerializeField] private EnemyMovement _enemyMovement;
     
     public void SetDead()
     {
-        //Animator.enabled = false;
+        Animator.enabled = false;
         _enemyMovement.enabled = false;
         enabled = false;
         
@@ -195,12 +192,5 @@ public class SecondBoss : Enemy
             
             _channelSo.RaiseEvent(ex);
         }
-    }
-
-    public void DeadAnim()
-    {
-        var fsm = GetEntityCompo<EnemyFSM>();
-        fsm.SetState(_deadState);
-        _anim.SetTrigger(_deadParam.HashValue);
     }
 }

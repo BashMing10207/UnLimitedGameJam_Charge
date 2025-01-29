@@ -15,7 +15,6 @@ public class BashAstar : MonoBehaviour,IEntityComponent //나는 이게 Astar가 아니
     private List<float> _distances = new List<float>();
     public Vector3 PathDir => _maxtmp;
     private Entity _entity;
-    public float RefeshTime = 0.1f;
 
     public void Initialize(Entity entity)
     {
@@ -24,7 +23,7 @@ public class BashAstar : MonoBehaviour,IEntityComponent //나는 이게 Astar가 아니
 
     private void Awake()
     {
-        InvokeRepeating(nameof(Pathfind), 0, 0.05f);
+        InvokeRepeating(nameof(Pathfind), 0, 0.2f);
     }
     private void Pathfind()
     {

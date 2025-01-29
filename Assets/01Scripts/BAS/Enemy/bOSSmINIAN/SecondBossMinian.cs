@@ -24,46 +24,28 @@ public class SecondBossMinian : Enemy
     private GameEventChannelSO _spawnChanel;
     [SerializeField]
     private float _attackCoolDown = 3f;
-    [SerializeField]
-    private AnimStateSO _resetParam;
-    [SerializeField]
-    private Animator _animaotr;
-    private float _currentAttackCooldown = 0;
     //private StatModifierSO _dashSpeed;
     protected override void Awake()
     {
         base.Awake();
         var fsm = GetEntityCompo<EnemyFSM>();
         fsm.SetState(_run);
-        _animaotr = GetComponent<Animator>();
-    }
-
-    private void OnEnable()
-    {
-        _animaotr.SetTrigger(_resetParam.HashValue);
+        //StartCoroutine(AttackLoop());'
+        InvokeRepeating(nameof(AttackLop),0,_attackCoolDown);
     }
 
     protected override void Update()
     {
+
+           
+
         if (_isFilpable)
         {
             _spriteRenderer.flipX = _playerManager.PlayerTrm.position.x < transform.position.x;
         }
     }
 
-    private void FixedUpdate()
-    {
-        if(_currentAttackCooldown >= _attackCoolDown)
-        {
-            _currentAttackCooldown = 0;
-            AttackLop();
-        }
-        else
-        {
-            _currentAttackCooldown += Time.fixedDeltaTime;
-        }
-    }
-
+    
 
     // 이 아래는 애니메이션 트리거 날먹
     public void ProjectileAttack()
@@ -89,15 +71,15 @@ public class SecondBossMinian : Enemy
         _isFilpable = true;
     }
 
-    //private IEnumerator AttackLoop()
-    //{
-    //    var fsm = GetEntityCompo<EnemyFSM>();
-    //    while (true)
-    //    {
-    //        yield return new WaitForSeconds(_attackCoolDown);
-    //        fsm.SetState(_attack);
-    //    }
-    //}
+    private IEnumerator AttackLoop()
+    {
+        var fsm = GetEntityCompo<EnemyFSM>();
+        while (true)
+        {
+            yield return new WaitForSeconds(_attackCoolDown);
+            fsm.SetState(_attack);
+        }
+    }
 
     private void AttackLop()
     {
