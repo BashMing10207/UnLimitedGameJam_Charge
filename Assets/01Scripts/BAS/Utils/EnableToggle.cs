@@ -11,8 +11,9 @@ public class EnableToggle : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    public void EnableToggler()
+    public void EnableToggler(bool aaa)
     {
-        aa.SetActive(!aa.activeInHierarchy);
+        gameObject.SetActive(aaa);
+        //aa.SetActive(!aa.activeInHierarchy);
     }
 }
