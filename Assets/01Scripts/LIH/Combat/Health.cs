@@ -77,10 +77,10 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
 
     private void HitFeedBack()
     {
+        OnHit?.Invoke(_damage);
+        
         if (IsDead)
             OnDead?.Invoke();
-        else
-            OnHit?.Invoke(_damage);
     }
 
     public float GetCurrentHealth() => _currentHealth;
