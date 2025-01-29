@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 
@@ -9,6 +10,8 @@ public class Portal : MonoBehaviour
     [SerializeField] private string nextSceneName;
     [SerializeField] private LayerMask whatIsTarget;
     [SerializeField] private FadeIn fade;
+    
+    [SerializeField] private TextMeshProUGUI text;
     
     private PlayerInputSO _playerInput;
     
@@ -24,7 +27,7 @@ public class Portal : MonoBehaviour
             {
                 _playerInput = other.GetComponent<Player>().PlayerInput;
             }
-            
+            text.gameObject.SetActive(true);
             _playerInput.InteractEvent += TransitionScene;
         }  
     }
@@ -35,6 +38,7 @@ public class Portal : MonoBehaviour
         {
             _playerInput.InteractEvent -= TransitionScene;
             _playerInput = null;
+            text.gameObject.SetActive(false);
         }  
                 
     }
