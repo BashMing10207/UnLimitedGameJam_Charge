@@ -49,6 +49,7 @@ public class TitleManager : MonoBehaviour
         fadeInImage.DOFade(1 , fadeTime).OnComplete(() =>
         {
             SceneManager.LoadScene(nextScene);
+            print(123);
         });
     }
     
