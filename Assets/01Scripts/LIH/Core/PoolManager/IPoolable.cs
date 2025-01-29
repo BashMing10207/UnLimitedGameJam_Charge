@@ -8,7 +8,7 @@ public enum PoolType
     ImpactParticle,
     ExplosionParticle,
     Rock,
-    Particle,
+    HitImpact,
     EnemyHomingBullet,
     EnemyFastBullet,
     PopUpText,

@@ -52,8 +52,9 @@ public class Player : Entity
         return default;
     }
 
-    public Vector2 LookDir() => (PlayerInput.MousePos - (Vector2)transform.position).normalized;
 
+    public Vector2 LooDir => (PlayerInput.MousePos - (Vector2)transform.position).normalized;
+    
     public void HitSoundPlay()
     {
         var evt = SoundEvents.PlaySfxEvent;

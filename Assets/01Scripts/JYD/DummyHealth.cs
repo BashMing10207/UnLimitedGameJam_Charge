@@ -5,7 +5,7 @@ public class DummyHealth : MonoBehaviour ,IDamageable
 {
     public float health;
     public UnityEvent dieEvent; 
-        
+    
     public void ApplyDamage(float damage)
     {
         health -= damage;
@@ -13,5 +13,10 @@ public class DummyHealth : MonoBehaviour ,IDamageable
         {
             dieEvent?.Invoke();
         }
+    }
+
+    public void SetHealth(float _health)
+    {
+        health = _health;
     }
 }

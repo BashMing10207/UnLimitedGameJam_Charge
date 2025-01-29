@@ -7,11 +7,11 @@ public class Rock : MonoBehaviour,IPoolable
     public GameObject GameObject => gameObject;
 
     private Pool _myPool;
-
+    
     [SerializeField] private PoolType _poolType;
     [SerializeField] private GameEventChannelSO ChannelSo;
     [SerializeField] private LayerMask whatIsTarget;
-
+    
     private bool isDie;
     
     public void SetUpPool(Pool pool)
@@ -46,7 +46,7 @@ public class Rock : MonoBehaviour,IPoolable
     
         foreach (var hitCollider in hitColliders)
         {
-            if (hitCollider.TryGetComponent<IDamageable>(out var damageable))
+            if (hitCollider.TryGetComponent<IDamageable>(out var damageable) && hitCollider.GetComponent<Player>())
             {
                 damageable.ApplyDamage(5f); 
             }

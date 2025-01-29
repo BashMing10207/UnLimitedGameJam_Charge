@@ -32,7 +32,7 @@ public class MenuCanvasUI : MonoBehaviour
     private void HandleOpenMenu(OpenMenuEvent evt)
     {
         if (_windowStatus == UIWindowStatus.Closing || _windowStatus == UIWindowStatus.Opening)
-            return; //진행중이라면 받지 않는다.
+            return;
 
         var evt2 = SoundEvents.PlaySfxEvent;
         evt2.clipData = _openSound;
@@ -75,4 +75,7 @@ public class MenuCanvasUI : MonoBehaviour
             Time.timeScale = 1f;
         }, duration);
     }
+    
+    
+    
 }

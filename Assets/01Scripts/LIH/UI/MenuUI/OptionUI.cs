@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class OptionUI : MonoBehaviour
 {
-    public void afafafa()
+    public void Quit()
     {
         Application.Quit();
     }

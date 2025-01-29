@@ -10,21 +10,22 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     [SerializeField] protected float _lifeTime;
     [SerializeField] protected float _defaultBulletSpeed;
     [SerializeField] protected LayerMask whatIsTarget;
-    [SerializeField] protected float _delateTime = 0.4f;
     protected Rigidbody2D _rigidbody2D;
-
-    [SerializeField]
-    protected float _power;
-
+      
+    [SerializeField] protected float _power;
     protected Pool _myPool;
 
     protected float _currentTime;
 
     public UnityEvent<float> BulletInit;
-
+    
     [SerializeField] TrailRenderer _trailRenderer;
     protected bool _isActiving = true;
 
+    [SerializeField] private GameEventChannelSO _channelSo;
+
+    [SerializeField] private Material hitImpactMat;
+    
     private void OnEnable()
     {
         _isActiving = true;
@@ -41,8 +42,13 @@ public abstract class Bullet : MonoBehaviour, IPoolable
         _power = Mathf.RoundToInt(power);
         _rigidbody2D.AddForce(dir * _defaultBulletSpeed * speed, ForceMode2D.Impulse);
         BulletInit?.Invoke(power);
+        
         if (_trailRenderer != null)
-            _trailRenderer.SetPositions(new Vector3[0] { });
+        {
+            _trailRenderer.Clear();
+            _trailRenderer.enabled = false;
+            _trailRenderer.enabled = true;
+        }
     }
 
     private void Update()
@@ -69,18 +75,20 @@ public abstract class Bullet : MonoBehaviour, IPoolable
                 if (root.TryGetComponent(out IDamageable health))
                 {
                     health.ApplyDamage(_power);
-                    Invoke(nameof(PoolBullet), _delateTime);
                     _isActiving = false;
                     _rigidbody2D.linearVelocity = Vector2.zero;
                 }
+            
+                var evt = SpawnEvents.HitImpactCreate;
+                evt.poolType = PoolType.HitImpact;
+                evt.position = transform.position;
+                evt.hitImpactMat = hitImpactMat;
+                _channelSo.RaiseEvent(evt);
+                
+                _myPool.Push(this);
             }
         }
         
-    }
-
-    private void PoolBullet()
-    {
-        _myPool.Push(this);
     }
 
     public void SetUpPool(Pool pool)
@@ -91,5 +99,12 @@ public abstract class Bullet : MonoBehaviour, IPoolable
     public void ResetItem()
     {
         _currentTime = 0f;
+        
+        if (_trailRenderer != null)
+        {
+            _trailRenderer.Clear();
+            _trailRenderer.enabled = false;
+            _trailRenderer.enabled = true;
+        }
     }
 }

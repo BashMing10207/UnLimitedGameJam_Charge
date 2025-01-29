@@ -16,7 +16,7 @@ public partial class CrossHandAction : Action
     
     protected override Status OnStart()
     {
-        Golem.Value.CrossHand(Speed.Value , CrossSpeed.Value);
+        Golem.Value.HandPattern.CrossHands(Speed.Value , CrossSpeed.Value);
         return Status.Success;
     }
 

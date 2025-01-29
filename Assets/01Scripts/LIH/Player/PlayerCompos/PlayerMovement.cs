@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour, IPlayerCompo
 {
@@ -47,7 +45,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
     private float _dashSpeed;
     private float _currentDashCool;
     private float _dashCoolTime;
-
+    
     private float _chargingMoveMultiplier = 1f;
 
     public void Initialize(Player player)
@@ -114,7 +112,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         switch (_player.dashType)
         {
             case PlayerDashType.MouseDir:
-                dir = _player.LookDir();
+                dir = _player.LooDir;
                 break;
             case PlayerDashType.InputDir:
                 dir = _player.PlayerInput.InputDirection.normalized;
@@ -143,7 +141,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
         float inverseLerp = Mathf.InverseLerp(0, _maxKnockBackChargingValue, power);
         float knockBackPower = Mathf.Lerp(0, _applyKnockBackMaxPower, inverseLerp);
         
-        _rigidbody2D.AddForce(-_player.LookDir() * knockBackPower, ForceMode2D.Impulse);
+        _rigidbody2D.AddForce(-_player.LooDir * knockBackPower, ForceMode2D.Impulse);
         DOVirtual.DelayedCall(_knockBackTime, () => CanMove = true);
     }
 
@@ -153,10 +151,10 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
             return;
         
         _moveDir = _player.PlayerInput.InputDirection;
-        _rigidbody2D.linearVelocity = _moveDir * _moveSpeed / _chargingMoveMultiplier;
+        _rigidbody2D.linearVelocity = _moveDir * (_moveSpeed * _chargingMoveMultiplier);
     }
     
-    public void StopImmediately(bool isYAxisToo = false)
+    private void StopImmediately(bool isYAxisToo = false)
     {
         if(isYAxisToo)
             _rigidbody2D.linearVelocity = Vector2.zero;
@@ -164,6 +162,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
             _rigidbody2D.linearVelocityX = 0;
 
         _moveDir = Vector2.zero;
+    }
+
+    public void SetActiveCanMove(bool _isActive)
+    {
+        CanMove = _isActive;
+        StopImmediately();
     }
 
     private void HandleResetChargingSpeed(float power)
@@ -179,17 +183,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerCompo
 
     private void HandleSetChargingSpeed(float chargingTime, float chargingValue)
     {
-        if(CanMove == false)
+        if (CanMove == false)
             return;
 
-        if (chargingValue >= _zeroSpeedChargingValue)
-        {
-            StopImmediately(true);
-            CanMove = false;
-        }
-        else
-        {
-            _chargingMoveMultiplier = Mathf.Max(1,chargingValue);
-        }
+        chargingValue = Mathf.Min(chargingValue, 100);
+        
+        _chargingMoveMultiplier = Mathf.Lerp(1.0f, 0.3f, chargingValue / 100f);
     }
+
 }

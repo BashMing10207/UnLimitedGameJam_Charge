@@ -16,7 +16,7 @@ public class BloodScreenFeedback : Feedback
         evt.color = new Color(0.7f, 0, 0);
         evt.intensity = _intensity;
         evt.lerpTime = _lerpTime;
-
+        
         _volumeEventChannel.RaiseEvent(evt);
         
         DOVirtual.DelayedCall(_duration, () => _volumeEventChannel.RaiseEvent(VolumeEvents.VignetteResetEvent));

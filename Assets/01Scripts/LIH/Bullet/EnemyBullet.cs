@@ -14,8 +14,7 @@ public class EnemyBullet : Bullet
 
             evt.clipData = fireAudio;
             soundChannelSo.RaiseEvent(evt);
-
         }
-
+        
     }
 }
