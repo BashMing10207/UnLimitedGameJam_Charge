@@ -29,6 +29,7 @@ public class TitleManager : MonoBehaviour
     
     private void Awake()
     {
+        Time.timeScale = 1;
         startBtnText.DOFade(alphaValue, time).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InSine);
     }
     private void Start()
