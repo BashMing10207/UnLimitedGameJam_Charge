@@ -46,7 +46,10 @@ public class GolemBossAnimatorController : MonoBehaviour
     
     public void SetDead()
     {
+        GolemBoss.BulletPattern.ActiveLaser(false);
+        GolemBoss.Dead();
         BossAnimator.enabled = true;
+                
         BossAnimator.SetBool("Dead",true);
     }
 

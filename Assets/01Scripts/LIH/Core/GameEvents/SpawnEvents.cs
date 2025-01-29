@@ -54,5 +54,4 @@ public class HitImpactCreate : GameEvent
 {
     public PoolType poolType ;
     public Vector2 position;
-    public Material hitImpactMat;
 }

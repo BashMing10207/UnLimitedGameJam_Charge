@@ -31,8 +31,8 @@ public class GolemBoss : Entity
 
     private GolemBossHandPattern _handPattern;
     public GolemBossHandPattern HandPattern => _handPattern;
-    
-    [SerializeField] private BehaviorGraphAgent _agent;
+
+    private BehaviorGraphAgent _agent;
         
     protected override void Awake()
     {
@@ -82,7 +82,8 @@ public class GolemBoss : Entity
         
     public void Dead()
     {
-        _agent.enabled = false;
         PlaySound(goelmDeadSound);;
+        
+        _agent.enabled = false;
     }
 }

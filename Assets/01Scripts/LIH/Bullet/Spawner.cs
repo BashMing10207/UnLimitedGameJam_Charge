@@ -63,7 +63,6 @@ public class Spawner : MonoBehaviour
     {
         HitImpactParticle ex = _poolManager.Pop(evt.poolType) as HitImpactParticle;
         ex.transform.position = evt.position;
-        ex.SetUpColor(evt.hitImpactMat);
         ex.PlayParticle();
     }
     
