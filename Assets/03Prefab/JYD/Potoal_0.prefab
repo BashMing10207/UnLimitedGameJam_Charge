@@ -147,7 +147,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5b853e8f2f4ee8746877e80dafd1220c, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5893136d0609ccc4abb3da05d39f5b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: LobbyScene
+  nextSceneName: BossOneScene
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64

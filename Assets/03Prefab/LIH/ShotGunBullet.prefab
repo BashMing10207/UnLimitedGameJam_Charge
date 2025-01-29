@@ -204,7 +204,6 @@ MonoBehaviour:
         m_CallState: 2
   _trailRenderer: {fileID: 3738361170782467865}
   _channelSo: {fileID: 11400000, guid: 147bcbf0355179142878d71f4e703d84, type: 2}
-  hitImpactMat: {fileID: 2100000, guid: ff24f8c37a508044d8d6854ff64bc37d, type: 2}
 --- !u!114 &5583430653186301336
 MonoBehaviour:
   m_ObjectHideFlags: 0

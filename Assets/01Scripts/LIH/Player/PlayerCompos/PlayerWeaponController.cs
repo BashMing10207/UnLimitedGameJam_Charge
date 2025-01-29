@@ -162,9 +162,4 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     {
         gameObject.SetActive(_isActive);
     }
-
-    public void InvokeResetEvent()
-    {
-        resetEvent?.Invoke();
-    }
 }

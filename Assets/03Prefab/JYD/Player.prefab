@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1516370337146375645}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.332, y: -0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -123,8 +123,6 @@ MonoBehaviour:
   dashType: 1
   _playerManagerSO: {fileID: 11400000, guid: cd88f5759a03fd644bda25133db62a84, type: 2}
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: 7961c0b96d71ad746aa01b380295824b, type: 2}
-  _soundChannelSo: {fileID: 0}
-  _hitSound: {fileID: 0}
 --- !u!114 &5432457615222919477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,13 +138,10 @@ MonoBehaviour:
   _dashCoolEvent:
     m_PersistentCalls:
       m_Calls: []
-  _soundChannelSo: {fileID: 0}
-  _dashSound: {fileID: 0}
   _moveSpeedStat: {fileID: 11400000, guid: 505ee74f875bf374ba48fdab976a7355, type: 2}
   _dashSpeedStat: {fileID: 11400000, guid: ba023ed7b49a8744ca30686b3093033a, type: 2}
   _dashCoolStat: {fileID: 11400000, guid: 2e6dce52016d8af4bbdc841a9831b9b1, type: 2}
   _dashTime: 0.3
-  _dashInvincibilityTime: 0
   _knockBackTime: 0.15
   _applyKnockBackMaxPower: 10
   _maxKnockBackChargingValue: 50
@@ -165,9 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27413610620e1e42b8d7ccd7e29fac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundChannelSo: {fileID: 0}
-  _shotSound: {fileID: 0}
-  _chargingSound: {fileID: 0}
   chargingEvent:
     m_PersistentCalls:
       m_Calls:
@@ -254,7 +246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c161c621fe40472bbc2565489517956b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnEventChannel: {fileID: 0}
   _healthStat: {fileID: 11400000, guid: c6bebaea503719749b5f5870c30e6e06, type: 2}
   OnHit:
     m_PersistentCalls:
@@ -336,16 +327,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerMuzzleEffect: {fileID: 4730605180681999947, guid: 87868998d15b8224ca4b6158f8d150fc, type: 3}
-  _emisiion: {fileID: 0}
   _spawnChannel: {fileID: 11400000, guid: 6944cce5058946943ac30c78e150d1b4, type: 2}
   _bullet: {fileID: 3559990087977567739, guid: 52ebaf3d6b432144e9f1cdef1b09471c, type: 3}
-  _particleMaxSize: 0
   _recoilTime: 0.1
   _recoilXValue: 0.6
   _minPower: 10
-  _maxSize: 3
-  _maxSpeed: 3
-  _damage: 10
 --- !u!1 &2639593208037178768
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +634,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 980112813
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6879118450950661895, guid: dad7e8a40dfce244d9c9374ba301995c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -787,7 +773,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 854918179
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 159929021, guid: 552b0f28a585cd5468447308980f164f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -848,9 +834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50b0ec57610e784c89107d40f3dd839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 0}
-  movement: {fileID: 0}
-  _weaponController: {fileID: 0}
 --- !u!114 &4660775733831698416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,4 +1126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc8f204960d4adc861bda0fb32353c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRenderers:
+  - {fileID: 3693657962144148358}
+  - {fileID: 8297457645272548644}
   _blinkTime: 0.2
