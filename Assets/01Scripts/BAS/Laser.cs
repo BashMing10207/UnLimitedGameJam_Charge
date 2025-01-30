@@ -13,7 +13,7 @@ public class Laser : MonoBehaviour
     private Transform player = null;
 
     [SerializeField] private float damage = 5;
-    private float damageInterval = 0.1f;
+    private float damageInterval = 0.01f;
     private float lastDamageTime = 0;
 
     [SerializeField] private ParticleSystem _laserCover;

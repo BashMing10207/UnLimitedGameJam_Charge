@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -28,11 +27,11 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
     
     private void Update()
     {
-        if (Keyboard.current.nKey.wasPressedThisFrame)
+        /*if (Keyboard.current.nKey.wasPressedThisFrame)
         {
             ApplyDamage(3f);
             Debug.Log(_currentHealth);
-        }
+        }*/
     }
 
     public void Initialize(Entity entity)
@@ -78,10 +77,10 @@ public class Health : MonoBehaviour, IDamageable, IEntityComponent, IAfterInitab
 
     private void HitFeedBack()
     {
+        OnHit?.Invoke(_damage);
+        
         if (IsDead)
             OnDead?.Invoke();
-        else
-            OnHit?.Invoke(_damage);
     }
 
     public float GetCurrentHealth() => _currentHealth;

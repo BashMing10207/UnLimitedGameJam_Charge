@@ -16,7 +16,7 @@ public partial class SectorFormShotAction : Action
     
     protected override Status OnStart()
     {
-        Golem.Value.SectorFormShot(Angle.Value ,BulletCount.Value,Time.Value);
+        Golem.Value.BulletPattern.SectorFormShot(Angle.Value ,BulletCount.Value,Time.Value);
         return Status.Success;
     }
     

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,7 +17,7 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
 
     public List<float> levelSeconds;
     public List<float> levelAdditiveValue;
-
+    
     [SerializeField] private float _minChargingValue;
     [SerializeField] private float _chargingDelayTime;
     
@@ -117,20 +116,25 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
     private void ChargingLogic()
     {
         _currentChargingTime += Time.deltaTime;
+        
         float maxValue = levelSeconds.Where(x => x <= _currentChargingTime).Max();
         CurrentLevelIndex = levelSeconds.FindLastIndex(x => x <= maxValue);
-
+        
         _currentChargingDelayTime -= Time.deltaTime;
         if (_currentChargingDelayTime <= 0)
         {
-            _currentCharging += levelAdditiveValue[CurrentLevelIndex];
+            float curIncValue = levelAdditiveValue[CurrentLevelIndex];
+
+            curIncValue = _playerInput.InputDirection == Vector2.zero ? curIncValue : 1;
+            
+            _currentCharging += curIncValue;
             _currentChargingDelayTime = _chargingDelayTime;
         }
     }
     
     private void GunRotate()
     {
-        float z = Mathf.Atan2(_player.LookDir().y, _player.LookDir().x) * Mathf.Rad2Deg;
+        float z = Mathf.Atan2(_player.LooDir.y, _player.LooDir.x) * Mathf.Rad2Deg;
         if (_playerRender.FacingDirection <= 0f)
             z = -z + 180f;
         
@@ -152,5 +156,15 @@ public class PlayerWeaponController : MonoBehaviour, IPlayerCompo
         currentWeapon.SetOwner(_player);
         fireEvent.AddListener(currentWeapon.Fire);
         chargingEvent.AddListener(currentWeapon.Charging);
+    }
+
+    public void SetActiveWeapon(bool _isActive)
+    {
+        gameObject.SetActive(_isActive);
+    }
+
+    public void InvokeResetEvent()
+    {
+        resetEvent?.Invoke();
     }
 }

@@ -67,7 +67,7 @@ public abstract class Weapon : MonoBehaviour
     {
         PlayerMuzzleEffect effect = Instantiate(_playerMuzzleEffect);
         effect.transform.position = _fireTrm.position;
-        float z = Mathf.Atan2(_player.LookDir().y, _player.LookDir().x) * Mathf.Rad2Deg;
+        float z = Mathf.Atan2(_player.LooDir.y, _player.LooDir.x) * Mathf.Rad2Deg;
         effect.SetRotate(z);
     }
 

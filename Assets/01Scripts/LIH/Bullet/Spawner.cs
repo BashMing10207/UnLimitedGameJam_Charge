@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletSpawner : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameEventChannelSO _spawnChannel;
     [SerializeField] private PoolManagerSO _poolManager;
@@ -11,6 +11,7 @@ public class BulletSpawner : MonoBehaviour
         _spawnChannel.AddListener<SmokeParticleCreate>(HandleSmokeParticleSpawn);
         _spawnChannel.AddListener<RockCreate>(HandleRockSpawn);
         _spawnChannel.AddListener<ExplosionCreate>(HandleExplosionSpawn);
+        _spawnChannel.AddListener<HitImpactCreate>(HandleHitImpactSpawn);
     }
 
     private void OnDestroy()
@@ -19,6 +20,7 @@ public class BulletSpawner : MonoBehaviour
         _spawnChannel.RemoveListener<SmokeParticleCreate>(HandleSmokeParticleSpawn);
         _spawnChannel.RemoveListener<RockCreate>(HandleRockSpawn);
         _spawnChannel.RemoveListener<ExplosionCreate>(HandleExplosionSpawn);
+        _spawnChannel.RemoveListener<HitImpactCreate>(HandleHitImpactSpawn);
     }
 
     private void HandleBulletSpawn(BulletCreate evt)
@@ -46,6 +48,7 @@ public class BulletSpawner : MonoBehaviour
         Rock rock = _poolManager.Pop(evt.poolType) as Rock;
         rock.transform.position = evt.position;
         rock.SetDirection(evt.direction , evt.fallTime);
+        rock.GetComponent<DummyHealth>().SetHealth(Random.Range(5f , 10f));
     }
 
     private void HandleExplosionSpawn(ExplosionCreate evt)
@@ -55,4 +58,13 @@ public class BulletSpawner : MonoBehaviour
         ex.PlayParticle();
         
     }
+
+    private void HandleHitImpactSpawn(HitImpactCreate evt)
+    {
+        HitImpactParticle ex = _poolManager.Pop(evt.poolType) as HitImpactParticle;
+        ex.transform.position = evt.position;
+        ex.SetUpColor(evt.hitImpactMat);
+        ex.PlayParticle();
+    }
+    
 }

@@ -14,7 +14,7 @@ public partial class SpinShotAction : Action
     [SerializeReference] public BlackboardVariable<bool> IsLeft;
     protected override Status OnStart()
     {
-        Golem.Value.SpinShot(BulletCount.Value,IsLeft.Value);
+        Golem.Value.BulletPattern.SpinShot(BulletCount.Value,IsLeft.Value);
         
         return Status.Success;
     }

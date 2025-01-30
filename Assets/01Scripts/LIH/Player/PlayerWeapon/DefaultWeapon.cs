@@ -15,10 +15,10 @@ public class DefaultWeapon : Weapon
     {
         var evt = SpawnEvents.BulletCreate;
         evt._bulletType = PoolType.PlayerBullet;
-        evt.damage = _damage+power/1.5f;
-        evt.dir = _player.LookDir()*(1+power/2);
+        evt.damage = _damage + power/1.5f;
+        evt.dir = _player.LooDir * Mathf.Min(1+power/4 , 12);
         evt.position = _fireTrm.position;
-
+        
         float sizet = Mathf.InverseLerp(0, 100f, power);
         evt.size = Mathf.Lerp(1f, _maxSize, sizet);
         
