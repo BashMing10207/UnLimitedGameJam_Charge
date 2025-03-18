@@ -7,7 +7,7 @@ public class EnemyChaseStateSO : EnemyStateSO // 쫒아가기 상태
     private BashAstar _astar;
     [SerializeField]
     private float _mindistance = 2;
-
+    private EnemyAnimator _anim;
     public override void OnEnter(Entity entity)
     {
         _enemy = entity as Enemy;
